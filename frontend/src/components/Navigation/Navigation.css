@@ -1,0 +1,54 @@
+/* .navbarLogo {
+    height: 35px;
+    width: 80px;
+    margin-top: 10px;
+} */
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #131921;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  background-color: #131921;
+}
+
+#rightButton {
+  display: inline-flex;
+  background-color: #131921;
+}
+
+#rightSideinfo {
+  float: right;
+}
+
+#demoBtn {
+  background-color: #131921;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#logoZelp {
+  height: 45px;
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+
+.navBar {
+  margin-top: -10px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
