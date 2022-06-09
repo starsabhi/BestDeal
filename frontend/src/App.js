@@ -8,6 +8,7 @@ import Navigation from './components/Navigation';
 import SplashPage from './components/SplashPage';
 import Home from './components/Home';
 import PageNotFound from './components/PageNotFound';
+import Productsdetail from './components/Productsdetail';
 
 function App() {
   const dispatch = useDispatch();
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route exact path="/products">
             <Home />
+          </Route>
+          <Route exact path="/products/:productId">
+            <Productsdetail />
           </Route>
           <Route>
             <PageNotFound />
