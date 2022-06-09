@@ -12,15 +12,10 @@ function ProfileButton({ user }) {
   };
 
   return (
-    <ul id='profile-dropdown'>
-      <li id='nameOfuser'>Hello {user.username}</li>
-      {/* <li>{user.email}</li> */}
-      <li>
-        <button id='LogoutBtn' onClick={logout}>
-          Log Out
-        </button>
-      </li>
-    </ul>
+    <>
+      <div>Hello {user.username}</div>
+      <button onClick={logout}>Log Out</button>
+    </>
   );
 }
 

@@ -1,0 +1,30 @@
+.splashPageMainDiv {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  background-image: url(../..//images//splashPageimg/image1.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  animation: change linear 10s infinite;
+}
+
+@keyframes change {
+  0% {
+    /* opacity: 0.2; */
+    animation-timing-function: ease-in;
+    background-image: url(../..//images//splashPageimg/image1.png);
+  }
+  50% {
+    opacity: 0.4;
+    animation-timing-function: ease-out;
+    background-image: url(../..//images//splashPageimg/image2.jpg);
+  }
+}
+
+.ProductBtnonSplashPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

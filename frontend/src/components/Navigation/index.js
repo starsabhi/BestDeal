@@ -25,7 +25,7 @@ function Navigation({ isLoaded }) {
     sessionLinks = <ProfileButton user={sessionUser} />;
   } else {
     sessionLinks = (
-      <div id='rightButton'>
+      <div className='rightButton'>
         {/* <button id='demoBtn' onClick={demoLogin}>
           Demo
         </button> */}
@@ -41,17 +41,10 @@ function Navigation({ isLoaded }) {
 
   return (
     <div className='navBar'>
-      <ul className='navbarli'>
-        {/* <li className='navbarli'> */}
-        <li>
-          <NavLink exact to='/'>
-            <div>Hello</div>
-            {/* <img className='navbarLogo' src={logo} /> */}
-          </NavLink>
-        </li>
-        <li id='rightSideinfo'>{isLoaded && sessionLinks}</li>
-        {/* </li> */}
-      </ul>
+      <NavLink exact to='/'>
+        <div className='ImageinNav'>Hello</div>
+      </NavLink>
+      <div className='rightSideinfo'>{isLoaded && sessionLinks}</div>
     </div>
   );
 }
