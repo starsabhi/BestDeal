@@ -23,10 +23,10 @@ module.exports = {
           category: 'cloths',
         },
         {
-          name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
-          price: '10.00',
+          name: "lannel Shirt for Men Long Sleeve Men's Casual Button-Down Shirt 100%",
+          price: '12.00',
           imageUrl:
-            'https://m.media-amazon.com/images/I/A1Dm49fDO0L._AC_UL1500_.jpg',
+            'https://m.media-amazon.com/images/I/81awHbAIt8L._AC_UX569_.jpg',
           description:
             'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
           productInfo:

@@ -1,0 +1,26 @@
+.HomepageMainDiv {
+  display: flex;
+}
+
+.productListClass {
+  display: flex;
+  flex-direction: column;
+  border: 1px;
+  border-radius: 1px solid black;
+}
+.productClassArr {
+  display: flex;
+  border-radius: 1px solid black;
+}
+
+.productListimage {
+  height: 200px;
+  width: 200px;
+}
+
+.contentdiv {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  max-width: 500px;
+}
