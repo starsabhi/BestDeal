@@ -12,18 +12,19 @@ export default function EditReview({
   closeModal,
 }) {
   const dispatch = useDispatch();
-
-  const currentReview = useSelector((state) => state.review);
-  console.log(currentReview.content, 'MODALSTATE');
-  const [content, setContent] = useState(`${currentReview.content}`);
-  // const [updateContent, setUpdateContent] = use;
-  // useEffect(() => {
-  //   dispatch(getReviews(prodcutid));
-  // }, [dispatch]);
   useEffect(() => {
     dispatch(getOneReview(reviewId, prodcutid));
     // console.log(getOneBusiness(businessId))
   }, [dispatch]);
+
+  const currentReview = useSelector((state) => state.review);
+  console.log(currentReview.content, 'MODALSTATE');
+  const [content, setContent] = useState(`${currentReview.content}`);
+
+  // const [updateContent, setUpdateContent] = use;
+  // useEffect(() => {
+  //   dispatch(getReviews(prodcutid));
+  // }, [dispatch]);
 
   const handleEditReview = async (e) => {
     e.preventDefault();
@@ -35,7 +36,7 @@ export default function EditReview({
       content,
     };
 
-    const review = await dispatch(updateReview(newReview));
+    const review = await dispatch(updateReview(newReview, reviewId));
     if (review) {
       console.log('THIS WORKED AS WELL AS I THINK');
       // setForm(false);

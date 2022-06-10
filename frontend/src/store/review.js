@@ -85,8 +85,8 @@ export const deleteReview = (reviewId) => async (dispatch) => {
 };
 
 export const updateReview = (review, id) => async (dispatch) => {
-  console.log(review);
-  const res = await csrfFetch(`/${id}`, {
+  console.log(review, id);
+  const res = await csrfFetch(`/api/review//${id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
