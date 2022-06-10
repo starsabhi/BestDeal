@@ -55,26 +55,26 @@ router.patch(
   asyncHandler(async (req, res) => {
     // console.log(req.body);
 
-    const { userId, productId, rating, answer } = req.body;
+    const { userId, productId, rating, content } = req.body;
 
     console.log('THIS IS BODY', {
       userId,
       productId,
       rating,
-      answer,
+      content,
     });
 
     const { reviewId } = req.params;
-    // console.log("THIS IS ID", {reviewId})
+    console.log('THIS IS ID', { reviewId });
 
     const review = await db.Review.findByPk(reviewId);
-    // console.log(review, "THIS IS UPDATED REVIEW")
+    console.log(review, 'THIS IS UPDATED REVIEW');
 
     await review.update({
       userId,
       productId,
       rating,
-      answer,
+      content,
     });
     res.json(review);
   })

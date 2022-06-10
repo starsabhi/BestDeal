@@ -35,7 +35,6 @@ function App() {
           </Route>
           <Route exact path="/products">
             <Home />
-            <Home />
           </Route>
           <Route exact path="/products/:productId">
             <Productsdetail />
