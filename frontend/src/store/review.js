@@ -93,9 +93,11 @@ export const updateReview = (review, id) => async (dispatch) => {
     },
     body: JSON.stringify(review),
   });
+  console.log(res);
 
   if (res.ok) {
     const review = await res.json();
+    console.log(review);
     dispatch(editReview(review));
     return review;
   }

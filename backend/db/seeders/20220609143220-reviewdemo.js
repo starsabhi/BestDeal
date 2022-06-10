@@ -12,18 +12,30 @@ module.exports = {
       'Reviews',
       [
         {
-          userId: '1',
+          userId: '2',
           productId: '1',
           rating: '4',
           content:
             'I like this shirt. I can use this one any time very nice!!!',
         },
         {
-          userId: '1',
+          userId: '2',
           productId: '2',
           rating: '4',
           content:
             "I don't like this shirt. I can use this one any time very nice!!!",
+        },
+        {
+          userId: '2',
+          productId: '2',
+          rating: '4',
+          content: 'I can use this for various parties!!!',
+        },
+        {
+          userId: '3',
+          productId: '2',
+          rating: '4',
+          content: 'It is not bad shirt for this price!!!',
         },
       ],
       {}
