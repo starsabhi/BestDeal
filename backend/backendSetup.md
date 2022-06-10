@@ -24,3 +24,6 @@ npx dotenv sequelize db:migrate:undo:all
 npx sequelize seed:generate --name reviewdemo
 npx dotenv sequelize db:seed:all
 npx dotenv sequelize db:seed:undo:all
+
+
+git push heroku main

@@ -8,17 +8,17 @@ import './Navigation.css';
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
-  // const [errors, setErrors] = useState([]);
-  // const credential = 'demo@user.io';
-  // const password = 'password';
-  // const dispatch = useDispatch();
-  // const demoLogin = () => {
-  //   setErrors([]);
-  //   return dispatch(login({ credential, password })).catch(async (res) => {
-  //     const data = await res.json();
-  //     if (data && data.errors) setErrors(data.errors);
-  //   });
-  // };
+  const [errors, setErrors] = useState([]);
+  const credential = 'demo@user.io';
+  const password = 'password';
+  const dispatch = useDispatch();
+  const demoLogin = () => {
+    setErrors([]);
+    return dispatch(login({ credential, password })).catch(async (res) => {
+      const data = await res.json();
+      if (data && data.errors) setErrors(data.errors);
+    });
+  };
 
   let sessionLinks;
   if (sessionUser) {
@@ -26,9 +26,9 @@ function Navigation({ isLoaded }) {
   } else {
     sessionLinks = (
       <div className='rightButton'>
-        {/* <button id='demoBtn' onClick={demoLogin}>
+        <button id='demoBtn' onClick={demoLogin}>
           Demo
-        </button> */}
+        </button>
         <NavLink className='navLogin' to='/login'>
           Log In
         </NavLink>
