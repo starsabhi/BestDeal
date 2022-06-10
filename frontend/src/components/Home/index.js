@@ -8,7 +8,7 @@ import './Home.css';
 function Home() {
   const dispatch = useDispatch();
   const productList = useSelector((state) => Object.values(state.product));
-  console.log(productList, '***************');
+  // console.log(productList, '***************');
   useEffect(() => {
     dispatch(getAllProduct());
   }, [dispatch]);

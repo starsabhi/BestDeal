@@ -52,10 +52,10 @@ const productReducer = (state = initialState, action) => {
     }
     case GET_ONE_Product: {
       let newState = {};
-      console.log(
-        action,
-        '*######************************************************************'
-      );
+      // console.log(
+      //   action,
+      //   '*######************************************************************'
+      // );
       newState = { ...action.products };
       console.log(newState, 'COMPLETED ******************OR NOT');
       return newState;

@@ -17,6 +17,7 @@ function App() {
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
+  // console.log(sessionUser,'**********')
 
   return (
     <>
@@ -30,13 +31,10 @@ function App() {
             <SignupFormPage />
           </Route>
           <Route exact path="/">
-            {sessionUser ? (
-              <Redirect to="/products" />
-            ) : (
-              <SplashPage isLoaded={isLoaded} />
-            )}
+            <SplashPage />
           </Route>
           <Route exact path="/products">
+            <Home />
             <Home />
           </Route>
           <Route exact path="/products/:productId">
