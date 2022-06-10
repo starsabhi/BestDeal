@@ -32,11 +32,14 @@ export const getOneProduct = (productId) => async (dispatch) => {
   const response = await csrfFetch(`/api/products/${productId}`, {
     method: 'GET',
   });
-  console.log(response, 'Line35');
-  const product = await response.json();
-  console.log('*******8', product);
-  dispatch(oneProduct(product));
-  return product;
+  // console.log(response, 'Line35');
+  if (response.ok) {
+    const product = await response.json();
+    // console.log('*******8', product);
+    dispatch(oneProduct(product));
+    return product;
+  } else {
+  }
 };
 
 const initialState = {};
@@ -57,7 +60,7 @@ const productReducer = (state = initialState, action) => {
       //   '*######************************************************************'
       // );
       newState = { ...action.products };
-      console.log(newState, 'COMPLETED ******************OR NOT');
+      // console.log(newState, 'COMPLETED ******************OR NOT');
       return newState;
     }
 

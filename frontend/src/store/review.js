@@ -33,10 +33,10 @@ const editReview = (review) => ({
 
 export const getReviews = (productId) => async (dispatch) => {
   const res = await csrfFetch(`/api/review/${productId}`);
-  console.log('********************8', res);
+  // console.log('********************8', res);
   if (res.ok) {
     const reviews = await res.json();
-    console.log('***************', reviews);
+    // console.log('***************', reviews);
     dispatch(loadReviews(reviews));
     return reviews;
   }
@@ -47,9 +47,9 @@ export const getOneReview = (reviewId, productId) => async (dispatch) => {
   const res = await csrfFetch(`/api/review/${productId}/${reviewId}`, {
     method: 'GET',
   });
-  console.log('GET COMPLETED OT NOT &******');
+  // console.log('GET COMPLETED OT NOT &******');
   const review = await res.json();
-  console.log(review, 'GETIING ONE REVIEW OR NOT');
+  // console.log(review, 'GETIING ONE REVIEW OR NOT');
   dispatch(oneReview(review));
   return review;
 };
@@ -62,22 +62,22 @@ export const writeReview = (review) => async (dispatch) => {
     },
     body: JSON.stringify(review),
   });
-  console.log(res);
+  // console.log(res);
   if (res.ok) {
     const review = await res.json();
-    console.log(review);
+    // console.log(review);
     dispatch(addReview(review));
     return review;
   }
 };
 
 export const deleteReview = (reviewId) => async (dispatch) => {
-  console.log('&&*&*&*&*&*&*&*', reviewId);
+  // console.log('&&*&*&*&*&*&*&*', reviewId);
   const res = await csrfFetch(`/api/review/${reviewId}`, {
     method: 'DELETE',
   });
 
-  console.log('&&*&*&*&*&*&*&*COMPLETD OR NOT');
+  // console.log('&&*&*&*&*&*&*&*COMPLETD OR NOT');
   if (res.ok) {
     const reviewId = await res.json();
     dispatch(removeReviews(reviewId));
@@ -85,7 +85,7 @@ export const deleteReview = (reviewId) => async (dispatch) => {
 };
 
 export const updateReview = (review, id) => async (dispatch) => {
-  console.log(review, id);
+  // console.log(review, id);
   const res = await csrfFetch(`/api/review//${id}`, {
     method: 'PATCH',
     headers: {
@@ -93,11 +93,11 @@ export const updateReview = (review, id) => async (dispatch) => {
     },
     body: JSON.stringify(review),
   });
-  console.log(res);
+  // console.log(res);
 
   if (res.ok) {
     const review = await res.json();
-    console.log(review);
+    // console.log(review);
     dispatch(editReview(review));
     return review;
   }
@@ -117,7 +117,7 @@ const reviewReducer = (state = initialState, action) => {
     }
     case ADD_REVIEWS: {
       let newState = { ...state };
-      console.log(action, '**********************************************');
+      // console.log(action, '**********************************************');
       newState[action.id] = action;
       return newState;
     }

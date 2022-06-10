@@ -9,13 +9,13 @@ import './ProfileButton.css';
 function ProfileButton({ user }) {
   const history = useHistory();
   const dispatch = useDispatch();
-  const sessionUser = useSelector((state) => state.session.user);
-  console.log(sessionUser,'***********8')
+  // const sessionUser = useSelector((state) => state.session.user);
+  // console.log(sessionUser,'***********8')
 
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
-    history.push('/')
+    history.push('/');
   };
 
   return (

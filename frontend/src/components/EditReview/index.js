@@ -9,40 +9,41 @@ export default function EditReview({
   reviewId,
   sessionuid,
   prodcutid,
+  editcontent,
   closeModal,
 }) {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getOneReview(reviewId, prodcutid));
-    // console.log(getOneBusiness(businessId))
-  }, [dispatch]);
 
-  const currentReview = useSelector((state) => state.review);
-  console.log(currentReview.content, 'MODALSTATE');
-  const [content, setContent] = useState(`${currentReview.content}`);
+  // const currentReview = useSelector((state) => state.review);
+  // console.log(currentReview.content, 'MODALSTATE');
+  const [editformcontent, setEditformcontent] = useState(editcontent);
+  // console.log(editcontent);
+
+  // useEffect(() => {
+  //   dispatch(getOneReview(reviewId, prodcutid));
+  // }, [dispatch]);
 
   // const [updateContent, setUpdateContent] = use;
+
   // useEffect(() => {
   //   dispatch(getReviews(prodcutid));
   // }, [dispatch]);
 
   const handleEditReview = async (e) => {
     e.preventDefault();
-    // if(validationErrors.length>0) return alert("Please Sumbit Review")
+
     const newReview = {
       userId: sessionuid,
       productId: prodcutid,
       rating: 4,
-      content,
+      content: editformcontent,
     };
 
     const review = await dispatch(updateReview(newReview, reviewId));
     if (review) {
-      console.log('THIS WORKED AS WELL AS I THINK');
-      // setForm(false);
-      // dispatch(getReviews(prodcutid));
-      // resetAdd();
-      // window.location.reload();
+      // console.log('THIS WORKED AS WELL AS I THINK');
+      closeModal();
+      dispatch(getReviews(prodcutid));
     }
   };
 
@@ -64,8 +65,8 @@ export default function EditReview({
               className="edit-song-input"
               type="text"
               name="songTitle"
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
+              value={editformcontent}
+              onChange={(e) => setEditformcontent(e.target.value)}
               required
             />
           </div>
