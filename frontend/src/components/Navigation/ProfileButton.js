@@ -20,8 +20,10 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <div>Hello {user.username}</div>
-      <button onClick={logout}>Log Out</button>
+      <div className="newDivDemoUser">
+        <div>Hello {user.username}</div>
+        <button onClick={logout}>Log Out</button>
+      </div>
     </>
   );
 }

@@ -6,9 +6,9 @@ const EDIT_REVIEW = 'review/EDIT_REVIEWS';
 const DELETE_REVIEW = 'review/DELETE_REVIEWS';
 const ONE_REVIEW = 'review/ONE_REVIEW';
 
-const removeReviews = (reviews) => ({
+const removeReviews = (reviewId) => ({
   type: DELETE_REVIEW,
-  reviews,
+  reviewId,
 });
 
 const oneReview = (reviews) => ({
@@ -21,9 +21,9 @@ const loadReviews = (reviews) => ({
   reviews,
 });
 
-const addReview = (reviews) => ({
+const addReview = (review) => ({
   type: ADD_REVIEWS,
-  reviews,
+  review,
 });
 
 const editReview = (review) => ({
@@ -108,34 +108,31 @@ const reviewReducer = (state = initialState, action) => {
   let newState = { ...state };
   switch (action.type) {
     case LOAD_REVIEWS: {
-      // let newState = {...state}
-      //   console.log(action,"************************REVIEW REDUCER**********")
-      // action.reviews.forEach((review)=>{
-      //     newState[review.id] = review
-      // })
-      return action;
+      action.reviews.forEach((review) => {
+        newState[review.id] = review;
+      });
+      return newState;
     }
     case ADD_REVIEWS: {
-      let newState = { ...state };
-      // console.log(action, '**********************************************');
-      newState[action.id] = action;
+      newState[action.review.id] = action.review;
       return newState;
     }
 
     case EDIT_REVIEW: {
-      return action.review;
+      newState[action.review.id] = action.review;
+      return newState;
     }
 
     case DELETE_REVIEW: {
       delete newState[action.reviewId];
       return newState;
     }
-    case ONE_REVIEW: {
-      let newState = {};
-      newState = { ...action.reviews };
-      // console.log(action,"****************************")
-      return newState;
-    }
+    // case ONE_REVIEW: {
+    //   let newState = {};
+    //   newState = { ...action.reviews };
+    //   // console.log(action,"****************************")
+    //   return newState;
+    // }
 
     default:
       return state;

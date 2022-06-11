@@ -1,5 +1,5 @@
 import './EditReview.css';
-import { updateReview, getOneReview, getReviews } from '../../store/review';
+import { updateReview, getOneReview, getReviews } from '../../../store/review';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,23 +13,9 @@ export default function EditReview({
   closeModal,
 }) {
   const dispatch = useDispatch();
-
-  // const currentReview = useSelector((state) => state.review);
-  // console.log(currentReview.content, 'MODALSTATE');
   const [editformcontent, setEditformcontent] = useState(editcontent);
-  // console.log(editcontent);
 
-  // useEffect(() => {
-  //   dispatch(getOneReview(reviewId, prodcutid));
-  // }, [dispatch]);
-
-  // const [updateContent, setUpdateContent] = use;
-
-  // useEffect(() => {
-  //   dispatch(getReviews(prodcutid));
-  // }, [dispatch]);
-
-  const handleEditReview = async (e) => {
+  const handleEditReview = (e) => {
     e.preventDefault();
 
     const newReview = {
@@ -39,9 +25,8 @@ export default function EditReview({
       content: editformcontent,
     };
 
-    const review = await dispatch(updateReview(newReview, reviewId));
+    const review = dispatch(updateReview(newReview, reviewId));
     if (review) {
-      // console.log('THIS WORKED AS WELL AS I THINK');
       closeModal();
       dispatch(getReviews(prodcutid));
     }
@@ -54,7 +39,7 @@ export default function EditReview({
         <form
           className={'resource-edit-form'}
           autoComplete="off"
-          onSubmit={handleEditReview}
+          onSubmit={(e) => handleEditReview(e)}
         >
           <div className="edit-song-form-group">
             <label className="edit-song-label" htmlFor="songTitle">

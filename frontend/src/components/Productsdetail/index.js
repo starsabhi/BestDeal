@@ -12,18 +12,23 @@ function Productsdetail() {
   const Id = useParams();
   // console.log(Id, '***********productId******');
   const Product = useSelector((state) => state.product);
-  const Reviews = useSelector((state) => state.review);
+  const Review = useSelector((state) => state.review);
+  const Reviews = Object.values(Review);
+  console.log(
+    Reviews,
+    '********CurrrentStatePRODUCTDETAIL*********',
+    Object.values(Reviews)
+  );
   const CurrrentState = useSelector((state) => state);
-  // console.log(CurrrentState, '********CurrrentState*********');
 
   useEffect(() => {
     dispatch(getOneProduct(Id.productId));
     // console.log(getOneBusiness(businessId))
   }, [dispatch]);
 
-  useEffect(()=>{
-    dispatch(getReviews(Id.productId))
-  },[dispatch]);
+  useEffect(() => {
+    dispatch(getReviews(Id.productId));
+  }, [dispatch]);
 
   // console.log(Reviews?.reviews[0].content, '********REVIEWS*********');
   return (
@@ -39,11 +44,18 @@ function Productsdetail() {
               <p className="descriptionptag">{Product?.description}</p>
             </div>
           </div>
-          <div className='productListClass priceCartorderBoxDiv'>Hello<div/>
-          {/* <p>{Reviews?.reviews[0].content}</p> */}
+          <div className="productListClass priceCartorderBoxDiv">
+            Hello
+            <div />
+            {/* <p>{Reviews?.reviews[0].content}</p> */}
+          </div>
         </div>
-        </div>
-        <ReviewCard Id={Id} Reviews={Reviews} CurrrentState={CurrrentState} Product={Product}/>
+        <ReviewCard
+          Id={Id}
+          Reviews={Reviews}
+          CurrrentState={CurrrentState}
+          Product={Product}
+        />
       </div>
     </>
   );

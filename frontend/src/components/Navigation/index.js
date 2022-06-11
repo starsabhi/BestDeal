@@ -1,23 +1,37 @@
 // frontend/src/components/Navigation/index.js
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import { login } from '../../store/session';
+import * as sessionActions from '../../store/session';
 import './Navigation.css';
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
+  const history = useHistory();
   const [errors, setErrors] = useState([]);
   const credential = 'demo@user.io';
   const password = 'password';
   const dispatch = useDispatch();
-  const demoLogin = () => {
-    setErrors([]);
-    return dispatch(login({ credential, password })).catch(async (res) => {
-      const data = await res.json();
-      if (data && data.errors) setErrors(data.errors);
-    });
+  // const demoLogin = () => {
+  //   setErrors([]);
+  //   return dispatch(login({ credential, password })).catch(async (res) => {
+  //     const data = await res.json();
+  //     if (data && data.errors) setErrors(data.errors);
+  //     // history.push('/products');
+  //   });
+  // };
+
+  const demoLogin = (e) => {
+    e.preventDefault();
+    dispatch(sessionActions.login({ credential, password })).catch(
+      async (res) => {
+        const data = await res.json();
+        if (data && data.errors) setErrors(data.errors);
+      }
+    );
+    history.push('/products');
   };
 
   let sessionLinks;
@@ -25,14 +39,14 @@ function Navigation({ isLoaded }) {
     sessionLinks = <ProfileButton user={sessionUser} />;
   } else {
     sessionLinks = (
-      <div className='rightButton'>
-        <button id='demoBtn' onClick={demoLogin}>
+      <div className="rightButton">
+        <button id="demoBtn" onClick={demoLogin}>
           Demo
         </button>
-        <NavLink className='navLogin' to='/login'>
+        <NavLink className="navLogin" to="/login">
           Log In
         </NavLink>
-        <NavLink className='navSignUp' to='/signup'>
+        <NavLink className="navSignUp" to="/signup">
           Sign Up
         </NavLink>
       </div>
@@ -40,11 +54,11 @@ function Navigation({ isLoaded }) {
   }
 
   return (
-    <div className='navBar'>
-      <NavLink exact to='/'>
-        <div className='ImageinNav'>Hello</div>
+    <div className="navBar">
+      <NavLink exact to="/">
+        <div className="ImageinNav">Hello</div>
       </NavLink>
-      <div className='rightSideinfo'>{isLoaded && sessionLinks}</div>
+      <div className="rightSideinfo">{isLoaded && sessionLinks}</div>
     </div>
   );
 }
