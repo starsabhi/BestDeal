@@ -4,14 +4,16 @@ import './SplashPage.css';
 function SplashPage() {
   return (
     <>
-      <div className="splashPageMainDiv">
-        <div className="infoforsplashPage">
-          Everyone deserve best products with best price Our Products
-        </div>
-        <div>
-          <NavLink exact to={'/products'}>
-            <button className="ProductBtnonSplashPage"> Our Products</button>
-          </NavLink>
+      <div>
+        <div className="splashPageMainDiv">
+          <div className="infoforsplashPage">
+            <h3>Everyone deserve best products with best price Our Products</h3>
+            <NavLink exact to={'/products'}>
+              <div className="divbutttonforladningPage">
+                <button className="ProductBtnonSplashPage">Our Products</button>
+              </div>
+            </NavLink>
+          </div>
         </div>
       </div>
     </>

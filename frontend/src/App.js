@@ -9,6 +9,7 @@ import SplashPage from './components/SplashPage';
 import Home from './components/Home';
 import PageNotFound from './components/PageNotFound';
 import Productsdetail from './components/Productsdetail';
+import Footer from './components/Footer';
 
 function App() {
   const dispatch = useDispatch();
@@ -44,6 +45,7 @@ function App() {
           </Route>
         </Switch>
       )}
+      <Footer />
     </>
   );
 }
