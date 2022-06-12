@@ -10,6 +10,7 @@ import Home from './components/Home';
 import PageNotFound from './components/PageNotFound';
 import Productsdetail from './components/Productsdetail';
 import Footer from './components/Footer';
+import TotalItemCart from './components/Cart/TotalItemCart';
 
 function App() {
   const dispatch = useDispatch();
@@ -46,6 +47,7 @@ function App() {
         </Switch>
       )}
       {/* <Footer /> */}
+      {/* <TotalItemCart /> */}
     </>
   );
 }

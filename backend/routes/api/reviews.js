@@ -35,6 +35,7 @@ router.get(
 
 router.post(
   '/',
+  requireAuth,
   asyncHandler(async (req, res) => {
     // console.log("ROUTER COMPLETED OR NOT   *********************")
     const { userId, productId, rating, content } = req.body;
@@ -52,6 +53,7 @@ router.post(
 
 router.patch(
   '/:reviewId',
+  requireAuth,
   asyncHandler(async (req, res) => {
     // console.log(req.body);
 
@@ -82,6 +84,7 @@ router.patch(
 
 router.delete(
   '/:reviewId',
+  requireAuth,
   asyncHandler(async (req, res) => {
     const { reviewId } = req.params;
     const review = await db.Review.findByPk(reviewId);

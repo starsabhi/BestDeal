@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './Productsdetail.css';
 import { getReviews } from '../../store/review';
 import ReviewCard from '../ReviewCard';
+import CartBox from '../Cart/CartBox';
 
 function Productsdetail() {
   const dispatch = useDispatch();
@@ -14,11 +15,11 @@ function Productsdetail() {
   const Product = useSelector((state) => state.product);
   const Review = useSelector((state) => state.review);
   const Reviews = Object.values(Review);
-  console.log(
-    Reviews,
-    '********CurrrentStatePRODUCTDETAIL*********',
-    Object.values(Reviews)
-  );
+  // console.log(
+  //   Reviews,
+  //   '********CurrrentStatePRODUCTDETAIL*********',
+  //   Object.values(Reviews)
+  // );
   const CurrrentState = useSelector((state) => state);
 
   useEffect(() => {
@@ -35,8 +36,8 @@ function Productsdetail() {
     <>
       <div className="ProductsdetailDiv">
         {/* <h1>Productsdetail</h1> */}
-        <div className="productListClass">
-          <div key={Product.id} className="productClassArr">
+        <div className="productListClassforProductdetailPage flex-child-element">
+          <div key={Product?.id} className="productClassArr">
             <div className="contentdiv">
               <h2 className="productNameh2">{Product?.name}</h2>
               <p>${Product.price}</p>
@@ -44,19 +45,19 @@ function Productsdetail() {
               <p className="descriptionptag">{Product?.description}</p>
             </div>
           </div>
-          <div className="productListClass priceCartorderBoxDiv">
-            Hello
-            <div />
-            {/* <p>{Reviews?.reviews[0].content}</p> */}
-          </div>
         </div>
-        <ReviewCard
-          Id={Id}
-          Reviews={Reviews}
-          CurrrentState={CurrrentState}
-          Product={Product}
-        />
+        <div className="priceCartorderBoxDiv flex-child-element">
+          <CartBox Product={Product} productId={Id.productId} />
+          <div />
+          {/* <p>{Reviews?.reviews[0].content}</p> */}
+        </div>
       </div>
+      <ReviewCard
+        Id={Id}
+        Reviews={Reviews}
+        CurrrentState={CurrrentState}
+        Product={Product}
+      />
     </>
   );
 }

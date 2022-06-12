@@ -1,9 +1,19 @@
 .ProductsdetailDiv {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   max-width: 500px;
 }
 
-.priceCartorderBoxDivP{
-display: flex;
+.priceCartorderBoxDivP {
+  display: flex;
+}
+
+.productListClassforProductdetailPage {
+  border: 1px solid black;
+}
+
+.flex-child-element {
+  flex: 1;
+  border: 2px solid blueviolet;
+  margin: 10px;
 }

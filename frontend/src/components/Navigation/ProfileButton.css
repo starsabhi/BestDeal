@@ -23,3 +23,12 @@
 
 .userNameDivinNav {
 }
+
+.totalItemCartInNavBar {
+  height: 30px;
+  margin-top: -20px;
+  /* transition-duration: 0.4s; */
+}
+/* .totalItemCartInNavBar:hover {
+  border: 1px solid white;
+} */

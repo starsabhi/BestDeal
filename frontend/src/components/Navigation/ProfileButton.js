@@ -5,6 +5,7 @@ import { Redirect, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import './ProfileButton.css';
+import TotalItemCart from '../Cart/TotalItemCart';
 
 function ProfileButton({ user }) {
   const history = useHistory();
@@ -21,6 +22,9 @@ function ProfileButton({ user }) {
   return (
     <>
       <div className="newDivDemoUser">
+        {/* <div className="totalItemCartInNavBar"> */}
+        <TotalItemCart />
+        {/* </div> */}
         <div className="userNameDivinNav">Hello {user.username}</div>
         <button className="logOutBtnele" onClick={logout}>
           Log Out
