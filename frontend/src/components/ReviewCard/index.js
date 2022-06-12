@@ -5,6 +5,7 @@ import { getReviews, getOneReview } from '../../store/review';
 import MainModal from '../MainModal';
 import EditReview from './EditReview/index';
 import DeleteReview from './DeleteReview';
+import AddReview from './AddReview';
 
 function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
   const dispatch = useDispatch();
@@ -59,6 +60,20 @@ function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
     document.getElementById('root').classList.remove('overflow');
   };
 
+  //ADD REVIEW MODAL
+  const [addtReviewModal, setAddReviewModal] = useState(false);
+  const openAddReviewModal = () => {
+    if (addtReviewModal) return; // do nothing if modal already showing
+    setAddReviewModal(true); // else open modal
+    document.getElementById('root').classList.add('overflow');
+  };
+  const closeAddReviewModal = () => {
+    if (!addtReviewModal) return; // do nothing if modal already closed
+    setAddReviewModal(false); // else close modal
+    // disable page scrolling:
+    document.getElementById('root').classList.remove('overflow');
+  };
+
   //DELETE REVIEW MODAL
   const [deleteReviewModal, setdeleteReviewModal] = useState(false);
   const openDeleteSongModal = () => {
@@ -71,6 +86,12 @@ function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
     setdeleteReviewModal(false); // else close modal
     // disable page scrolling:
     document.getElementById('root').classList.remove('overflow');
+  };
+
+  //ADD MODAL HELPER FUNCTION
+  const passingAdd = (reId) => {
+    openAddReviewModal(true);
+    // setSelectedReviewId(reId);
   };
 
   const passingFun = (reId) => {
@@ -94,6 +115,10 @@ function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
         />
       </MainModal>
 
+      <MainModal showModal={addtReviewModal} closeModal={closeAddReviewModal}>
+        <AddReview prodcutid={prodcutid} sessionuid={sessionUser?.id} />
+      </MainModal>
+
       <MainModal
         showModal={deleteReviewModal}
         closeModal={closeDeleteSongModal}
@@ -109,12 +134,12 @@ function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
       <div className="">
         <h1>ReviewCard</h1>
         {sessionUser ? (
-          <button onClick={() => setForm(true)}>Add review</button>
+          <button onClick={() => passingAdd(true)}>Add review</button>
         ) : (
           <></>
         )}
         <></>
-        {form ? (
+        {/* {form ? (
           <form onSubmit={handleSubmitReview}>
             <input
               className="inputForAddingreview"
@@ -132,7 +157,7 @@ function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
           </form>
         ) : (
           <></>
-        )}
+        )} */}
         {Reviews?.map((review) => (
           <div
             key={review?.id}

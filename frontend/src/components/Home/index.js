@@ -28,11 +28,11 @@ function Home() {
               category,
             }) => (
               <div key={id} className="productClassArr">
-                <div className="contentdiv">
-                  <h2 className="productNameh2">{name}</h2>
+                <div className="contentdivforHome">
                   <NavLink to={`products/${id}`}>
-                    <p>${price}</p>
                     <img className="productListimage" src={imageUrl} />
+                    <h2 className="productNameh2">{name}</h2>
+                    <p>${price}</p>
                   </NavLink>
                   {/* <p className="descriptionptag">{description}</p> */}
                 </div>

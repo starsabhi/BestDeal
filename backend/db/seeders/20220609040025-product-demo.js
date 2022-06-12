@@ -32,6 +32,96 @@ module.exports = {
             'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
           category: 'cloths',
         },
+        {
+          name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
+          price: '10.00',
+          imageUrl: 'https://m.media-amazon.com/images/I/31V7R+fPOfL._AC_.jpg',
+          description:
+            'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
+          productInfo:
+            'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
+          category: 'cloths',
+        },
+        {
+          name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
+          price: '10.00',
+          imageUrl: 'https://m.media-amazon.com/images/I/31V7R+fPOfL._AC_.jpg',
+          description:
+            'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
+          productInfo:
+            'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
+          category: 'cloths',
+        },
+        {
+          name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
+          price: '10.00',
+          imageUrl: 'https://m.media-amazon.com/images/I/31V7R+fPOfL._AC_.jpg',
+          description:
+            'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
+          productInfo:
+            'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
+          category: 'cloths',
+        },
+        {
+          name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
+          price: '10.00',
+          imageUrl: 'https://m.media-amazon.com/images/I/31V7R+fPOfL._AC_.jpg',
+          description:
+            'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
+          productInfo:
+            'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
+          category: 'cloths',
+        },
+        {
+          name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
+          price: '10.00',
+          imageUrl: 'https://m.media-amazon.com/images/I/31V7R+fPOfL._AC_.jpg',
+          description:
+            'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
+          productInfo:
+            'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
+          category: 'cloths',
+        },
+        {
+          name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
+          price: '10.00',
+          imageUrl: 'https://m.media-amazon.com/images/I/31V7R+fPOfL._AC_.jpg',
+          description:
+            'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
+          productInfo:
+            'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
+          category: 'cloths',
+        },
+        {
+          name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
+          price: '10.00',
+          imageUrl: 'https://m.media-amazon.com/images/I/31V7R+fPOfL._AC_.jpg',
+          description:
+            'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
+          productInfo:
+            'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
+          category: 'cloths',
+        },
+        {
+          name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
+          price: '10.00',
+          imageUrl: 'https://m.media-amazon.com/images/I/31V7R+fPOfL._AC_.jpg',
+          description:
+            'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
+          productInfo:
+            'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
+          category: 'cloths',
+        },
+        {
+          name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
+          price: '10.00',
+          imageUrl: 'https://m.media-amazon.com/images/I/31V7R+fPOfL._AC_.jpg',
+          description:
+            'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
+          productInfo:
+            'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
+          category: 'cloths',
+        },
       ],
       {}
     );
