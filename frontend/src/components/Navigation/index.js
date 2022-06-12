@@ -60,9 +60,15 @@ function Navigation({ isLoaded }) {
   return (
     <div className="navBar">
       <div className="navbarContent">
-        <NavLink exact to="/">
-          <img className="imgInNavImgEle" src={navLogo} alt={navLogo}></img>
-        </NavLink>
+        {sessionUser ? (
+          <NavLink exact to="/products">
+            <img className="imgInNavImgEle" src={navLogo} alt={navLogo}></img>
+          </NavLink>
+        ) : (
+          <NavLink exact to="/">
+            <img className="imgInNavImgEle" src={navLogo} alt={navLogo}></img>
+          </NavLink>
+        )}
         <div className="rightSideinfo">{isLoaded && sessionLinks}</div>
       </div>
     </div>
