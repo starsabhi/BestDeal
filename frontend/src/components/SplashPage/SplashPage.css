@@ -28,3 +28,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.infoforsplashPage {
+  /* color: #fff; */
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  /* z-index: 10; */
+}

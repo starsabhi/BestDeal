@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
-import { login } from '../../store/session';
 import * as sessionActions from '../../store/session';
+import navLogo from '../../images/Navbar/bestDeal.png';
 import './Navigation.css';
 
 function Navigation({ isLoaded }) {
@@ -25,6 +25,7 @@ function Navigation({ isLoaded }) {
 
   const demoLogin = (e) => {
     e.preventDefault();
+    setErrors([]);
     dispatch(sessionActions.login({ credential, password })).catch(
       async (res) => {
         const data = await res.json();
@@ -40,13 +41,16 @@ function Navigation({ isLoaded }) {
   } else {
     sessionLinks = (
       <div className="rightButton">
-        <button id="demoBtn" onClick={demoLogin}>
+        <button
+          className="demobtninNavBarwithoursignup buttonfornavforSpace"
+          onClick={demoLogin}
+        >
           Demo
         </button>
-        <NavLink className="navLogin" to="/login">
+        <NavLink className="navLogin buttonfornavforSpace" to="/login">
           Log In
         </NavLink>
-        <NavLink className="navSignUp" to="/signup">
+        <NavLink className="navSignUp buttonfornavforSpace" to="/signup">
           Sign Up
         </NavLink>
       </div>
@@ -55,10 +59,12 @@ function Navigation({ isLoaded }) {
 
   return (
     <div className="navBar">
-      <NavLink exact to="/">
-        <div className="ImageinNav">Hello</div>
-      </NavLink>
-      <div className="rightSideinfo">{isLoaded && sessionLinks}</div>
+      <div className="navbarContent">
+        <NavLink exact to="/">
+          <img className="imgInNavImgEle" src={navLogo} alt={navLogo}></img>
+        </NavLink>
+        <div className="rightSideinfo">{isLoaded && sessionLinks}</div>
+      </div>
     </div>
   );
 }

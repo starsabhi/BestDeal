@@ -5,8 +5,10 @@ function SplashPage() {
   return (
     <>
       <div className="splashPageMainDiv">
-        <div>
+        <div className="infoforsplashPage">
           Everyone deserve best products with best price Our Products
+        </div>
+        <div>
           <NavLink exact to={'/products'}>
             <button className="ProductBtnonSplashPage"> Our Products</button>
           </NavLink>

@@ -1,8 +1,8 @@
-import { getReviews, deleteReview } from '../../../store/review';
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, Redirect, useHistory } from 'react-router-dom';
+import { deleteReview } from '../../../store/review';
+// import { useEffect, useState } from 'react';
+// import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+// import { NavLink, Redirect, useHistory } from 'react-router-dom';
 export default function DeleteReview({
   reviewId,
   sessionuid,
