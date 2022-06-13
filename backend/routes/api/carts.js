@@ -61,4 +61,15 @@ router.patch(
   })
 );
 
+router.delete(
+  '/:cartId',
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const { cartId } = req.params;
+    const cart = await db.Cart.findByPk(cartId);
+    await cart.destroy();
+    res.json(cart.id);
+  })
+);
+
 module.exports = router;

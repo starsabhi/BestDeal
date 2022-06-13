@@ -33,3 +33,6 @@ npx dotenv sequelize db:seed:all
 npx dotenv sequelize db:seed:undo:all
 
 git push heroku main
+
+heroku run npm run sequelize db:migrate
+heroku run npm run sequelize db:seed:all

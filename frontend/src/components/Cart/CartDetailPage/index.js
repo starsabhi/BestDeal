@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCarts } from '../../../store/cart';
+import { deleteCart, getCarts } from '../../../store/cart';
 import { getAllProduct } from '../../../store/product';
 import './CartDetailPage.css';
 import ClipLoader from 'react-spinners/ClipLoader';
@@ -10,6 +10,8 @@ function CartDetailPage() {
   const sessionUser = useSelector((state) => state.session.user);
   // const productList = useSelector((state) => Object.values(state.product));
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+  // const [deleteCartId, setDeleteCartId] = useState(null);
 
   useEffect(() => {
     setLoading(true);
@@ -18,9 +20,23 @@ function CartDetailPage() {
     }, 500);
   }, []);
 
+  // const deleteCartFunc = (DeleteId) => {
+  //   console.log(DeleteId, 'DELETEID');
+  //   setDeleteCartId(DeleteId);
+  //   return handleCartDelete();
+  // };
+
+  const handleCartDelete = (DeleteId) => {
+    // e.preventDefault();
+    console.log('THIS THIS');
+    const deleteCompleted = dispatch(deleteCart(DeleteId));
+    if (deleteCompleted) {
+      console.log('Cart DELETE working ');
+    }
+  };
+
   const cart = useSelector((state) => Object.values(state.cart));
   console.log(cart);
-  const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCarts(sessionUser?.id));
   }, [dispatch]);
@@ -47,9 +63,12 @@ function CartDetailPage() {
                     alt={item?.imageUrl}
                   ></img>
                   <div>${item.price}</div>
+                  <div>Quantity:{item.quantity}</div>
+                  <button onClick={() => handleCartDelete(item?.id)}>
+                    Delete
+                  </button>
                 </div>
               ))}
-              <div>Price</div>
             </div>
           </div>
         )}

@@ -27,6 +27,11 @@ const emptyToCart = (cart) => ({
   cart,
 });
 
+const removeCart = (cartId) => ({
+  type: DELETE_CART,
+  cartId,
+});
+
 export const emptyCarts = () => async (dispatch) => {
   dispatch(emptyToCart({}));
   return {};
@@ -79,6 +84,19 @@ export const editCart = (cart, cartId) => async (dispatch) => {
   }
 };
 
+export const deleteCart = (cartId) => async (dispatch) => {
+  // console.log('&&*&*&*&*&*&*&*', reviewId);
+  const res = await csrfFetch(`/api/cart/${cartId}`, {
+    method: 'DELETE',
+  });
+
+  // console.log('&&*&*&*&*&*&*&*COMPLETD OR NOT');
+  if (res.ok) {
+    const CartId = await res.json();
+    dispatch(removeCart(CartId));
+  }
+};
+
 const initialState = {};
 
 const cartReducer = (state = initialState, action) => {
@@ -102,6 +120,11 @@ const cartReducer = (state = initialState, action) => {
 
     case EMPTY_CART: {
       return action.cart;
+    }
+
+    case DELETE_CART: {
+      delete newState[action.cartId];
+      return newState;
     }
 
     default:
