@@ -13,7 +13,7 @@ module.exports = {
       [
         {
           name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
-          price: '10.00',
+          price: '10.50',
           imageUrl: 'https://m.media-amazon.com/images/I/31V7R+fPOfL._AC_.jpg',
           description:
             'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
@@ -23,7 +23,7 @@ module.exports = {
         },
         {
           name: "lannel Shirt for Men Long Sleeve Men's Casual Button-Down Shirt 100%",
-          price: '12.00',
+          price: '12.99',
           imageUrl:
             'https://m.media-amazon.com/images/I/81awHbAIt8L._AC_UX569_.jpg',
           description:
@@ -34,7 +34,7 @@ module.exports = {
         },
         {
           name: 'COKAFIL Mens Running Shoes Athletic Walking Blade Tennis Shoes Fashion Sneakers',
-          price: '20.00',
+          price: '20.99',
           imageUrl:
             'https://m.media-amazon.com/images/I/81jqgBux10L._AC_UY575_.jpg',
           description:

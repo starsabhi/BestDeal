@@ -11,7 +11,7 @@ function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const CheckingWhat = useSelector((state) => state);
-  console.log('CheckingWhatREVIEWCARD', Reviews);
+  // console.log('CheckingWhatREVIEWCARD', Reviews);
   const [content, setContent] = useState('');
   const [form, setForm] = useState(false);
 
@@ -24,27 +24,27 @@ function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
     dispatch(getReviews(prodcutid));
   }, [dispatch]);
 
-  const handleSubmitReview = async (e) => {
-    e.preventDefault();
+  // const handleSubmitReview = async (e) => {
+  //   e.preventDefault();
 
-    const newReview = {
-      userId: sessionUser.id,
-      productId: prodcutid,
-      rating: 4,
-      content,
-    };
+  //   const newReview = {
+  //     userId: sessionUser.id,
+  //     productId: prodcutid,
+  //     rating: 4,
+  //     content,
+  //   };
 
-    const review = await dispatch(writeReview(newReview));
-    if (review) {
-      setForm(false);
-      dispatch(getReviews(prodcutid));
-      resetAdd();
-    }
-  };
+  //   const review = await dispatch(writeReview(newReview));
+  //   if (review) {
+  //     setForm(false);
+  //     dispatch(getReviews(prodcutid));
+  //     resetAdd();
+  //   }
+  // };
 
-  const resetAdd = () => {
-    setContent('');
-  };
+  // const resetAdd = () => {
+  //   setContent('');
+  // };
 
   //EDIT REVIEW MODAL
   const [editReviewModal, seteditReviewModal] = useState(false);

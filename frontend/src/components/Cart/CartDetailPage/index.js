@@ -11,7 +11,9 @@ function CartDetailPage() {
   // const productList = useSelector((state) => Object.values(state.product));
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
+
   // const [deleteCartId, setDeleteCartId] = useState(null);
+  // const [totalItem, setTotalItem] = useState(1);
 
   useEffect(() => {
     setLoading(true);
@@ -19,6 +21,8 @@ function CartDetailPage() {
       setLoading(false);
     }, 500);
   }, []);
+
+  // e.preventDefault();
 
   // const deleteCartFunc = (DeleteId) => {
   //   console.log(DeleteId, 'DELETEID');
@@ -54,19 +58,18 @@ function CartDetailPage() {
               <TotalPriceCart />
             </div>
             <div className="CartDeatailPageMainDiv">
-              {cart?.map((item) => (
-                <div className="CartDeatailPageInnerDiv" key={item?.id}>
-                  <div>{item?.name}</div>
+              {cart?.map(({ id, name, imageUrl, price, quantity }) => (
+                <div className="CartDeatailPageInnerDiv" key={id}>
+                  <div>{name}</div>
                   <img
                     className="imageforCartdetailPage"
-                    src={item?.imageUrl}
-                    alt={item?.imageUrl}
+                    src={imageUrl}
+                    alt={imageUrl}
                   ></img>
-                  <div>${item.price}</div>
-                  <div>Quantity:{item.quantity}</div>
-                  <button onClick={() => handleCartDelete(item?.id)}>
-                    Delete
-                  </button>
+
+                  <div>${price}</div>
+                  <div>Quantity:{quantity}</div>
+                  <button onClick={() => handleCartDelete(id)}>Delete</button>
                 </div>
               ))}
             </div>

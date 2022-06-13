@@ -18,11 +18,11 @@ export default function TotalItemCart() {
   }, [dispatch]);
   const initialValue = 0;
   const theSum = ItemArr.reduce(function (accumulator, currentValue) {
-    return accumulator + currentValue.quantity;
+    return accumulator + parseInt(currentValue.quantity);
   }, initialValue);
-  // console.log(theSum);
+  // console.log(theSum)
 
-  console.log('How many time value changes', theSum);
+  // console.log('How many time value changes', theSum);
   return (
     <>
       <div>

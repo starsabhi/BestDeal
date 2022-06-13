@@ -17,7 +17,8 @@ export default function TotalPriceCart() {
   const theSum = ItemArr.reduce(function (accumulator, currentValue) {
     return (
       accumulator +
-      parseFloat(currentValue.price) * parseFloat(currentValue.quantity)
+      parseFloat(currentValue.price).toFixed(2) *
+        parseFloat(currentValue.quantity)
     );
   }, initialValue);
   console.log(theSum);

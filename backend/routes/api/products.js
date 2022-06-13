@@ -9,6 +9,7 @@ router.get(
   asyncHandler(async (req, res) => {
     const product = await db.Product.findAll();
     // console.log(businessess, "**************")
+    // console.log('************************First****************************');
     res.json(product);
   })
 );
@@ -18,6 +19,7 @@ router.get(
   asyncHandler(async (req, res) => {
     const { productId } = req.params;
     const product = await db.Product.findByPk(productId);
+    // console.log('**************************Second**************************');
     return res.json(product);
   })
 );

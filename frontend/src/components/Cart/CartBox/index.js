@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCarts, addItemToCart, editCart } from '../../../store/cart';
 import addCartLogo from '../../../images/Navbar/addCart.svg';
@@ -8,7 +8,13 @@ export default function CartBox({ Product, productId }) {
   const sessionUser = useSelector((state) => state.session.user);
   const cartPrevious = useSelector((state) => Object.values(state.cart));
   const dispatch = useDispatch();
+  const [totalItem, setTotalItem] = useState(1);
   // console.log('********', Product, cartPrevious);
+  console.log('****', totalItem);
+
+  const handleChange = (e) => {
+    setTotalItem(e.target.value);
+  };
 
   useEffect(() => {
     dispatch(getCarts(sessionUser?.id));
@@ -26,18 +32,18 @@ export default function CartBox({ Product, productId }) {
       console.log(alreadyProduct);
       const cartId = alreadyProduct[0].id;
       let previousQuantity = alreadyProduct[0].quantity;
-      console.log(previousQuantity);
+      // console.log(previousQuantity);
       const newItem = {
         userId: sessionUser.id,
         productId: productId,
         name: Product.name,
         price: Product.price,
         imageUrl: Product.imageUrl,
-        quantity: previousQuantity + 1,
+        quantity: previousQuantity + parseInt(totalItem),
       };
       const cartEdit = await dispatch(editCart(newItem, cartId));
       if (cartEdit) {
-        console.log('Completededitcart');
+        // console.log('Completededitcart');
       }
     } else {
       const newItem = {
@@ -46,27 +52,43 @@ export default function CartBox({ Product, productId }) {
         name: Product.name,
         price: Product.price,
         imageUrl: Product.imageUrl,
-        quantity: 1,
+        quantity: parseInt(totalItem),
       };
 
       const cartAdd = await dispatch(addItemToCart(newItem));
       if (cartAdd) {
-        console.log('Completed');
+        // console.log('Completed');
       }
     }
   };
 
   return (
     <>
-      <div className="addCartButtonforboxDivmainDiv">
-        <button
-          className="addCartButtonforbox"
-          onClick={(e) => handleAddToCart(e)}
-        >
-          <div>ADD TO CART</div>
-          <img src={addCartLogo}></img>
-        </button>
-      </div>
+      {sessionUser ? (
+        <div className="addCartButtonforboxDivmainDiv">
+          <select value={totalItem} onChange={(e) => handleChange(e)}>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+          <button
+            className="addCartButtonforbox"
+            onClick={(e) => handleAddToCart(e)}
+          >
+            <div>ADD TO CART</div>
+            <img src={addCartLogo}></img>
+          </button>
+        </div>
+      ) : (
+        <></>
+      )}
     </>
   );
 }
