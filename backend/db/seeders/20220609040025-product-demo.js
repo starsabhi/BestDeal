@@ -33,9 +33,10 @@ module.exports = {
           category: 'cloths',
         },
         {
-          name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
-          price: '10.00',
-          imageUrl: 'https://m.media-amazon.com/images/I/31V7R+fPOfL._AC_.jpg',
+          name: 'COKAFIL Mens Running Shoes Athletic Walking Blade Tennis Shoes Fashion Sneakers',
+          price: '20.00',
+          imageUrl:
+            'https://m.media-amazon.com/images/I/81jqgBux10L._AC_UY575_.jpg',
           description:
             'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
           productInfo:
@@ -53,9 +54,21 @@ module.exports = {
           category: 'cloths',
         },
         {
-          name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
+          name: "Men's Walking Shoes Sneakers Breathable Mesh Upper Casual",
+          price: '20.00',
+          imageUrl:
+            'https://m.media-amazon.com/images/I/71-LdwoPhfL._AC_UY575_.jpg',
+          description:
+            'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
+          productInfo:
+            'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
+          category: 'cloths',
+        },
+        {
+          name: 'Kids Watch,Boys Watch for 3-15 Year Old Boys',
           price: '10.00',
-          imageUrl: 'https://m.media-amazon.com/images/I/31V7R+fPOfL._AC_.jpg',
+          imageUrl:
+            'https://m.media-amazon.com/images/I/61IcMWPWFDL._AC_UX679_.jpg',
           description:
             'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
           productInfo:
@@ -73,49 +86,10 @@ module.exports = {
           category: 'cloths',
         },
         {
-          name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
-          price: '10.00',
-          imageUrl: 'https://m.media-amazon.com/images/I/31V7R+fPOfL._AC_.jpg',
-          description:
-            'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
-          productInfo:
-            'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
-          category: 'cloths',
-        },
-        {
-          name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
-          price: '10.00',
-          imageUrl: 'https://m.media-amazon.com/images/I/31V7R+fPOfL._AC_.jpg',
-          description:
-            'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
-          productInfo:
-            'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
-          category: 'cloths',
-        },
-        {
-          name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
-          price: '10.00',
-          imageUrl: 'https://m.media-amazon.com/images/I/31V7R+fPOfL._AC_.jpg',
-          description:
-            'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
-          productInfo:
-            'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
-          category: 'cloths',
-        },
-        {
-          name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
-          price: '10.00',
-          imageUrl: 'https://m.media-amazon.com/images/I/31V7R+fPOfL._AC_.jpg',
-          description:
-            'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
-          productInfo:
-            'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
-          category: 'cloths',
-        },
-        {
-          name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
-          price: '10.00',
-          imageUrl: 'https://m.media-amazon.com/images/I/31V7R+fPOfL._AC_.jpg',
+          name: 'Boys Camouflage LED Sports Kids Watch Waterproof Digital Electronic',
+          price: '15.00',
+          imageUrl:
+            'https://m.media-amazon.com/images/I/71EQDHXpjoL._AC_UX679_.jpg',
           description:
             'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
           productInfo:
