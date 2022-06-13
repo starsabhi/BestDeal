@@ -4,3 +4,22 @@
   align-items: center;
   /* margin-top: 250px; */
 }
+
+.CartDeatailPageMainDiv {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+  margin: 10px 10px 10px 10px;
+}
+
+.CartDeatailPageInnerDiv {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 50%;
+}
+
+.imageforCartdetailPage {
+  height: 100px;
+  width: 100px;
+}
