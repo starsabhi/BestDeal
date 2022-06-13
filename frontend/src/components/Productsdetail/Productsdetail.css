@@ -1,19 +1,23 @@
 .ProductsdetailDiv {
+  margin-top: 10px;
+  margin-left: 10px;
   display: flex;
   /* flex-direction: column; */
-  max-width: 500px;
+  /* max-width: 500px; */
 }
 
-.priceCartorderBoxDivP {
+.priceCartorderBoxDiv {
   display: flex;
+  border: 1px solid black;
+  width: 250px;
+  margin-left: 10%;
+  /* width: 100%; */
 }
 
 .productListClassforProductdetailPage {
+  width: 70%;
   border: 1px solid black;
 }
 
-.flex-child-element {
-  flex: 1;
-  border: 2px solid blueviolet;
-  margin: 10px;
+.contentdivForproductdetailpage {
 }

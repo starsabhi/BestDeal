@@ -5,6 +5,7 @@ const ADD_TO_CART = 'review/ADD_CART';
 const EDIT_CART = 'review/EDIT_CART';
 const DELETE_CART = 'review/DELETE_CART';
 const ONE_CART = 'review/ONE_CART';
+const EMPTY_CART = 'review/EMPTY_CART';
 
 const loadCart = (carts) => ({
   type: LOAD_CART,
@@ -15,6 +16,21 @@ const addToCart = (cart) => ({
   type: ADD_TO_CART,
   cart,
 });
+
+const editToCart = (cart) => ({
+  type: EDIT_CART,
+  cart,
+});
+
+const emptyToCart = (cart) => ({
+  type: EMPTY_CART,
+  cart,
+});
+
+export const emptyCarts = () => async (dispatch) => {
+  dispatch(emptyToCart({}));
+  return {};
+};
 
 export const getCarts = (userId) => async (dispatch) => {
   const res = await csrfFetch(`/api/cart/${userId}`);
@@ -44,6 +60,25 @@ export const addItemToCart = (cart) => async (dispatch) => {
   }
 };
 
+export const editCart = (cart, cartId) => async (dispatch) => {
+  // console.log(review, id);
+  const res = await csrfFetch(`/api/cart/${cartId}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(cart),
+  });
+  // console.log(res);
+
+  if (res.ok) {
+    const cart = await res.json();
+    // console.log(review);
+    dispatch(editToCart(cart));
+    return cart;
+  }
+};
+
 const initialState = {};
 
 const cartReducer = (state = initialState, action) => {
@@ -58,6 +93,15 @@ const cartReducer = (state = initialState, action) => {
     case ADD_TO_CART: {
       newState[action.cart.id] = action.cart;
       return newState;
+    }
+
+    case EDIT_CART: {
+      newState[action.cart.id] = action.cart;
+      return newState;
+    }
+
+    case EMPTY_CART: {
+      return action.cart;
     }
 
     default:

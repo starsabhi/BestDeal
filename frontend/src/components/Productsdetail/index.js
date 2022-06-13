@@ -36,9 +36,9 @@ function Productsdetail() {
     <>
       <div className="ProductsdetailDiv">
         {/* <h1>Productsdetail</h1> */}
-        <div className="productListClassforProductdetailPage flex-child-element">
+        <div className="productListClassforProductdetailPage">
           <div key={Product?.id} className="productClassArr">
-            <div className="contentdiv">
+            <div className="contentdivForproductdetailpage">
               <h2 className="productNameh2">{Product?.name}</h2>
               <p>${Product.price}</p>
               <img className="productListimage" src={Product?.imageUrl} />
@@ -46,7 +46,7 @@ function Productsdetail() {
             </div>
           </div>
         </div>
-        <div className="priceCartorderBoxDiv flex-child-element">
+        <div className="priceCartorderBoxDiv">
           <CartBox Product={Product} productId={Id.productId} />
           <div />
           {/* <p>{Reviews?.reviews[0].content}</p> */}

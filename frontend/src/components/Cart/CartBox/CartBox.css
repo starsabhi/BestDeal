@@ -1,0 +1,21 @@
+.addCartButtonforbox {
+  margin-left: 30px;
+  background-color: #0f1111d5;
+  color: white;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.addCartButtonforbox:hover {
+  transform: scale(1.1);
+  color: gray;
+}
+
+.addCartButtonforboxDivmainDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 60%; */
+}

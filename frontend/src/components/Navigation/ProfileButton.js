@@ -6,15 +6,17 @@ import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import './ProfileButton.css';
 import TotalItemCart from '../Cart/TotalItemCart';
+import { emptyCarts } from '../../store/cart';
 
 function ProfileButton({ user }) {
   const history = useHistory();
   const dispatch = useDispatch();
-  // const sessionUser = useSelector((state) => state.session.user);
+  const sessionUser = useSelector((state) => state.session.user);
   // console.log(sessionUser,'***********8')
 
   const logout = (e) => {
     e.preventDefault();
+    dispatch(emptyCarts());
     dispatch(sessionActions.logout());
     history.push('/');
   };
