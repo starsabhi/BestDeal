@@ -4,10 +4,10 @@ import { getCarts, addItemToCart } from '../../../store/cart';
 export default function CartBox({ Product, productId }) {
   const sessionUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
-  console.log('********', Product, productId);
+  console.log('********', Product);
 
   useEffect(() => {
-    dispatch(getCarts(sessionUser.id));
+    dispatch(getCarts(sessionUser?.id));
   }, [dispatch]);
 
   const handleAddToCaart = async (e) => {
@@ -16,6 +16,9 @@ export default function CartBox({ Product, productId }) {
     const newItem = {
       userId: sessionUser.id,
       productId: productId,
+      name: Product.name,
+      price: Product.price,
+      imageUrl: Product.imageUrl,
       quantity: 1,
     };
 

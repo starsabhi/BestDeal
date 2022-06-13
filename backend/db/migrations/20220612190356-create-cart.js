@@ -18,6 +18,18 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: { model: 'Products' },
       },
+      name: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
+      price: {
+        allowNull: false,
+        type: Sequelize.DECIMAL(20, 2),
+      },
+      imageUrl: {
+        allowNull: false,
+        type: Sequelize.TEXT,
+      },
       quantity: {
         allowNull: false,
         type: Sequelize.INTEGER,

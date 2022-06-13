@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCarts } from '../../../store/cart';
 import addToCart from '../../../images/Navbar/count.svg';
 import './TotalItemCart.css';
+import { NavLink } from 'react-router-dom';
 
 export default function TotalItemCart() {
   const sessionUser = useSelector((state) => state.session.user);
@@ -31,10 +32,12 @@ export default function TotalItemCart() {
 
   return (
     <>
-      <div className="shoppindCartTotalNumberOfItems">
-        <img className="imageCartTotalSumCount" src={addToCart}></img>
-        <div className="totalSumNumber">{theSum}</div>
-      </div>
+      <NavLink to="/cartpage">
+        <div className="shoppindCartTotalNumberOfItems">
+          <img className="imageCartTotalSumCount" src={addToCart}></img>
+          <div className="totalSumNumber">{theSum}</div>
+        </div>
+      </NavLink>
     </>
   );
 }

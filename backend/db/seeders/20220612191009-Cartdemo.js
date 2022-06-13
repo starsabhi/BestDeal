@@ -8,13 +8,20 @@ module.exports = {
 
       Example:
       */
-   return queryInterface.bulkInsert('Carts', [
-    {
-      userId: '1',
-      productId: '1',
-      quantity: '1',
-    },
-   ], {});
+    return queryInterface.bulkInsert(
+      'Carts',
+      [
+        {
+          userId: '1',
+          productId: '1',
+          name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
+          imageUrl: 'https://m.media-amazon.com/images/I/31V7R+fPOfL._AC_.jpg',
+          price: '10.00',
+          quantity: '1',
+        },
+      ],
+      {}
+    );
   },
 
   down: (queryInterface, Sequelize) => {
@@ -24,6 +31,6 @@ module.exports = {
 
       Example:
       */
-   return queryInterface.bulkDelete('Carts', null, {});
-  }
+    return queryInterface.bulkDelete('Carts', null, {});
+  },
 };
