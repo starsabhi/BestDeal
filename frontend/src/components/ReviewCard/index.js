@@ -12,8 +12,8 @@ function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
   const sessionUser = useSelector((state) => state.session.user);
   const CheckingWhat = useSelector((state) => state);
   // console.log('CheckingWhatREVIEWCARD', Reviews);
-  const [content, setContent] = useState('');
-  const [form, setForm] = useState(false);
+  // const [content, setContent] = useState('');
+  // const [form, setForm] = useState(false);
 
   const [selectedReviewId, setSelectedReviewId] = useState(null);
   const [editcontent, setEditContent] = useState('');
