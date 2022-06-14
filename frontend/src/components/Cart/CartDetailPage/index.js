@@ -99,7 +99,8 @@ function CartDetailPage() {
                 quantity={editCartQuantity}
               />
             </MainModal>
-            <div>
+
+            <div className="TotalPriceDiv">
               <TotalPriceCart />
             </div>
             <div className="CartDeatailPageMainDiv">
