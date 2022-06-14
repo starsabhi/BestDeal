@@ -4,6 +4,7 @@ const LOAD_CART = 'review/LOAD_CART';
 const ADD_TO_CART = 'review/ADD_CART';
 const EDIT_CART = 'review/EDIT_CART';
 const DELETE_CART = 'review/DELETE_CART';
+// const DELETE_FULL_CART = 'review/DELETE_FULL_CART';
 const ONE_CART = 'review/ONE_CART';
 const EMPTY_CART = 'review/EMPTY_CART';
 
@@ -31,6 +32,11 @@ const removeCart = (cartId) => ({
   type: DELETE_CART,
   cartId,
 });
+
+// const removeFullCart = (userId) => ({
+//   type: DELETE_FULL_CART,
+//   userId,
+// });
 
 export const emptyCarts = () => async (dispatch) => {
   dispatch(emptyToCart({}));
@@ -97,6 +103,20 @@ export const deleteCart = (cartId) => async (dispatch) => {
   }
 };
 
+// export const deleteFullCart = (userId) => async (dispatch) => {
+//   // console.log('&&*&*&*&*&*&*&*', reviewId);
+//   const res = await csrfFetch(`/api/cart/full/${userId}`, {
+//     method: 'DELETE',
+//   });
+
+//   // console.log('&&*&*&*&*&*&*&*COMPLETD OR NOT');
+//   if (res.ok) {
+//     const userId = await res.json();
+//     console.log(userId);
+//     dispatch(removeFullCart(userId));
+//   }
+// };
+
 const initialState = {};
 
 const cartReducer = (state = initialState, action) => {
@@ -123,9 +143,17 @@ const cartReducer = (state = initialState, action) => {
     }
 
     case DELETE_CART: {
+      console.log('Hello');
+      console.log(action);
       delete newState[action.cartId];
       return newState;
     }
+
+    // case DELETE_FULL_CART: {
+    //   console.log(action);
+    //   delete newState[action];
+    //   return newState;
+    // }
 
     default:
       return state;

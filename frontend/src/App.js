@@ -11,6 +11,8 @@ import PageNotFound from './components/PageNotFound';
 import Productsdetail from './components/Productsdetail';
 import Footer from './components/Footer';
 import CartDetailPage from './components/Cart/CartDetailPage';
+import OrderDetail from './components/Order/OrderDetail';
+import OrderList from './components/Order/OrderList';
 
 function App() {
   const dispatch = useDispatch();
@@ -43,6 +45,12 @@ function App() {
           </Route>
           <Route exact path="/cartpage">
             <CartDetailPage />
+          </Route>
+          <Route exact path="/orderdetail">
+            <OrderDetail />
+          </Route>
+          <Route exact path="/listorder">
+            <OrderList />
           </Route>
           <Route>
             <PageNotFound />
