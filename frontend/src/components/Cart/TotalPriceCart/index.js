@@ -21,13 +21,14 @@ export default function TotalPriceCart() {
         parseFloat(currentValue.quantity)
     );
   }, initialValue);
-  console.log(theSum);
+  let totalPrice = theSum.toFixed(2);
+  console.log(totalPrice);
 
-  console.log('How many time value changes', theSum);
+  // console.log('How many time value changes', theSum);
   return (
     <>
       <div>
-        <div className="totalPriceNumber">TOTAL PRICE ${theSum}</div>
+        <div className="totalPriceNumber">TOTAL PRICE ${totalPrice}</div>
       </div>
     </>
   );
