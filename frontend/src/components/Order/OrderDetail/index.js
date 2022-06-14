@@ -105,6 +105,7 @@ function OrderDetail() {
     // e.preventDefault();
 
     const newOrder = {
+      // id: unique_id,
       userId: sessionUser.id,
       totalPrice: totalPrice,
     };

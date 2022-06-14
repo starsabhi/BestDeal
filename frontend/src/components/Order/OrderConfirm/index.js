@@ -19,30 +19,33 @@ export default function OrderConfirm({ totalPrice, closeModal }) {
   //for loop for create replica
   // const [start, setStart] = useState(false);
 
-  const handleFinalAdd = () => {
+  const handleFinalAdd = async () => {
     console.log('******');
     const cartListIdForDelete = [];
-    cartList.forEach(({ id, imageUrl, name, price, productId, quantity }) => {
-      cartListIdForDelete.push(id);
-      console.log('******');
-      const newItem = {
-        orderId: lastEle,
-        userId: sessionUser.id,
-        productId: productId,
-        name: name,
-        price: price,
-        imageUrl: imageUrl,
-        quantity: quantity,
-      };
+    cartList.forEach(
+      async ({ id, imageUrl, name, price, productId, quantity }) => {
+        cartListIdForDelete.push(id);
+        console.log('******');
+        const newItem = {
+          orderId: lastEle,
+          userId: sessionUser.id,
+          productId: productId,
+          name: name,
+          price: price,
+          imageUrl: imageUrl,
+          quantity: quantity,
+        };
 
-      console.log('******');
-      const cartOrderAdd = dispatch(addOrderCart(newItem));
-      if (cartOrderAdd) {
-        console.log('Completed');
+        console.log('******');
+        const cartOrderAdd = await dispatch(addOrderCart(newItem));
+        if (cartOrderAdd) {
+          console.log('Completed');
+        }
       }
-    });
+    );
+    console.log(cartListIdForDelete, '*****');
 
-    const deleteWhole = cartListIdForDelete.forEach((ele) => {
+    const deleteWhole = await cartListIdForDelete.forEach((ele) => {
       dispatch(deleteCart(ele));
     });
 
