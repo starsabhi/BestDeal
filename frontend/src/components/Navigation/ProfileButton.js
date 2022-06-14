@@ -7,6 +7,7 @@ import * as sessionActions from '../../store/session';
 import './ProfileButton.css';
 import TotalItemCart from '../Cart/TotalItemCart';
 import { emptyCarts } from '../../store/cart';
+import { emptyToOrderLogoutCart } from '../../store/order';
 
 function ProfileButton({ user }) {
   const history = useHistory();
@@ -16,9 +17,15 @@ function ProfileButton({ user }) {
 
   const logout = (e) => {
     e.preventDefault();
+    dispatch(emptyToOrderLogoutCart());
     dispatch(emptyCarts());
     dispatch(sessionActions.logout());
     history.push('/');
+  };
+
+  //TESTING FOR ORDERS
+  const ordersClick = () => {
+    history.push('/listorder');
   };
 
   return (
@@ -31,6 +38,7 @@ function ProfileButton({ user }) {
         <button className="logOutBtnele" onClick={logout}>
           Log Out
         </button>
+        <button onClick={() => ordersClick()}>Orders</button>
       </div>
     </>
   );

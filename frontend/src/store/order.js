@@ -1,8 +1,9 @@
 import { csrfFetch } from './csrf';
 
-const LOAD_ORDER = 'review/LOAD_ORDER';
-const ADD_TO_ORDER = 'review/ADD_TO_ORDER';
-const DELETE_ORDER = 'review/DELETE_ORDER';
+const LOAD_ORDER = 'order/LOAD_ORDER';
+const ADD_TO_ORDER = 'order/ADD_TO_ORDER';
+const DELETE_ORDER = 'order/DELETE_ORDER';
+const EMPTY_ORDER = 'order/EMPTY_ORDER';
 
 const loadOrder = (orders) => ({
   type: LOAD_ORDER,
@@ -19,12 +20,22 @@ const removeOrder = (orderId) => ({
   orderId,
 });
 
+const emptyToOrderCart = (order) => ({
+  type: EMPTY_ORDER,
+  order,
+});
+
+export const emptyToOrderLogoutCart = () => async (dispatch) => {
+  dispatch(emptyToOrderCart({}));
+  return {};
+};
+
 export const getOrders = (userId) => async (dispatch) => {
   const res = await csrfFetch(`/api/order/${userId}`);
   // console.log('********************8', res);
   if (res.ok) {
     const orders = await res.json();
-    // console.log('***************', reviews);
+    console.log('***************', orders);
     dispatch(loadOrder(orders));
     return orders;
   }
@@ -86,6 +97,10 @@ const orderReducer = (state = initialState, action) => {
     case DELETE_ORDER: {
       delete newState[action.orderId];
       return newState;
+    }
+
+    case EMPTY_ORDER: {
+      return action.order;
     }
 
     default:

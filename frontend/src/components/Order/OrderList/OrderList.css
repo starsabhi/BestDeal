@@ -1,0 +1,26 @@
+/* .mainDivforOrderList {
+} */
+
+.OrderListDiv {
+  display: flex;
+  justify-content: center;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 50%;
+}
+
+.widthOrderListDiv {
+  /* display: flex; */
+}
+.InnerDivOrderList {
+  border: 1px solid black;
+}
+
+.doubleInnerDivOrderList {
+  display: flex;
+
+  border: 1px solid black;
+  margin: 50px;
+}

@@ -1,12 +1,12 @@
 import { csrfFetch } from './csrf';
 
-const LOAD_CART = 'review/LOAD_CART';
-const ADD_TO_CART = 'review/ADD_CART';
-const EDIT_CART = 'review/EDIT_CART';
-const DELETE_CART = 'review/DELETE_CART';
-// const DELETE_FULL_CART = 'review/DELETE_FULL_CART';
-const ONE_CART = 'review/ONE_CART';
-const EMPTY_CART = 'review/EMPTY_CART';
+const LOAD_CART = 'cart/LOAD_CART';
+const ADD_TO_CART = 'cart/ADD_CART';
+const EDIT_CART = 'cart/EDIT_CART';
+const DELETE_CART = 'cart/DELETE_CART';
+// const DELETE_FULL_CART = 'cart/DELETE_FULL_CART';
+const ONE_CART = 'cart/ONE_CART';
+const EMPTY_CART = 'cart/EMPTY_CART';
 
 const loadCart = (carts) => ({
   type: LOAD_CART,
