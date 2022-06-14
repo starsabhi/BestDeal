@@ -10,6 +10,8 @@ const usersRouter = require('./users.js');
 const productRouter = require('./products');
 const reviewRouter = require('./reviews');
 const cartRouter = require('./carts');
+const orderRouter = require('./orders');
+const orderCartRouter = require('./ordercart')
 
 router.use('/session', sessionRouter);
 
@@ -20,6 +22,11 @@ router.use('/products', productRouter);
 router.use('/review', reviewRouter);
 
 router.use('/cart', cartRouter);
+
+router.use('/order', orderRouter);
+
+
+router.use('/ordercart', orderCartRouter);
 
 // router.post('/test', (req, res) => {
 //   res.json({ requestBody: req.body });

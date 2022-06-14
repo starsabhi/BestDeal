@@ -72,4 +72,22 @@ router.delete(
   })
 );
 
+// router.delete(
+//   '/full/:userId',
+//   requireAuth,
+//   asyncHandler(async (req, res) => {
+//     console.log('&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&');
+//     const { userId } = req.params;
+//     const cartFull = await db.Cart.destroy({
+//       where: {
+//         userId: userId,
+//       },
+//     });
+//     console.log('********************************************');
+//     // await cartFull.destroy();
+//     console.log('********************************************');
+//     res.json(userId);
+//   })
+// );
+
 module.exports = router;

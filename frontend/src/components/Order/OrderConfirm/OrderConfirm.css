@@ -1,0 +1,10 @@
+.OrderConfirmMainDiv {
+  height: 200px;
+  width: 200px;
+}
+
+.orderFinalModalMainDiv {
+  height: 300px;
+  width: 300px;
+  background-color: white;
+}
