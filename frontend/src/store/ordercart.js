@@ -1,7 +1,8 @@
 import { csrfFetch } from './csrf';
 
-const LOAD_ORDER_CART = 'cart/LOAD_ORDER_CART';
+const LOAD_ORDER_CART = 'ordercart/LOAD_ORDER_CART';
 const ADD_TO_ORDER_CART = 'ordercart/ADD_TO_ORDER_CART';
+const DELETE_To_ORDER_CART = 'ordercart/DELETE_To_ORDER_CART';
 
 const loadOrderCart = (orderCarts) => ({
   type: LOAD_ORDER_CART,
@@ -11,6 +12,11 @@ const loadOrderCart = (orderCarts) => ({
 const addToOrderCart = (orderCart) => ({
   type: ADD_TO_ORDER_CART,
   orderCart,
+});
+
+const removeOrderCart = (cartOrderId) => ({
+  type: DELETE_To_ORDER_CART,
+  cartOrderId,
 });
 
 export const loadToOrderCart = (orderId) => async (dispatch) => {
@@ -42,6 +48,19 @@ export const addOrderCart = (orderCart) => async (dispatch) => {
   }
 };
 
+export const deleteCartOrder = (cartOrderId) => async (dispatch) => {
+  // console.log('&&*&*&*&*&*&*&*', reviewId);
+  const res = await csrfFetch(`/api/ordercart/${cartOrderId}`, {
+    method: 'DELETE',
+  });
+
+  // console.log('&&*&*&*&*&*&*&*COMPLETD OR NOT');
+  if (res.ok) {
+    const CartOrderId = await res.json();
+    dispatch(removeOrderCart(CartOrderId));
+  }
+};
+
 const initialState = {};
 
 const orderCartReducer = (state = initialState, action) => {
@@ -68,10 +87,10 @@ const orderCartReducer = (state = initialState, action) => {
     //   return action.cart;
     // }
 
-    // case DELETE_CART: {
-    //   delete newState[action.cartId];
-    //   return newState;
-    // }
+    case DELETE_To_ORDER_CART: {
+      delete newState[action.cartOrderId];
+      return newState;
+    }
 
     default:
       return state;
