@@ -23,16 +23,8 @@ router.post(
   requireAuth,
   asyncHandler(async (req, res) => {
     // console.log("ROUTER COMPLETED OR NOT   *********************")
-    const {
-      orderId,
-      userId,
-      productId,
-      name,
-      price,
-      imageUrl,
-      quantity,
-      totalPrice,
-    } = req.body;
+    const { orderId, userId, productId, name, price, imageUrl, quantity } =
+      req.body;
     // console.log("ROUTER COMPLETED OR NOT   *********************")
 
     const newOrderCart = await db.OrderCart.create({
@@ -43,9 +35,36 @@ router.post(
       price,
       imageUrl,
       quantity,
-      totalPrice,
     });
     res.json(newOrderCart);
+  })
+);
+
+router.patch(
+  '/:orderCartId',
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const { orderId, userId, productId, name, price, imageUrl, quantity } =
+      req.body;
+
+    console.log(req.body, '*************************************************');
+
+    const { orderCartId } = req.params;
+    console.log('WHIRERER********111111111111111111111111111111');
+
+    const orderCart = await db.OrderCart.findByPk(orderCartId);
+    console.log('WHIRERER********2222222222222222222222222222222222222222222');
+
+    await orderCart.update({
+      orderId,
+      userId,
+      productId,
+      name,
+      price,
+      imageUrl,
+      quantity,
+    });
+    res.json(orderCart);
   })
 );
 

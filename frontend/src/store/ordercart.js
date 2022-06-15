@@ -2,6 +2,7 @@ import { csrfFetch } from './csrf';
 
 const LOAD_ORDER_CART = 'ordercart/LOAD_ORDER_CART';
 const ADD_TO_ORDER_CART = 'ordercart/ADD_TO_ORDER_CART';
+const EDIT_ORDER_CART = 'ordercart/EDIT_ORDER_CART';
 const DELETE_To_ORDER_CART = 'ordercart/DELETE_To_ORDER_CART';
 
 const loadOrderCart = (orderCarts) => ({
@@ -11,6 +12,11 @@ const loadOrderCart = (orderCarts) => ({
 
 const addToOrderCart = (orderCart) => ({
   type: ADD_TO_ORDER_CART,
+  orderCart,
+});
+
+const editToOrderCart = (orderCart) => ({
+  type: EDIT_ORDER_CART,
   orderCart,
 });
 
@@ -48,6 +54,27 @@ export const addOrderCart = (orderCart) => async (dispatch) => {
   }
 };
 
+export const editOrderCart = (orderCart, orderCartId) => async (dispatch) => {
+  // console.log(review, id);
+  const res = await csrfFetch(`/api/ordercart/${orderCartId}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(orderCart),
+  });
+  // console.log(res);
+  console.log('WHIRERER********111111111111111111111111111111');
+
+  if (res.ok) {
+    console.log('WHIRERER********111111111111111111111111111111');
+    const orderCartR = await res.json();
+    // console.log(review);
+    dispatch(editToOrderCart(orderCartR));
+    return orderCartR;
+  }
+};
+
 export const deleteCartOrder = (cartOrderId) => async (dispatch) => {
   // console.log('&&*&*&*&*&*&*&*', reviewId);
   const res = await csrfFetch(`/api/ordercart/${cartOrderId}`, {
@@ -74,6 +101,11 @@ const orderCartReducer = (state = initialState, action) => {
       return newState;
     }
     case ADD_TO_ORDER_CART: {
+      newState[action.orderCart.id] = action.orderCart;
+      return newState;
+    }
+
+    case EDIT_ORDER_CART: {
       newState[action.orderCart.id] = action.orderCart;
       return newState;
     }
