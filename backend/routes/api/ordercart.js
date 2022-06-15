@@ -49,4 +49,15 @@ router.post(
   })
 );
 
+router.delete(
+  '/:cartOrderId',
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const { cartOrderId } = req.params;
+    const cartOrder = await db.OrderCart.findByPk(cartOrderId);
+    await cartOrder.destroy();
+    res.json(cartOrder.id);
+  })
+);
+
 module.exports = router;

@@ -143,8 +143,8 @@ const cartReducer = (state = initialState, action) => {
     }
 
     case DELETE_CART: {
-      console.log('Hello');
-      console.log(action);
+      // console.log('Hello');
+      // console.log(action);
       delete newState[action.cartId];
       return newState;
     }

@@ -27,10 +27,10 @@ function CartDetailPage() {
 
   const handleCartDelete = (DeleteId) => {
     // e.preventDefault();
-    console.log('THIS THIS');
+    // console.log('THIS THIS');
     const deleteCompleted = dispatch(deleteCart(DeleteId));
     if (deleteCompleted) {
-      console.log('Cart DELETE working ');
+      // console.log('Cart DELETE working ');
     }
   };
 
