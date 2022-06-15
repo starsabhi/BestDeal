@@ -41,8 +41,6 @@ export default function OrderList() {
                   <>
                     <div className="doubleInnerDivOrderList" key={order?.id}>
                       <OrderCartList orderId={order?.id} />
-                      {/* <div>{order?.totalPrice}</div> */}
-                      {/* <button>Update</button> */}
                     </div>
                   </>
                 ))}

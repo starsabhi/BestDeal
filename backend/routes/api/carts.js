@@ -47,7 +47,7 @@ router.patch(
     const { cartId } = req.params;
 
     const cart = await db.Cart.findByPk(cartId);
-    console.log(cart, 'THIS IS UPDATED REVIEW');
+    // console.log(cart, 'THIS IS UPDATED REVIEW');
 
     await cart.update({
       userId,
