@@ -19,6 +19,7 @@ export const loadToOrderCart = (orderId) => async (dispatch) => {
   if (res.ok) {
     const orderCart = await res.json();
     // console.log('***************', reviews);
+    console.log(orderCart, '***********************');
     dispatch(loadOrderCart(orderCart));
     return orderCart;
   }
@@ -47,6 +48,7 @@ const orderCartReducer = (state = initialState, action) => {
   let newState = { ...state };
   switch (action.type) {
     case LOAD_ORDER_CART: {
+      console.log(action.orderCarts);
       action.orderCarts.forEach((orderCart) => {
         newState[orderCart.id] = orderCart;
       });

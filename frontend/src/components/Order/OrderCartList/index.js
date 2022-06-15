@@ -11,13 +11,19 @@ export default function OrderCartList({ orderId }) {
   useEffect(() => {
     dispatch(loadToOrderCart(orderId));
   }, [dispatch]);
+  console.log(orderId);
   console.log(state);
+
+  //TRY filter
+  const newArr = orderCartList.filter((order) => order.orderId === orderId);
+
+  console.log('isCHANEGAD', orderCartList);
   return (
     <>
       <div className="OrderCartListmainDiv">
         <div className="bodyofCartOrderList">
           Hello
-          {orderCartList.map((orderCart) => (
+          {newArr.map((orderCart) => (
             <>
               <img
                 className="bodyCartorderimage"
