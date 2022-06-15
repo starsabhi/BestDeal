@@ -1,0 +1,14 @@
+/* .bodyofCartOrderList {
+  height: 50px;
+  width: 50px;
+} */
+
+.bodyCartorderimage {
+  height: 50px;
+  width: 50px;
+}
+
+.bodyofCartOrderList {
+  display: flex;
+  flex-direction: column;
+}

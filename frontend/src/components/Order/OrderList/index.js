@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { getOrders } from '../../../store/order';
 import './OrderList.css';
+import OrderCartList from '../OrderCartList';
 
 export default function OrderList() {
   const [loading, setLoading] = useState(false);
@@ -38,8 +39,9 @@ export default function OrderList() {
               <div className="InnerDivOrderList">
                 {orderListForuser?.map((order) => (
                   <>
-                    <div className="doubleInnerDivOrderList">
-                      <div>{order.totalPrice}</div>
+                    <div className="doubleInnerDivOrderList" key={order?.id}>
+                      <OrderCartList orderId={order?.id} />
+                      <div>{order?.totalPrice}</div>
                       <button>Update</button>
                     </div>
                   </>

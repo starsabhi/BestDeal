@@ -4,19 +4,19 @@ const { requireAuth } = require('../../utils/auth');
 const router = express.Router();
 const db = require('../../db/models');
 
-// router.get(
-//   '/:userId',
-//   asyncHandler(async (req, res) => {
-//     const { userId } = req.params;
+router.get(
+  '/:orderId',
+  asyncHandler(async (req, res) => {
+    const { orderId } = req.params;
 
-//     const carts = await db.Cart.findAll({
-//       where: {
-//         userId: userId,
-//       },
-//     });
-//     return res.json(carts);
-//   })
-// );
+    const orderCarts = await db.OrderCart.findAll({
+      where: {
+        orderId: orderId,
+      },
+    });
+    return res.json(orderCarts);
+  })
+);
 
 router.post(
   '/',
