@@ -1,11 +1,29 @@
 import { csrfFetch } from './csrf';
 
-const ADD_TO_ORDER_CART = 'review/ADD_TO_ORDER_CART';
+const LOAD_ORDER_CART = 'cart/LOAD_ORDER_CART';
+const ADD_TO_ORDER_CART = 'ordercart/ADD_TO_ORDER_CART';
+
+const loadOrderCart = (orderCarts) => ({
+  type: LOAD_ORDER_CART,
+  orderCarts,
+});
 
 const addToOrderCart = (orderCart) => ({
   type: ADD_TO_ORDER_CART,
   orderCart,
 });
+
+export const loadToOrderCart = (orderId) => async (dispatch) => {
+  const res = await csrfFetch(`/api/ordercart/${orderId}`);
+  // console.log('********************8', res);
+  if (res.ok) {
+    const orderCart = await res.json();
+    // console.log('***************', reviews);
+    console.log(orderCart, '***********************');
+    dispatch(loadOrderCart(orderCart));
+    return orderCart;
+  }
+};
 
 export const addOrderCart = (orderCart) => async (dispatch) => {
   const res = await csrfFetch(`/api/ordercart/`, {
@@ -29,12 +47,13 @@ const initialState = {};
 const orderCartReducer = (state = initialState, action) => {
   let newState = { ...state };
   switch (action.type) {
-    // case LOAD_CART: {
-    //   action.carts.forEach((cart) => {
-    //     newState[cart.id] = cart;
-    //   });
-    //   return newState;
-    // }
+    case LOAD_ORDER_CART: {
+      console.log(action.orderCarts);
+      action.orderCarts.forEach((orderCart) => {
+        newState[orderCart.id] = orderCart;
+      });
+      return newState;
+    }
     case ADD_TO_ORDER_CART: {
       newState[action.orderCart.id] = action.orderCart;
       return newState;
