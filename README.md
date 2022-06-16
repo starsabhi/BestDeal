@@ -38,11 +38,11 @@ BestDeal is eCommerce app where you can buy products. User can leave reviews on 
 4. Deploy your app on Heroku with `git push heroku main-branch:master` from main branch.
 
 ## Feature List
-1 - (CRUD) Log-in user can create, update, delete thier own reviews. All users can read reviews on prduct detail page.
-2 - (CRUD) Log-in user can create, update(quantity) , delete shopping carts products. They can view their cart on shoppiing detail page.
-3 - (CRUD) Log-in user can create ,view, update order (if its same day as order day), delete thier order on order detail page.
+1. (CRUD) Log-in user can create, update, delete thier own reviews. All users can read reviews on prduct detail page.
+2. (CRUD) Log-in user can create, update(quantity) , delete shopping carts products. They can view their cart on shoppiing detail page.
+3 . (CRUD) Log-in user can create ,view, update order (if its same day as order day), delete thier order on order detail page.
 
 
 ## Future Feature List
-1 - search bar for searching items
-2 - implementing AWS store for reviews so user can update photos with thiers reviews
+1. search bar for searching items
+2. implementing AWS store for reviews so user can update photos with thiers reviews
