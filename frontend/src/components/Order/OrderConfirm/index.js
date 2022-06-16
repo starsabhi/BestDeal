@@ -14,7 +14,7 @@ export default function OrderConfirm({ totalPrice, closeModal }) {
   // console.log(cartList);
 
   const lastEle = orderList[orderList.length - 1].id;
-  console.log(lastEle);
+  // console.log(lastEle);
 
   //for loop for create replica
   // const [start, setStart] = useState(false);
@@ -63,7 +63,7 @@ export default function OrderConfirm({ totalPrice, closeModal }) {
     closeModal();
     const deleteClose = dispatch(deleteOrder(lastEle));
     if (deleteClose) {
-      console.log('MODAL CLOSE WITH DELETE ORDER');
+      // console.log('MODAL CLOSE WITH DELETE ORDER');
     }
   };
   //--------------------------------

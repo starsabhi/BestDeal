@@ -1,24 +1,46 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory, useParams } from 'react-router-dom';
+import { updateOrder } from '../../../store/order';
 import { deleteCartOrder, loadToOrderCart } from '../../../store/ordercart';
 import MainModal from '../../MainModal';
 import EditOrderCart from '../EditOrderCart';
-import './OrderCartList.css';
+import './UpdateOrder.css';
 
-export default function OrderCartList({ orderId, showBtn }) {
+export default function UpdateOrder() {
   const sessionUser = useSelector((state) => state.session.user);
+  const objectId = useParams();
   const dispatch = useDispatch();
-  // const state = useSelector((state) => state);
+  const history = useHistory();
+  const Orderid = objectId.orderId;
   const orderCartList = useSelector((state) => Object.values(state.orderCart));
+  console.log(orderCartList);
+
+  //LOADING ORDER CART
   useEffect(() => {
-    dispatch(loadToOrderCart(orderId));
+    dispatch(loadToOrderCart(Orderid));
   }, [dispatch]);
-  // console.log(orderId);
-  // console.log(state);
 
   //TRY filter
-  const newArr = orderCartList.filter((order) => order.orderId === orderId);
+  console.log(Orderid);
+  const newArr = orderCartList.filter((order) => order.orderId == Orderid);
   // console.log(newArr);
+
+  //-----------------------TOTAL PRICE------------------------------
+  const initialValue = 0;
+  const theSum = newArr.reduce(function (accumulator, currentValue) {
+    return (
+      accumulator +
+      parseFloat(currentValue.price).toFixed(2) *
+        parseFloat(currentValue.quantity)
+    );
+  }, initialValue);
+  let totalPriceOrder = theSum.toFixed(2);
+  console.log(totalPriceOrder);
+
+  //--------------------------------------------------------
+
+  ////---------------------------------------------------------
 
   //DELETE ITEM FORM ORDER CART----------------
   const handleOrderCartDelete = (DeleteId) => {
@@ -73,9 +95,22 @@ export default function OrderCartList({ orderId, showBtn }) {
     openEditOrderCartModal(true);
   };
 
-  //----------------------------------------------
+  ////UPDATE TOTAL PRICE FOR ORDER---------
+  const handleTotalpriceUpdate = (e) => {
+    e.preventDefault();
 
-  // console.log('isCHANEGAD', orderCartList);
+    const newOrder = {
+      userId: sessionUser.id,
+      totalPrice: totalPriceOrder,
+    };
+
+    const orderComplete = dispatch(updateOrder(newOrder, Orderid));
+    if (orderComplete) {
+      // console.log('Completed');
+      history.push('/listorder');
+    }
+  };
+
   return (
     <>
       <div className="OrderCartListmainDiv">
@@ -115,7 +150,7 @@ export default function OrderCartList({ orderId, showBtn }) {
                 <div>Price:${price}</div>
                 <div>Quantity:{quantity}</div>
 
-                {/* <>
+                <>
                   <button
                     onClick={() =>
                       helperFunctionEdit(
@@ -135,11 +170,14 @@ export default function OrderCartList({ orderId, showBtn }) {
                   <button onClick={() => handleOrderCartDelete(id)}>
                     Delete
                   </button>
-                </> */}
+                </>
               </>
             )
           )}
         </div>
+        <button onClick={(e) => handleTotalpriceUpdate(e)}>
+          Submit Changes
+        </button>
       </div>
     </>
   );
