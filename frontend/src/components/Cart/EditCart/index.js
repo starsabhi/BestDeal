@@ -39,7 +39,7 @@ export default function EditCart({
   return (
     <>
       <div className="editCartDeatailmainDiv">
-        Hello
+        Update Quantity
         <select value={totalItem} onChange={(e) => handleChange(e)}>
           <option value="1">1</option>
           <option value="2">2</option>

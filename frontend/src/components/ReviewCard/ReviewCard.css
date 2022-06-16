@@ -1,0 +1,67 @@
+.MainDivForReviewCard {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.REviewCardDivH1Tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.AddReviewbtninsideDiv {
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.AddReviewbtninsideDiv:hover {
+  transform: scale(1.2);
+}
+
+.reviewContentDivwrap {
+  display: flex;
+  flex-direction: column;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  margin: 10px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.mainDivforTwoBtneditRdR {
+  display: flex;
+  justify-content: center;
+}
+
+.reviewEditButton {
+  margin: 5px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.reviewEditButton:hover {
+  transform: scale(1.1);
+}
+
+.reviewDeleteButton {
+  margin: 5px;
+  border-radius: 3px;
+  border: 1px solid lightgrey;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.reviewDeleteButton:hover {
+  transform: scale(1.1);
+}

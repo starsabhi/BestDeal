@@ -66,6 +66,7 @@ export default function CartBox({ Product, productId }) {
     <>
       {sessionUser ? (
         <div className="addCartButtonforboxDivmainDiv">
+          Quantity
           <select value={totalItem} onChange={(e) => handleChange(e)}>
             <option value="1">1</option>
             <option value="2">2</option>

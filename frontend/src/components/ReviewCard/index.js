@@ -6,6 +6,7 @@ import MainModal from '../MainModal';
 import EditReview from './EditReview/index';
 import DeleteReview from './DeleteReview';
 import AddReview from './AddReview';
+import './ReviewCard.css';
 
 function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
   const dispatch = useDispatch();
@@ -131,57 +132,47 @@ function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
         />
       </MainModal>
 
-      <div className="">
-        <h1>ReviewCard</h1>
+      <div className="MainDivForReviewCard">
+        <div className="REviewCardDivH1Tag">
+          <h1>ReviewCard</h1>
+        </div>
         {sessionUser ? (
-          <button onClick={() => passingAdd(true)}>Add review</button>
+          <div className="REviewCardDivH1Tag">
+            <button
+              className="AddReviewbtninsideDiv"
+              onClick={() => passingAdd(true)}
+            >
+              Add review
+            </button>
+          </div>
         ) : (
           <></>
         )}
-        <></>
-        {/* {form ? (
-          <form onSubmit={handleSubmitReview}>
-            <input
-              className="inputForAddingreview"
-              type="text"
-              onChange={(e) => setContent(e.target.value)}
-              value={content}
-              placeholder="content"
-              name="content"
-              required
-            ></input>
-            <div>
-              <button>Submit</button>
-              <button onClick={() => setForm(false)}>Cancel</button>
-            </div>
-          </form>
-        ) : (
-          <></>
-        )} */}
         {Reviews?.map((review) => (
-          <div
-            key={review?.id}
-            // onClick={() => selectedReviewId(review.id)}
-          >
+          <div className="reviewContentDivwrap" key={review?.id}>
             {review?.content}
             {sessionUser && sessionUser?.id === review.userId ? (
               <>
-                <button
-                  onClick={() => {
-                    passingFun(review?.id);
-                    setEditContent(review?.content);
-                  }}
-                >
-                  Edit
-                </button>
-                <button
-                  onClick={() => {
-                    passingDelete(review?.id);
-                    setEditContent(review?.content);
-                  }}
-                >
-                  Delete
-                </button>
+                <div className="mainDivforTwoBtneditRdR">
+                  <button
+                    className="reviewEditButton"
+                    onClick={() => {
+                      passingFun(review?.id);
+                      setEditContent(review?.content);
+                    }}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    className="reviewDeleteButton"
+                    onClick={() => {
+                      passingDelete(review?.id);
+                      setEditContent(review?.content);
+                    }}
+                  >
+                    Delete
+                  </button>
+                </div>
               </>
             ) : (
               <></>
