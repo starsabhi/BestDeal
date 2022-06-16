@@ -15,7 +15,7 @@ export default function Footer() {
             <div>Abhishek Bornak</div>
             <div className="footer-image-links">
               <a
-                href="https://github.com/starsabhi"
+                href="https://github.com/starsabhi/BestDeal"
                 target="_blank"
                 rel="noreferrer"
               >

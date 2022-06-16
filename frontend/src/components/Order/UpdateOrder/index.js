@@ -113,71 +113,73 @@ export default function UpdateOrder() {
 
   return (
     <>
-      <div className="OrderCartListmainDiv">
-        <MainModal
-          showModal={editOrderCartModal}
-          closeModal={closeEditOrderCartModal}
-        >
-          <EditOrderCart
-            Id={cartEditId}
-            OrderId={cartEditOrderId}
-            productId={editCartProductId}
-            name={editCartName}
-            price={editCartPrice}
-            imageUrl={editCartimageUrl}
-            quantity={editCartQuantity}
-          />
-        </MainModal>
-        <div className="bodyofCartOrderList">
-          {newArr.map(
-            ({
-              id,
-              orderId,
-              userId,
-              productId,
-              name,
-              price,
-              imageUrl,
-              quantity,
-            }) => (
-              <>
-                <img
-                  className="bodyCartorderimage"
-                  src={imageUrl}
-                  alt={imageUrl}
-                ></img>
-                <div>Name:{name}</div>
-                <div>Price:${price}</div>
-                <div>Quantity:{quantity}</div>
-
+      <div className="MainUpdateOrderDiv">
+        <div className="OrderCartListmainDiv">
+          <MainModal
+            showModal={editOrderCartModal}
+            closeModal={closeEditOrderCartModal}
+          >
+            <EditOrderCart
+              Id={cartEditId}
+              OrderId={cartEditOrderId}
+              productId={editCartProductId}
+              name={editCartName}
+              price={editCartPrice}
+              imageUrl={editCartimageUrl}
+              quantity={editCartQuantity}
+            />
+          </MainModal>
+          <div className="bodyofCartOrderList">
+            {newArr.map(
+              ({
+                id,
+                orderId,
+                userId,
+                productId,
+                name,
+                price,
+                imageUrl,
+                quantity,
+              }) => (
                 <>
-                  <button
-                    onClick={() =>
-                      helperFunctionEdit(
-                        id,
-                        orderId,
-                        userId,
-                        productId,
-                        name,
-                        price,
-                        imageUrl,
-                        quantity
-                      )
-                    }
-                  >
-                    Update
-                  </button>
-                  <button onClick={() => handleOrderCartDelete(id)}>
-                    Delete
-                  </button>
+                  <img
+                    className="bodyCartorderimage"
+                    src={imageUrl}
+                    alt={imageUrl}
+                  ></img>
+                  <div>Name:{name}</div>
+                  <div>Price:${price}</div>
+                  <div>Quantity:{quantity}</div>
+
+                  <>
+                    <button
+                      onClick={() =>
+                        helperFunctionEdit(
+                          id,
+                          orderId,
+                          userId,
+                          productId,
+                          name,
+                          price,
+                          imageUrl,
+                          quantity
+                        )
+                      }
+                    >
+                      Update
+                    </button>
+                    <button onClick={() => handleOrderCartDelete(id)}>
+                      Delete
+                    </button>
+                  </>
                 </>
-              </>
-            )
-          )}
+              )
+            )}
+          </div>
+          <button onClick={(e) => handleTotalpriceUpdate(e)}>
+            Submit Changes
+          </button>
         </div>
-        <button onClick={(e) => handleTotalpriceUpdate(e)}>
-          Submit Changes
-        </button>
       </div>
     </>
   );
