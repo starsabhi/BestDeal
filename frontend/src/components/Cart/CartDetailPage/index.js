@@ -80,7 +80,8 @@ function CartDetailPage() {
 
   return (
     <>
-      <div>
+      <div className="MainDivForCartDetailPAge">
+        <div className="MAAINYOURCARTEHEADER">YOUR CART</div>
         {loading ? (
           <div className="loadingScreenDemo">
             <ClipLoader color={'#344441'} loading={loading} size={150} />
