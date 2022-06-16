@@ -13,9 +13,10 @@ export default function EditReview({
   closeModal,
 }) {
   const dispatch = useDispatch();
+  const [errors, setErrors] = useState([]);
   const [editformcontent, setEditformcontent] = useState(editcontent);
 
-  const handleEditReview = (e) => {
+  const handleEditReview = async (e) => {
     e.preventDefault();
 
     const newReview = {
@@ -25,7 +26,12 @@ export default function EditReview({
       content: editformcontent,
     };
 
-    const review = dispatch(updateReview(newReview, reviewId));
+    const review = await dispatch(updateReview(newReview, reviewId)).catch(
+      async (res) => {
+        const data = await res.json();
+        if (data && data.errors) setErrors(data.errors);
+      }
+    );
     if (review) {
       closeModal();
       dispatch(getReviews(prodcutid));
@@ -41,6 +47,11 @@ export default function EditReview({
           autoComplete="off"
           onSubmit={(e) => handleEditReview(e)}
         >
+          <ul>
+            {errors.map((error, idx) => (
+              <li key={idx}>{error}</li>
+            ))}
+          </ul>
           <div className="edit-song-form-group">
             <label className="edit-song-label" htmlFor="songTitle">
               <div>Review Content</div>

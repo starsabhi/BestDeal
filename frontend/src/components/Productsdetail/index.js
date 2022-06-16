@@ -7,9 +7,18 @@ import './Productsdetail.css';
 import { getReviews } from '../../store/review';
 import ReviewCard from '../ReviewCard';
 import CartBox from '../Cart/CartBox';
+import ClipLoader from 'react-spinners/ClipLoader';
 
 function Productsdetail() {
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 400);
+  }, []);
+
   const Id = useParams();
   // console.log(Id, '***********productId******');
   const Product = useSelector((state) => state.product);
@@ -34,30 +43,38 @@ function Productsdetail() {
   // console.log(Reviews?.reviews[0].content, '********REVIEWS*********');
   return (
     <>
-      <div className="ProductsdetailDiv">
-        {/* <h1>Productsdetail</h1> */}
-        <div className="productListClassforProductdetailPage">
-          <div key={Product?.id} className="productClassArr">
-            <div className="contentdivForproductdetailpage">
-              <h2 className="productNameh2">{Product?.name}</h2>
-              <p>${Product.price}</p>
-              <img className="productListimage" src={Product?.imageUrl} />
-              <p className="descriptionptag">{Product?.description}</p>
+      {loading ? (
+        <div className="loadingScreenDemo">
+          <ClipLoader color={'#344441'} loading={loading} size={150} />
+        </div>
+      ) : (
+        <div className="ProductMainDiv">
+          <div className="ProductsdetailDiv">
+            {/* <h1>Productsdetail</h1> */}
+            <div className="productListClassforProductdetailPage">
+              <div key={Product?.id} className="productClassArr">
+                <div className="contentdivForproductdetailpage">
+                  <h2 className="productNameh2">{Product?.name}</h2>
+                  <p>${Product.price}</p>
+                  <img className="productListimage" src={Product?.imageUrl} />
+                  <p className="descriptionptag">{Product?.description}</p>
+                </div>
+              </div>
+            </div>
+            <div className="priceCartorderBoxDiv">
+              <CartBox Product={Product} productId={Id.productId} />
+              <div />
+              {/* <p>{Reviews?.reviews[0].content}</p> */}
             </div>
           </div>
+          <ReviewCard
+            Id={Id}
+            Reviews={Reviews}
+            CurrrentState={CurrrentState}
+            Product={Product}
+          />
         </div>
-        <div className="priceCartorderBoxDiv">
-          <CartBox Product={Product} productId={Id.productId} />
-          <div />
-          {/* <p>{Reviews?.reviews[0].content}</p> */}
-        </div>
-      </div>
-      <ReviewCard
-        Id={Id}
-        Reviews={Reviews}
-        CurrrentState={CurrrentState}
-        Product={Product}
-      />
+      )}
     </>
   );
 }

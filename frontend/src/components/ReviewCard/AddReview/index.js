@@ -8,6 +8,8 @@ import { NavLink, Redirect, useHistory } from 'react-router-dom';
 export default function AddReview({ sessionuid, prodcutid, closeModal }) {
   const dispatch = useDispatch();
   const [content, setContent] = useState('');
+  const [errors, setErrors] = useState([]);
+
   const handleSubmitReview = async (e) => {
     e.preventDefault();
 
@@ -18,7 +20,10 @@ export default function AddReview({ sessionuid, prodcutid, closeModal }) {
       content,
     };
 
-    const review = await dispatch(writeReview(newReview));
+    const review = await dispatch(writeReview(newReview)).catch(async (res) => {
+      const data = await res.json();
+      if (data && data.errors) setErrors(data.errors);
+    });
     if (review) {
       closeModal();
       dispatch(getReviews(prodcutid));
@@ -39,6 +44,11 @@ export default function AddReview({ sessionuid, prodcutid, closeModal }) {
           autoComplete="off"
           onSubmit={(e) => handleSubmitReview(e)}
         >
+          <ul>
+            {errors.map((error, idx) => (
+              <li key={idx}>{error}</li>
+            ))}
+          </ul>
           <div className="edit-song-form-group">
             <label className="edit-song-label" htmlFor="songTitle">
               <div>Review Content</div>

@@ -25,6 +25,7 @@
 }
 
 .infoforsplashPage {
+  margin-top: -90px;
   color: black;
   font-size: 35px;
   font-weight: 600;
@@ -51,16 +52,38 @@
 }
 
 .ProductBtnonSplashPage {
+  height: 50px;
+  width: 170px;
   background-color: black;
   color: white;
   cursor: pointer;
   border: 2px solid grey;
   border-radius: 5px;
   transition-duration: 0.4s;
+  animation: change3 linear 5s infinite;
+}
+
+@keyframes change3 {
+  0% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }
 
 .ProductBtnonSplashPage:hover {
   box-shadow: 0 12px 16px 0 rgba(239, 235, 235, 0.24),
     0 17px 50px 0 rgba(247, 247, 247, 0.19);
   transform: scale(1.2);
+}
+.appLogoSplashPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  /* margin-top: -80px; */
+}
+.appLogoSplashPageimg {
+  z-index: 100;
 }

@@ -15,6 +15,7 @@ function Home() {
 
   return (
     <>
+      <h2 className="productlistnameclass">Product List</h2>
       <div className="HomepageMainDiv">
         <div className="productListClass">
           {productList?.map(
@@ -29,10 +30,19 @@ function Home() {
             }) => (
               <div key={id} className="productClassArr">
                 <div className="contentdivforHome">
-                  <NavLink to={`products/${id}`}>
-                    <img className="productListimage" src={imageUrl} />
-                    <h2 className="productNameh2">{name}</h2>
-                    <p>${price}</p>
+                  <NavLink
+                    style={{ color: 'inherit', textDecoration: 'inherit' }}
+                    to={`products/${id}`}
+                  >
+                    <div className="imageListDivevery">
+                      <img className="productListimage" src={imageUrl} />
+                    </div>
+                    <div className="productnameDivforMain">
+                      <h2 className="productNameh2">{name}</h2>
+                    </div>
+                    <div className="priceMainDiv">
+                      <h3>${price}</h3>
+                    </div>
                   </NavLink>
                   {/* <p className="descriptionptag">{description}</p> */}
                 </div>
