@@ -143,7 +143,7 @@ function OrderDetail() {
 
   return (
     <>
-      <div>
+      <div className='orderDeatailPageMainDiv'>
         {loading ? (
           <div className="loadingScreenDemo">
             <ClipLoader color={'#344441'} loading={loading} size={150} />

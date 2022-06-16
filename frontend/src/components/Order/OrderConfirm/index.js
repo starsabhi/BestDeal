@@ -20,12 +20,12 @@ export default function OrderConfirm({ totalPrice, closeModal }) {
   // const [start, setStart] = useState(false);
 
   const handleFinalAdd = async () => {
-    console.log('******');
+    // console.log('******');
     const cartListIdForDelete = [];
     cartList.forEach(
       async ({ id, imageUrl, name, price, productId, quantity }) => {
         cartListIdForDelete.push(id);
-        console.log('******');
+        // console.log('******');
         const newItem = {
           orderId: lastEle,
           userId: sessionUser.id,
@@ -39,7 +39,7 @@ export default function OrderConfirm({ totalPrice, closeModal }) {
         console.log('******');
         const cartOrderAdd = await dispatch(addOrderCart(newItem));
         if (cartOrderAdd) {
-          console.log('Completed');
+          // console.log('Completed');
         }
       }
     );
@@ -81,8 +81,8 @@ export default function OrderConfirm({ totalPrice, closeModal }) {
     <>
       <div className="orderFinalModalMainDiv">
         <div className="OrderConfirmMainDiv">
-          Hello
-          <button onClick={() => handleFinalAdd()}>Final</button>
+          YOUR ORDER WILL BE ADDED IN ORDER LIST AND CART WILL BE EMPTY
+          <button onClick={() => handleFinalAdd()}>Confirm</button>
           <button onClick={() => handleCancel()}>Cancel</button>
         </div>
       </div>

@@ -46,7 +46,8 @@ module.exports = {
         {
           name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
           price: '10.00',
-          imageUrl: 'https://m.media-amazon.com/images/I/31V7R+fPOfL._AC_.jpg',
+          imageUrl:
+            'https://m.media-amazon.com/images/I/91brb-aPV6L._AC_UX522_.jpg',
           description:
             'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
           productInfo:
@@ -78,7 +79,8 @@ module.exports = {
         {
           name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
           price: '10.00',
-          imageUrl: 'https://m.media-amazon.com/images/I/31V7R+fPOfL._AC_.jpg',
+          imageUrl:
+            'https://m.media-amazon.com/images/I/91sj7LGZifL._AC_SX522._SX._UX._SY._UY_.jpg',
           description:
             'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
           productInfo:

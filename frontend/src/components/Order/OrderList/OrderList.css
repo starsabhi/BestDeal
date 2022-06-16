@@ -1,6 +1,10 @@
 /* .mainDivforOrderList {
 } */
 
+.MainDivforOrdersListPAGE {
+  height: 100%;
+}
+
 .OrderListDiv {
   display: flex;
   justify-content: center;

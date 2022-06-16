@@ -39,15 +39,43 @@ npx sequelize seed:generate --name Order
 npx dotenv sequelize db:seed:all
 npx dotenv sequelize db:seed:undo:all
 
+5 -npx sequelize model:generate --name OrderCart --attributes orderId:integer,userId:integer,productId:integer,quantity:integer,imageUrl:text,price:decimal
+npx dotenv sequelize db:migrate
+npx dotenv sequelize db:migrate:undo:all
+npx sequelize seed:generate --name OrderCartdemo
+npx dotenv sequelize db:seed:all
+npx dotenv sequelize db:seed:undo:all
 
 5 -npx sequelize model:generate --name OrderCart --attributes orderId:integer,userId:integer,productId:integer,quantity:integer,imageUrl:text,price:decimal
 npx dotenv sequelize db:migrate
 npx dotenv sequelize db:migrate:undo:all
-npx sequelize seed:generate --name Cartdemo
+npx sequelize seed:generate --name Orderdemo
 npx dotenv sequelize db:seed:all
+npx dotenv sequelize db:seed Order
 npx dotenv sequelize db:seed:undo:all
 
 git push heroku main
+
+        {
+          orderId: 1,
+          name: 'COKAFIL Mens Running Shoes Athletic Walking Blade Tennis Shoes Fashion Sneakers',
+          userId: 1,
+          productId: 3,
+          quantity: 2,
+          imageUrl:
+            'https://m.media-amazon.com/images/I/61IcMWPWFDL._AC_UX679_.jpg',
+          price: '10',
+          createdAt: '2018-10-07',
+          updatedAt: '2018-10-07',
+        },
+
+
+        {
+          userId: 1,
+          totalPrice: '40.99',
+          createdAt: '2018-10-07',
+          updatedAt: '2018-10-07',
+        },
 
 \*\*\*HEroku
 heroku run npm run sequelize db:migrate

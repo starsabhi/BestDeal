@@ -65,38 +65,40 @@ export default function OrderList() {
   //-------------------------------------
   return (
     <>
-      {loading ? (
-        <div className="loadingScreenDemo">
-          <ClipLoader color={'#344441'} loading={loading} size={150} />
-        </div>
-      ) : orderListForuser?.length ? (
-        <div className="InnerDivOrderList">
-          {orderListForuser?.map((order) => (
-            <>
-              <div className="OneOrderListDiv">
-                <div>Ordered On:{order.createdAt.slice(0, 10)}</div>
-                {order.createdAt.slice(0, 10) == todayDate3 ? (
-                  <div>
-                    <NavLink to={`/updateorder/${order.id}`}>
-                      <button>Update Order</button>
-                    </NavLink>
-                    <button onClick={() => handleDelete(order.id)}>
-                      Delete Order
-                    </button>
-                  </div>
-                ) : (
-                  <></>
-                )}
-                <div>ORDER TOTAL:{order.totalPrice}</div>
-                <OrderCartList orderId={order?.id} key={order?.id} />
-                {/* <button>delete</button> */}
-              </div>
-            </>
-          ))}
-        </div>
-      ) : (
-        <>You Have 0 ORDERS</>
-      )}
+      <div className="MainDivforOrdersListPAGE">
+        {loading ? (
+          <div className="loadingScreenDemo">
+            <ClipLoader color={'#344441'} loading={loading} size={150} />
+          </div>
+        ) : orderListForuser?.length ? (
+          <div className="InnerDivOrderList">
+            {orderListForuser.reverse()?.map((order) => (
+              <>
+                <div className="OneOrderListDiv">
+                  <div>Ordered On:{order.createdAt.slice(0, 10)}</div>
+                  {order.createdAt.slice(0, 10) == todayDate3 ? (
+                    <div>
+                      <NavLink to={`/updateorder/${order.id}`}>
+                        <button>Update Order</button>
+                      </NavLink>
+                      <button onClick={() => handleDelete(order.id)}>
+                        Delete Order
+                      </button>
+                    </div>
+                  ) : (
+                    <> ***YOUR ORDER HAS BEEN COMPLETED****</>
+                  )}
+                  <div>ORDER TOTAL:{order.totalPrice}</div>
+                  <OrderCartList orderId={order?.id} key={order?.id} />
+                  {/* <button>delete</button> */}
+                </div>
+              </>
+            ))}
+          </div>
+        ) : (
+          <>You Have 0 ORDERS</>
+        )}
+      </div>
     </>
   );
 }

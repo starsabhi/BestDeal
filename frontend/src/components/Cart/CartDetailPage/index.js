@@ -81,7 +81,11 @@ function CartDetailPage() {
   return (
     <>
       <div className="MainDivForCartDetailPAge">
-        <div className="MAAINYOURCARTEHEADER">YOUR CART</div>
+        {cart.length ? (
+          <div className="MAAINYOURCARTEHEADER">YOUR CART</div>
+        ) : (
+          <div className="MAAINYOURCARTEHEADER">YOUR CART IS EMPTY</div>
+        )}
         {loading ? (
           <div className="loadingScreenDemo">
             <ClipLoader color={'#344441'} loading={loading} size={150} />
@@ -136,14 +140,19 @@ function CartDetailPage() {
             </div>
           </div>
         )}
-        <div className="TotalPriceDiv">
-          <TotalPriceCart />
-          <div>
-            <NavLink to="/orderdetail">
-              <button>Place Your Order</button>
-            </NavLink>
+
+        {cart.length ? (
+          <div className="TotalPriceDiv">
+            <TotalPriceCart />
+            <div>
+              <NavLink to="/orderdetail">
+                <button>Place Your Order</button>
+              </NavLink>
+            </div>
           </div>
-        </div>
+        ) : (
+          <></>
+        )}
       </div>
     </>
   );
