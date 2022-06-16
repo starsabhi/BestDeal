@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import CartDetailPage from './components/Cart/CartDetailPage';
 import OrderDetail from './components/Order/OrderDetail';
 import OrderList from './components/Order/OrderList';
+import UpdateOrder from './components/Order/UpdateOrder';
 
 function App() {
   const dispatch = useDispatch();
@@ -51,6 +52,9 @@ function App() {
           </Route>
           <Route exact path="/listorder">
             <OrderList />
+          </Route>
+          <Route exact path="/updateorder/:orderId">
+            <UpdateOrder />
           </Route>
           <Route>
             <PageNotFound />

@@ -31,7 +31,7 @@ export const loadToOrderCart = (orderId) => async (dispatch) => {
   if (res.ok) {
     const orderCart = await res.json();
     // console.log('***************', reviews);
-    console.log(orderCart, '***********************');
+    // console.log(orderCart, '***********************');
     dispatch(loadOrderCart(orderCart));
     return orderCart;
   }
@@ -64,10 +64,10 @@ export const editOrderCart = (orderCart, orderCartId) => async (dispatch) => {
     body: JSON.stringify(orderCart),
   });
   // console.log(res);
-  console.log('WHIRERER********111111111111111111111111111111');
+  // console.log('WHIRERER********111111111111111111111111111111');
 
   if (res.ok) {
-    console.log('WHIRERER********111111111111111111111111111111');
+    // console.log('WHIRERER********111111111111111111111111111111');
     const orderCartR = await res.json();
     // console.log(review);
     dispatch(editToOrderCart(orderCartR));
@@ -94,7 +94,7 @@ const orderCartReducer = (state = initialState, action) => {
   let newState = { ...state };
   switch (action.type) {
     case LOAD_ORDER_CART: {
-      console.log(action.orderCarts);
+      // console.log(action.orderCarts);
       action.orderCarts.forEach((orderCart) => {
         newState[orderCart.id] = orderCart;
       });

@@ -18,11 +18,14 @@ function OrderDetail() {
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
 
+  //DATE OBJECT--------------------------------
+  // const new = Date();
+
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 800);
   }, []);
 
   // let arr = [1, 2, 3, 4];
@@ -31,7 +34,7 @@ function OrderDetail() {
   // console.log(unique_id, 'IDIDID');
 
   const handleCartDelete = (DeleteId) => {
-    // e.preventDefault();
+    // e.preventDefault()
     console.log('THIS THIS');
     const deleteCompleted = dispatch(deleteCart(DeleteId));
     if (deleteCompleted) {

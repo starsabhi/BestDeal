@@ -18,6 +18,37 @@ router.get(
   })
 );
 
+//updateorder/${orderId}
+router.get(
+  'updateorder/:orderId',
+  asyncHandler(async (req, res) => {
+    const { orderId } = req.params;
+    const order = await db.Order.findByPk(orderId);
+    // console.log('**************************Second**************************');
+    return res.json(order);
+  })
+);
+
+//UPDATE ORDER
+router.patch(
+  '/:orderId',
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const { userId, totalPrice } = req.body;
+    const { orderId } = req.params;
+
+    const order = await db.Order.findByPk(orderId);
+
+    await order.update({
+      userId,
+      totalPrice,
+    });
+    res.json(order);
+  })
+);
+
+//----------------------------
+
 router.post(
   '/',
   requireAuth,
