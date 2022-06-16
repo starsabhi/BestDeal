@@ -39,8 +39,8 @@ BestDeal is eCommerce app where you can buy products. User can leave reviews on 
 
 ## Feature List
 1. (CRUD) Log-in user can create, update, delete thier own reviews. All users can read reviews on prduct detail page.
-2. (CRUD) Log-in user can create, update(quantity) , delete shopping carts products. They can view their cart on shoppiing detail page.
-3 . (CRUD) Log-in user can create ,view, update order (if its same day as order day), delete thier order on order detail page.
+2. (CRUD) Log-in user can create, update(quantity) , delete shopping carts products. They can view their cart on shoppiing detail page. 
+3. (CRUD) Log-in user can create ,view, update order (if its same day as order day), delete thier order on order detail page.
 
 
 ## Future Feature List
