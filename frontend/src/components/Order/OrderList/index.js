@@ -76,16 +76,17 @@ export default function OrderList() {
               <div className="OneOrderListDiv">
                 <div>Ordered On:{order.createdAt.slice(0, 10)}</div>
                 {order.createdAt.slice(0, 10) == todayDate3 ? (
-                  <div>Hello</div>
+                  <div>
+                    <NavLink to={`/updateorder/${order.id}`}>
+                      <button>Update Order</button>
+                    </NavLink>
+                    <button onClick={() => handleDelete(order.id)}>
+                      Delete Order
+                    </button>
+                  </div>
                 ) : (
                   <></>
                 )}
-                <NavLink to={`/updateorder/${order.id}`}>
-                  <button>Update Order</button>
-                </NavLink>
-                <button onClick={() => handleDelete(order.id)}>
-                  Delete Order
-                </button>
                 <div>ORDER TOTAL:{order.totalPrice}</div>
                 <OrderCartList orderId={order?.id} key={order?.id} />
                 {/* <button>delete</button> */}

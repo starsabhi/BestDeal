@@ -1,5 +1,6 @@
 .HomepageMainDiv {
   display: flex;
+  margin: 10px;
 }
 
 .productListClass {
@@ -10,9 +11,9 @@
   margin-left: 10px;
   margin-right: 10px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   border: 1px;
-  gap: 10px;
+  gap: 15px;
   border-radius: 1px solid black;
 }
 .productClassArr {
@@ -30,4 +31,46 @@
   flex-direction: column;
   border: 1px solid black;
   max-width: 500px;
+  transition-duration: 0.4s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.contentdivforHome:hover {
+  transform: scale(1.05);
+}
+
+.imageListDivevery {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+}
+
+.productNameh2 {
+  text-decoration: none;
+  line-height: 1.5em;
+  height: 3em;
+  overflow: hidden;
+}
+
+.productnameDivforMain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  /* line-height: 1.5em; */
+  /* height: 3em; */
+  /* overflow: hidden; */
+}
+
+.priceMainDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -20px;
+}
+
+.productlistnameclass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
 }

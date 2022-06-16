@@ -3,6 +3,19 @@ const { asyncHandler, csrfProtection } = require('../utils');
 const { requireAuth } = require('../../utils/auth');
 const router = express.Router();
 const db = require('../../db/models');
+const { handleValidationErrors } = require('../../utils/validation');
+const { check } = require('express-validator');
+
+const validateReview = [
+  check('content')
+    .exists({ checkFalsy: true })
+    .withMessage('Review cannot be empty')
+    .isLength({ min: 5 })
+    .withMessage('Review should have at least 5 characters')
+    .custom((value) => !/^ *$/.test(value))
+    .withMessage('Review must contain characters'),
+  handleValidationErrors,
+];
 
 router.get(
   '/:productId',
@@ -36,6 +49,7 @@ router.get(
 router.post(
   '/',
   requireAuth,
+  validateReview,
   asyncHandler(async (req, res) => {
     // console.log("ROUTER COMPLETED OR NOT   *********************")
     const { userId, productId, rating, content } = req.body;
@@ -53,6 +67,7 @@ router.post(
 
 router.patch(
   '/:reviewId',
+  validateReview,
   requireAuth,
   asyncHandler(async (req, res) => {
     // console.log(req.body);

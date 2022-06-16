@@ -19,18 +19,18 @@
 }
 
 .footer-developed-by {
-  padding-left: 30px;
+  /* padding-left: 30px; */
   font-weight: bold;
 }
 
-.footer-developerList {
+/* .footer-developerList {
   display: flex;
   justify-content: space-around;
   align-items: center;
   /* gap: 70px; */
-  width: auto;
-  flex: 1;
-}
+/* width: auto;
+  flex: 1; */
+/* }  */
 
 .footer-developer-name {
   display: flex;

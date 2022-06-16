@@ -44,13 +44,17 @@ export const emptyCarts = () => async (dispatch) => {
 };
 
 export const getCarts = (userId) => async (dispatch) => {
-  const res = await csrfFetch(`/api/cart/${userId}`);
-  // console.log('********************8', res);
-  if (res.ok) {
-    const carts = await res.json();
-    // console.log('***************', reviews);
-    dispatch(loadCart(carts));
-    return carts;
+  if (userId) {
+    const res = await csrfFetch(`/api/cart/${userId}`);
+    // console.log('********************8', res);
+    if (res.ok) {
+      const carts = await res.json();
+      // console.log('***************', reviews);
+      dispatch(loadCart(carts));
+      return carts;
+    }
+  } else {
+    return {};
   }
 };
 
