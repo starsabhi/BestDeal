@@ -18,7 +18,8 @@ export default function EditReview({
 
   const handleEditReview = async (e) => {
     e.preventDefault();
-
+    const newContent = editformcontent.trim();
+    editformcontent.trim();
     const newReview = {
       userId: sessionuid,
       productId: prodcutid,
@@ -47,14 +48,16 @@ export default function EditReview({
           autoComplete="off"
           onSubmit={(e) => handleEditReview(e)}
         >
-          <ul>
+          <ul className="errorsLi">
             {errors.map((error, idx) => (
-              <li key={idx}>{error}</li>
+              <li className="errorsLi" key={idx}>
+                * {error}
+              </li>
             ))}
           </ul>
           <div className="edit-song-form-group">
             <label className="edit-song-label" htmlFor="songTitle">
-              <div>Review Content</div>
+              <div>*Review</div>
             </label>
             <input
               id="songTitle"

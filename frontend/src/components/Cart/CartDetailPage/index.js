@@ -110,30 +110,38 @@ function CartDetailPage() {
               {cart?.map(
                 ({ id, name, productId, imageUrl, price, quantity }) => (
                   <div className="CartDeatailPageInnerDiv" key={id}>
-                    <div>{name}</div>
+                    <div className="nameDivCartdpage">{name}</div>
                     <img
                       className="imageforCartdetailPage"
                       src={imageUrl}
                       alt={imageUrl}
                     ></img>
 
-                    <div>${price}</div>
-                    <div>Quantity:{quantity}</div>
-                    <button
-                      onClick={() =>
-                        helperFunctionEdit(
-                          id,
-                          productId,
-                          name,
-                          price,
-                          quantity,
-                          imageUrl
-                        )
-                      }
-                    >
-                      Update Quantity
-                    </button>
-                    <button onClick={() => handleCartDelete(id)}>Delete</button>
+                    <div className="simpleDivDiv">${price}</div>
+                    <div className="simpleDivDiv">Quantity:{quantity}</div>
+                    <div className="bothBtnforCartpage">
+                      <button
+                        className="updateAnddeleteBtn"
+                        onClick={() =>
+                          helperFunctionEdit(
+                            id,
+                            productId,
+                            name,
+                            price,
+                            quantity,
+                            imageUrl
+                          )
+                        }
+                      >
+                        Update Quantity
+                      </button>
+                      <button
+                        className="updateAnddeleteBtn"
+                        onClick={() => handleCartDelete(id)}
+                      >
+                        Delete
+                      </button>
+                    </div>
                   </div>
                 )
               )}

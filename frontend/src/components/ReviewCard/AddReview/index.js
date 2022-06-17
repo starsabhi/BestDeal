@@ -12,12 +12,13 @@ export default function AddReview({ sessionuid, prodcutid, closeModal }) {
 
   const handleSubmitReview = async (e) => {
     e.preventDefault();
-
+    const newContent = content.trim();
+    // console.log(`888${typeof content}888`);
     const newReview = {
       userId: sessionuid,
       productId: prodcutid,
       rating: 4,
-      content,
+      content: newContent,
     };
 
     const review = await dispatch(writeReview(newReview)).catch(async (res) => {
@@ -44,14 +45,16 @@ export default function AddReview({ sessionuid, prodcutid, closeModal }) {
           autoComplete="off"
           onSubmit={(e) => handleSubmitReview(e)}
         >
-          <ul>
+          <ul className="errorsLi">
             {errors.map((error, idx) => (
-              <li key={idx}>{error}</li>
+              <li className="errorsLi" key={idx}>
+                * {error}
+              </li>
             ))}
           </ul>
           <div className="edit-song-form-group">
             <label className="edit-song-label" htmlFor="songTitle">
-              <div>Review Content</div>
+              <div>*Review</div>
             </label>
             <input
               id="songTitle"

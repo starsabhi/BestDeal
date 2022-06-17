@@ -32,13 +32,15 @@ function ProfileButton({ user }) {
     <>
       <div className="newDivDemoUser">
         {/* <div className="totalItemCartInNavBar"> */}
-        <TotalItemCart />
         {/* </div> */}
         <div className="userNameDivinNav">Hello {user.username}</div>
+        <TotalItemCart />
+        <button className="logOutBtnele" onClick={() => ordersClick()}>
+          Your Orders
+        </button>
         <button className="logOutBtnele" onClick={logout}>
           Log Out
         </button>
-        <button onClick={() => ordersClick()}>Orders</button>
       </div>
     </>
   );

@@ -47,11 +47,13 @@ function Navigation({ isLoaded }) {
         >
           Demo
         </button>
+
         <NavLink className="navLogin buttonfornavforSpace" to="/login">
-          Log In
+          <button className="log-InNAv">Log In</button>
         </NavLink>
+
         <NavLink className="navSignUp buttonfornavforSpace" to="/signup">
-          Sign Up
+          <button className="sing-upNAv">Sign up</button>
         </NavLink>
       </div>
     );

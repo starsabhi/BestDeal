@@ -15,7 +15,7 @@ const validateReview = [
     .isLength({ max: 200 })
     .withMessage('Review should have max 200 characters')
     .matches(/.*\S.*/)
-    .withMessage('Comment must not be only spaces'),
+    .withMessage('Review must not be only spaces'),
   // .matches(/.*\s{1,4}*/)
   // .withMessage('Please remove extra spaces'),
   handleValidationErrors,
