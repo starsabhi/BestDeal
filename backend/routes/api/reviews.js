@@ -12,8 +12,12 @@ const validateReview = [
     .withMessage('Review cannot be empty')
     .isLength({ min: 5 })
     .withMessage('Review should have at least 5 characters')
-    .custom((value) => !/^ *$/.test(value))
-    .withMessage('Review must contain characters'),
+    .isLength({ max: 200 })
+    .withMessage('Review should have max 200 characters')
+    .matches(/.*\S.*/)
+    .withMessage('Comment must not be only spaces'),
+  // .matches(/.*\s{1,4}*/)
+  // .withMessage('Please remove extra spaces'),
   handleValidationErrors,
 ];
 
@@ -24,7 +28,7 @@ router.get(
     // const business = await db.Business.findByPk(productId);
     const reviews = await db.Review.findAll({
       where: {
-        productId,
+        productId: productId,
       },
       include: [{ model: db.User }],
     });

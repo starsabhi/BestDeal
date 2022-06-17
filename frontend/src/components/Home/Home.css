@@ -3,6 +3,10 @@
   margin: 10px;
 }
 
+.homepageDiv {
+  /* background-image: url(../../images/background/back1.jpg); */
+}
+
 .productListClass {
   /* display: flex;
   flex-direction: column; */

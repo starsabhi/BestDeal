@@ -20,6 +20,8 @@ function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
   const [editcontent, setEditContent] = useState('');
 
   const prodcutid = Id.productId;
+  const newArr = Reviews.filter((review) => review.productId == prodcutid);
+  // console.log(newArr);
 
   useEffect(() => {
     dispatch(getReviews(prodcutid));
@@ -133,52 +135,54 @@ function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
       </MainModal>
 
       <div className="MainDivForReviewCard">
-        <div className="REviewCardDivH1Tag">
-          <h1>ReviewCard</h1>
-        </div>
-        {sessionUser ? (
+        <div className="MainDivForReviewCard2">
           <div className="REviewCardDivH1Tag">
-            <button
-              className="AddReviewbtninsideDiv"
-              onClick={() => passingAdd(true)}
-            >
-              Add review
-            </button>
+            <h1>ReviewCard</h1>
           </div>
-        ) : (
-          <></>
-        )}
-        {Reviews?.map((review) => (
-          <div className="reviewContentDivwrap" key={review?.id}>
-            {review?.content}
-            {sessionUser && sessionUser?.id === review.userId ? (
-              <>
-                <div className="mainDivforTwoBtneditRdR">
-                  <button
-                    className="reviewEditButton"
-                    onClick={() => {
-                      passingFun(review?.id);
-                      setEditContent(review?.content);
-                    }}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    className="reviewDeleteButton"
-                    onClick={() => {
-                      passingDelete(review?.id);
-                      setEditContent(review?.content);
-                    }}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </>
-            ) : (
-              <></>
-            )}
-          </div>
-        ))}
+          {sessionUser ? (
+            <div className="REviewCardDivH1Tag">
+              <button
+                className="AddReviewbtninsideDiv"
+                onClick={() => passingAdd(true)}
+              >
+                Add review
+              </button>
+            </div>
+          ) : (
+            <></>
+          )}
+          {newArr?.map((review) => (
+            <div className="reviewContentDivwrap" key={review?.id}>
+              {review?.content}
+              {sessionUser && sessionUser?.id === review.userId ? (
+                <>
+                  <div className="mainDivforTwoBtneditRdR">
+                    <button
+                      className="reviewEditButton"
+                      onClick={() => {
+                        passingFun(review?.id);
+                        setEditContent(review?.content);
+                      }}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      className="reviewDeleteButton"
+                      onClick={() => {
+                        passingDelete(review?.id);
+                        setEditContent(review?.content);
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <></>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );

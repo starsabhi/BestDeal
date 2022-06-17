@@ -42,7 +42,7 @@ function Productsdetail() {
 
   // console.log(Reviews?.reviews[0].content, '********REVIEWS*********');
   return (
-    <>
+    <div>
       {loading ? (
         <div className="loadingScreenDemo">
           <ClipLoader color={'#344441'} loading={loading} size={150} />
@@ -54,10 +54,24 @@ function Productsdetail() {
             <div className="productListClassforProductdetailPage">
               <div key={Product?.id} className="productClassArr">
                 <div className="contentdivForproductdetailpage">
-                  <h2 className="productNameh2">{Product?.name}</h2>
-                  <p>${Product.price}</p>
-                  <img className="productListimage" src={Product?.imageUrl} />
-                  <p className="descriptionptag">{Product?.description}</p>
+                  <div className="grid-container-element">
+                    <div className="grid-child-element classOneImage">
+                      <img
+                        className="productListimageonProductdetailpage"
+                        src={Product?.imageUrl}
+                        alt={Product?.imageUrl}
+                      />
+                    </div>
+                    <div className="grid-child-element classTwoinfo">
+                      <div className="innerDivForsecondGrid">
+                        <h2 className="productNameh2">{Product?.name}</h2>
+                        <p>${Product.price}</p>
+                        <p className="descriptionptag">
+                          {Product?.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -75,7 +89,7 @@ function Productsdetail() {
           />
         </div>
       )}
-    </>
+    </div>
   );
 }
 
