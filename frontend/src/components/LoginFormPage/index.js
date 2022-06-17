@@ -35,13 +35,15 @@ function LoginFormPage() {
         <div className="loginformMainDivInner">
           <form className="formLoginformElement" onSubmit={handleSubmit}>
             Log in
-            <ul>
+            <ul className="errorsSingup">
               {errors.map((error, idx) => (
-                <li key={idx}>{error}</li>
+                <li className="errorsSingup" key={idx}>
+                  *{error}
+                </li>
               ))}
             </ul>
             <label className="formLabelDivinnerforLogin">
-              Username or Email
+              *Username or Email
               <input
                 type="text"
                 value={credential}
@@ -50,7 +52,7 @@ function LoginFormPage() {
               />
             </label>
             <label className="formLabelDivinnerforLogin">
-              Password
+              *Password
               <input
                 type="password"
                 value={password}

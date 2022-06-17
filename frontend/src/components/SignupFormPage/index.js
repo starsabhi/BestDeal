@@ -41,13 +41,15 @@ function SignupFormPage() {
         <div className="loginformMainDivInner">
           <form className="formLoginformElement" onSubmit={handleSubmit}>
             Sign-up
-            <ul>
+            <ul className="errorsSingup">
               {errors.map((error, idx) => (
-                <li key={idx}>{error}</li>
+                <li className="errorsSingup" key={idx}>
+                  * {error}
+                </li>
               ))}
             </ul>
             <label className="formLabelDivinnerforLogin">
-              Email
+              *Email
               <input
                 type="text"
                 value={email}
@@ -56,7 +58,7 @@ function SignupFormPage() {
               />
             </label>
             <label className="formLabelDivinnerforLogin">
-              Username
+              *Username
               <input
                 type="text"
                 value={username}
@@ -65,7 +67,7 @@ function SignupFormPage() {
               />
             </label>
             <label className="formLabelDivinnerforLogin">
-              Password
+              *Password
               <input
                 type="password"
                 value={password}
@@ -74,7 +76,7 @@ function SignupFormPage() {
               />
             </label>
             <label className="formLabelDivinnerforLogin">
-              Confirm Password
+              *Confirm Password
               <input
                 type="password"
                 value={confirmPassword}

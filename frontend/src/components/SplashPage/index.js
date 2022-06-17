@@ -2,25 +2,26 @@ import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './SplashPage.css';
 import AppLogo from '../../images/Navbar/logo.svg';
+import Footer from '../Footer';
 function SplashPage() {
   return (
     <>
-      <div>
+      <div className="mainDiv">
         <div className="splashPageMainDiv">
-          <div className="infoforsplashPage">
-            <div className="appLogoSplashPage">
-              <img className="appLogoSplashPageimg" src={AppLogo}></img>
-            </div>
-            <h3>Everyone deserve best products with best price</h3>
-            <h3>BestDeal is one of the best online store to shop</h3>
+          <div className="splashPAGEdiv">
+            <img className="mainDivimage" src={AppLogo}></img>
+            Best Deal is online shop where you can buy best products with best
+            price
             <NavLink exact to={'/products'}>
-              <div className="divbutttonforladningPage">
-                <button className="ProductBtnonSplashPage">
-                  To Check Products >>> Click here
-                </button>
-              </div>
+              <button className="productMainbtn">
+                Click here to View products >>>
+              </button>
             </NavLink>
           </div>
+          <div className="infoforsplashPage"></div>
+        </div>
+        <div>
+          <Footer />
         </div>
       </div>
     </>
