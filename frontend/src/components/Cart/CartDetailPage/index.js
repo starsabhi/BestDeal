@@ -12,12 +12,12 @@ import { NavLink } from 'react-router-dom';
 function CartDetailPage() {
   const sessionUser = useSelector((state) => state.session.user);
   // const productList = useSelector((state) => Object.values(state.product));
-  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
 
   // const [deleteCartId, setDeleteCartId] = useState(null);
   // const [totalItem, setTotalItem] = useState(1);
 
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {

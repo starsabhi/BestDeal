@@ -1,5 +1,5 @@
 .addCartButtonforbox {
-  margin-left: 30px;
+  /* margin-left: 30px; */
   background-color: #0f1111d5;
   color: white;
   cursor: pointer;
@@ -10,12 +10,56 @@
 
 .addCartButtonforbox:hover {
   transform: scale(1.1);
-  color: gray;
+  color: rgba(242, 242, 242, 1);
 }
 
 .addCartButtonforboxDivmainDiv {
+  /* display: flex; */
+  /* justify-content: center; */
+  align-items: center;
+  /* margin-top: 60%; */
+}
+
+.quantityDivforcartbox {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-top: 60%; */
+  margin: 10px;
+  /* margin-top: 120px; */
+}
+
+.imagelogoCartdiv {
+  display: flex;
+  justify-content: center;
+}
+
+.imagelogoCartBox {
+  height: 100px;
+  width: 100px;
+}
+
+.btnForcartBox {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  padding: 5px;
+}
+
+.imagelogoCartdivwithourlogin {
+  display: flex;
+  flex-direction: column;
+}
+
+.imagelogoCartBoxwithoutlog {
+  height: 100px;
+  /* width: 100px; */
+  /* display: flex;
+  justify-content: center; */
+}
+
+.h3forwithoutlogin {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  font-family: Arial, Helvetica, sans-serif;
 }
