@@ -1,16 +1,24 @@
 .MainDivForReviewCard {
-  border: 1px solid rgba(189, 189, 189, 1);
+  /* border: 1px solid rgba(189, 189, 189, 1); */
   border-radius: 15px;
   margin: 80px;
   display: flex;
+  /* flex-direction: column; */
   justify-content: center;
   flex-direction: column;
   /* width: 500px; */
+  margin-left: 30%;
+  margin-right: 30%;
 }
 .MainDivForReviewCard2 {
   display: flex;
   justify-content: center;
-  width: 500px;
+  flex-direction: column;
+  /* width: 500px; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-radius: 5px;
 }
 
 .REviewCardDivH1Tag {
@@ -38,8 +46,8 @@
   word-break: break-all;
   overflow-wrap: break-word;
   margin: 10px;
-  border: 1px solid gray;
-  border-radius: 3px;
+  border: 0.5px solid rgba(184, 187, 198, 1);
+  border-radius: 5px;
   padding: 5px;
 }
 
