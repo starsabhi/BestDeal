@@ -218,7 +218,14 @@ function OrderDetail() {
             <div className="totalPriceNumber">TOTAL PRICE ${totalPrice}</div>
           </div>
           <div>
-            <button onClick={() => handleFinalAddOrder()}>Confirm Order</button>
+            <div className="OrderDetailPageBtnDiv">
+              <button
+                className="CartCompleteBtn"
+                onClick={() => handleFinalAddOrder()}
+              >
+                Confirm Order
+              </button>
+            </div>
           </div>
         </div>
       </div>

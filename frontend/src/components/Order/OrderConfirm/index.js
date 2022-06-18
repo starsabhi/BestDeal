@@ -81,9 +81,23 @@ export default function OrderConfirm({ totalPrice, closeModal }) {
     <>
       <div className="orderFinalModalMainDiv">
         <div className="OrderConfirmMainDiv">
-          YOUR ORDER WILL BE ADDED IN ORDER LIST AND CART WILL BE EMPTY
-          <button onClick={() => handleFinalAdd()}>Confirm</button>
-          <button onClick={() => handleCancel()}>Cancel</button>
+          <div className="warningDivOrderConfirm">
+            YOUR ORDER WILL BE ADDED IN ORDER LIST AND CART WILL BE EMPTY
+          </div>
+          <div className="divFinalConfirmOrder">
+            <button
+              className="modalBtnConfirmmodal"
+              onClick={() => handleFinalAdd()}
+            >
+              Confirm
+            </button>
+            <button
+              className="modalBtnConfirmmodal"
+              onClick={() => handleCancel()}
+            >
+              Cancel
+            </button>
+          </div>
         </div>
       </div>
     </>

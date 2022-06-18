@@ -130,55 +130,63 @@ export default function UpdateOrder() {
             />
           </MainModal>
           <div className="bodyofCartOrderList">
-            {newArr.map(
-              ({
-                id,
-                orderId,
-                userId,
-                productId,
-                name,
-                price,
-                imageUrl,
-                quantity,
-              }) => (
-                <>
-                  <img
-                    className="bodyCartorderimage"
-                    src={imageUrl}
-                    alt={imageUrl}
-                  ></img>
-                  <div>Name:{name}</div>
-                  <div>Price:${price}</div>
-                  <div>Quantity:{quantity}</div>
-
+            <div className="innnerDivmainUpdateOrderDiv">
+              {newArr.map(
+                ({
+                  id,
+                  orderId,
+                  userId,
+                  productId,
+                  name,
+                  price,
+                  imageUrl,
+                  quantity,
+                }) => (
                   <>
-                    <button
-                      onClick={() =>
-                        helperFunctionEdit(
-                          id,
-                          orderId,
-                          userId,
-                          productId,
-                          name,
-                          price,
-                          imageUrl,
-                          quantity
-                        )
-                      }
-                    >
-                      Update
-                    </button>
-                    <button onClick={() => handleOrderCartDelete(id)}>
+                    <div className="innerOrderUpdateOrderCartListDivand">
+                      <img
+                        className="bodyCartorderimage"
+                        src={imageUrl}
+                        alt={imageUrl}
+                      ></img>
+                      <div>Name:{name}</div>
+                      <div>Price:${price}</div>
+                      <div>Quantity:{quantity}</div>
+
+                      <>
+                        <button
+                          className="submitFinalUpdate789"
+                          onClick={() =>
+                            helperFunctionEdit(
+                              id,
+                              orderId,
+                              userId,
+                              productId,
+                              name,
+                              price,
+                              imageUrl,
+                              quantity
+                            )
+                          }
+                        >
+                          Update
+                        </button>
+                        {/* <button onClick={() => handleOrderCartDelete(id)}>
                       Delete
-                    </button>
+                    </button> */}
+                      </>
+                    </div>
                   </>
-                </>
-              )
-            )}
+                )
+              )}
+            </div>
+            <button
+              className="submitFinalUpdate789"
+              onClick={(e) => handleTotalpriceUpdate(e)}
+            >
+              Submit Changes
+            </button>
           </div>
-          <button onClick={(e) => handleTotalpriceUpdate(e)}>
-            Submit Changes
-          </button>
         </div>
       </div>
     </>
