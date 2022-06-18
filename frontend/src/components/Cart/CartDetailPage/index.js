@@ -152,9 +152,9 @@ function CartDetailPage() {
         {cart.length ? (
           <div className="TotalPriceDiv">
             <TotalPriceCart />
-            <div>
+            <div className="OrderDetailPageBtnDiv">
               <NavLink to="/orderdetail">
-                <button>Place Your Order</button>
+                <button className="CartCompleteBtn">Place Your Order</button>
               </NavLink>
             </div>
           </div>

@@ -19,12 +19,12 @@ export default function EditReview({
   const handleEditReview = async (e) => {
     e.preventDefault();
     const newContent = editformcontent.trim();
-    editformcontent.trim();
+    const newStr = editformcontent.trim();
     const newReview = {
       userId: sessionuid,
       productId: prodcutid,
       rating: 4,
-      content: editformcontent,
+      content: newStr,
     };
 
     const review = await dispatch(updateReview(newReview, reviewId)).catch(

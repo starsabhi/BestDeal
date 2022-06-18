@@ -79,9 +79,14 @@ export default function OrderList() {
                   {order.createdAt.slice(0, 10) == todayDate3 ? (
                     <div>
                       <NavLink to={`/updateorder/${order.id}`}>
-                        <button>Update Order</button>
+                        <button className="UpdateOrderBtnforsecondPG">
+                          Update Order
+                        </button>
                       </NavLink>
-                      <button onClick={() => handleDelete(order.id)}>
+                      <button
+                        className="UpdateOrderBtnforsecondPG1"
+                        onClick={() => handleDelete(order.id)}
+                      >
                         Delete Order
                       </button>
                     </div>
