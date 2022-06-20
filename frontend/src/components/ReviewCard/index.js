@@ -137,7 +137,7 @@ function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
       <div className="MainDivForReviewCard">
         <div className="MainDivForReviewCard2">
           <div className="REviewCardDivH1Tag">
-            <h1>ReviewCard</h1>
+            <div className="reviewCardHeadaer">Review Card</div>
           </div>
           {sessionUser ? (
             <div className="REviewCardDivH1Tag">
@@ -145,7 +145,7 @@ function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
                 className="AddReviewbtninsideDiv"
                 onClick={() => passingAdd(true)}
               >
-                Add review
+                Add Review
               </button>
             </div>
           ) : (

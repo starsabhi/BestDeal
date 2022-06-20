@@ -11,7 +11,7 @@ export default function CartBox({ Product, productId }) {
   const dispatch = useDispatch();
   const [totalItem, setTotalItem] = useState(1);
   // console.log('********', Product, cartPrevious);
-  console.log('****', totalItem);
+  // console.log('****', totalItem);
 
   const handleChange = (e) => {
     setTotalItem(e.target.value);
@@ -23,14 +23,14 @@ export default function CartBox({ Product, productId }) {
 
   const handleAddToCart = async (e) => {
     e.preventDefault();
-    console.log(cartPrevious);
+    // console.log(cartPrevious);
     let alreadyProduct = cartPrevious?.filter((oneCart) => {
       // console.log(oneCart.productId == productId);
       return oneCart.productId == productId;
     });
-    console.log(alreadyProduct);
+    // console.log(alreadyProduct);
     if (alreadyProduct.length) {
-      console.log(alreadyProduct);
+      // console.log(alreadyProduct);
       const cartId = alreadyProduct[0].id;
       let previousQuantity = alreadyProduct[0].quantity;
       // console.log(previousQuantity);
@@ -56,7 +56,7 @@ export default function CartBox({ Product, productId }) {
         quantity: parseInt(totalItem),
       };
 
-      const cartAdd = await dispatch(addItemToCart(newItem));
+      const cartAdd = dispatch(addItemToCart(newItem));
       if (cartAdd) {
         // console.log('Completed');
       }

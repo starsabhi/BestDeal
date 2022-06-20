@@ -1,4 +1,4 @@
-import './EditReview.css';
+import './AddReview.css';
 import { getReviews, writeReview } from '../../../store/review';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -12,13 +12,13 @@ export default function AddReview({ sessionuid, prodcutid, closeModal }) {
 
   const handleSubmitReview = async (e) => {
     e.preventDefault();
-    const newContent = content.trim();
+    // const newContent = content.trim();
     // console.log(`888${typeof content}888`);
     const newReview = {
       userId: sessionuid,
       productId: prodcutid,
       rating: 4,
-      content: newContent,
+      content: content,
     };
 
     const review = await dispatch(writeReview(newReview)).catch(async (res) => {
@@ -37,11 +37,11 @@ export default function AddReview({ sessionuid, prodcutid, closeModal }) {
   };
 
   return (
-    <div className="resource-edit-form-container">
-      <div className="edit-song-card">
-        <h2 className="edit-song-header">Add Review</h2>
+    <div className="resource-add-form-container">
+      <div className="add-review-card">
+        <h2 className="add-review-header">Add Review</h2>
         <form
-          className={'resource-edit-form'}
+          className={'resource-add-form'}
           autoComplete="off"
           onSubmit={(e) => handleSubmitReview(e)}
         >
@@ -52,15 +52,15 @@ export default function AddReview({ sessionuid, prodcutid, closeModal }) {
               </li>
             ))}
           </ul>
-          <div className="edit-song-form-group">
-            <label className="edit-song-label" htmlFor="songTitle">
+          <div className="add-review-form-group">
+            <label className="add-review-label" htmlFor="reviewContent">
               <div>*Review</div>
             </label>
-            <input
-              id="songTitle"
-              className="edit-song-input"
+            <textarea
+              id="reviewContent"
+              className="add-review-input"
               type="text"
-              name="songTitle"
+              name="content"
               value={content}
               onChange={(e) => setContent(e.target.value)}
               required

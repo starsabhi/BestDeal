@@ -1,4 +1,4 @@
-.resource-edit-form-container {
+.resource-add-form-container {
   display: flex;
   justify-content: center;
   /* align-items: center; */
@@ -8,7 +8,7 @@
   overflow-y: auto;
 }
 
-.edit-review-card {
+.add-review-card {
   width: 650px;
   max-height: 650px;
   /* min-height: calc(100vh - 3rem); */
@@ -18,9 +18,10 @@
   /* box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2); */
   background-color: rgb(243, 243, 243);
   position: relative;
+  border-radius: 5px;
 }
 
-.edit-review-header {
+.add-review-header {
   text-align: center;
   margin: 0px;
   margin-bottom: 10px;
@@ -52,7 +53,7 @@
   margin: 0px;
 }
 
-.resource-edit-form {
+.resource-add-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,15 +62,17 @@
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2); */
 }
 
-.edit-review-form-group {
+.add-review-form-group {
   display: flex;
+
   width: 100%;
+
   border-radius: 4px;
   padding: 2px;
   margin-bottom: 16px;
 }
 
-.edit-review-label {
+.add-review-label {
   margin-left: -30px;
   display: flex;
   justify-content: flex-end;
@@ -82,10 +85,9 @@
   color: rgb(51, 51, 51);
 }
 
-.edit-review-input {
+.add-review-input {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 16px;
-  border: none;
   border-radius: 4px;
   height: 40px;
   width: 400px;
@@ -93,7 +95,7 @@
   padding-left: 10px;
 }
 
-.edit-song-input:focus {
+.add-review-input:focus {
   outline: solid 1px;
 }
 
@@ -102,36 +104,28 @@
   flex-direction: row;
   justify-content: center;
   /* width: 300px; */
+  /* margin: 10px; */
 }
 
-.resource-btn {
-  margin-top: 12px;
-  padding: 10px 15px;
-  border: 1px solid rgb(3, 161, 198);
-  border-radius: 4px;
-  width: 100%;
-
-  font-size: 16px;
-  text-decoration: none;
-  font-weight: 200;
-  color: white;
-  background-color: rgb(3, 161, 198);
-
+.resource-cancel-btn,
+.resource-delete-btn {
+  height: 50px;
+  width: 100px;
+  margin: 10px;
+  border: 1px solid rgba(139, 143, 162, 1);
+  border-radius: 5px;
   cursor: pointer;
-  /* transition: border 0.5s, background-color 0.5s, color 0.5s; */
-  transition-property: background-color;
-  transition-duration: 0.2s;
-  transition-timing-function: ease;
-  transition-delay: 0s;
+  transition-duration: 0.4s;
 }
 
-.resource-btn:hover {
-  background-color: rgba(3, 162, 198, 0.76);
+.resource-cancel-btn:hover {
+  background-color: rgba(79, 83, 99, 1);
+  transform: scale(1.1);
 }
 
-.resource-btn:disabled {
-  background-color: rgb(126, 126, 126);
-  border: 1px solid rgb(126, 126, 126);
+.resource-delete-btn:hover {
+  background-color: rgba(79, 83, 99, 1);
+  transform: scale(1.1);
 }
 
 .errorsLi {

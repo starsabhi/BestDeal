@@ -15,18 +15,28 @@ export default function Footer() {
             <div>Abhishek Bornak</div>
             <div className="footer-image-links">
               <a
-                href="https://github.com/starsabhi/BestDeal"
+                href="https://github.com/starsabhi"
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src={githubLogo} height="25px" alt="github"></img>
+                <img
+                  className="footerIconClass"
+                  src={githubLogo}
+                  height="23px"
+                  alt="github"
+                ></img>
               </a>
               <a
                 href="https://www.linkedin.com/in/abhishek-bornak-semasna514865/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src={linkedInLogo} height="25px" alt="linkedIn"></img>
+                <img
+                  className="footerIconClass"
+                  src={linkedInLogo}
+                  height="23px"
+                  alt="linkedIn"
+                ></img>
               </a>
             </div>
           </div>

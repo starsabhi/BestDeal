@@ -1,8 +1,6 @@
 import { deleteReview } from '../../../store/review';
-// import { useEffect, useState } from 'react';
-// import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-// import { NavLink, Redirect, useHistory } from 'react-router-dom';
+import './DeleteReview.css';
 export default function DeleteReview({
   reviewId,
   sessionuid,
@@ -23,11 +21,11 @@ export default function DeleteReview({
 
   return (
     <div className="resource-edit-form-container">
-      <div className="edit-song-card">
-        <h2 className="edit-song-header">Delete Review</h2>
+      <div className="delete-review-card">
+        <h2 className="delete-review-header">Delete Review</h2>
         <form className={'resource-edit-form'} autoComplete="off">
           This will permanently delete your review
-          <div className="edit-song-form-group"></div>
+          <div className="delete-song-form-group"></div>
           <div className="resource-edit-form-btn-div">
             <div className="resource-btn-container">
               <button

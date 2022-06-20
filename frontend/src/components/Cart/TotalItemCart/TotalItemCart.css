@@ -2,17 +2,20 @@
   /* height: 60px; */
   width: 50px;
   /* border: 1px solid black; */
+  /* border: 1px solid green; */
+  /* height: 40px; */
   transition-duration: 0.2s;
 }
 
 .shoppindCartTotalNumberOfItems:hover {
-  border: 1px solid white;
+  transform: scale(1.05);
+  /* border: 0.2px solid white; */
 }
 
 .imageCartTotalSumCount {
-  height: 35px;
-  width: 35px;
-  margin-left: 8px;
+  height: 30px;
+  width: 30px;
+  margin-left: 10px;
   fill: white;
 }
 
@@ -20,4 +23,9 @@
   display: flex;
   justify-content: center;
   color: white;
+}
+
+.carDivonNav {
+  /* height: 30px; */
+  /* border: 1px solid green; */
 }

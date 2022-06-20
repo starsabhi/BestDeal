@@ -16,7 +16,9 @@ function Home() {
   return (
     <>
       <div className="homepageDiv">
-        <h2 className="productlistnameclass">Product List</h2>
+        <h2 className="productlistnameclass">
+          <span>Our Product List</span>
+        </h2>
         <div className="HomepageMainDiv">
           <div className="productListClass">
             {productList?.map(
@@ -39,10 +41,10 @@ function Home() {
                         <img className="productListimage" src={imageUrl} />
                       </div>
                       <div className="productnameDivforMain">
-                        <h2 className="productNameh2">{name}</h2>
+                        <div className="productNameh2">{name}</div>
                       </div>
                       <div className="priceMainDiv">
-                        <h3>${price}</h3>
+                        <div>${price}</div>
                       </div>
                     </NavLink>
                     {/* <p className="descriptionptag">{description}</p> */}

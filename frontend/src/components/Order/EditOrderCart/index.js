@@ -46,7 +46,11 @@ export default function EditOrderCart({
     <>
       <div className="editCartDeatailmainDiv">
         <div className="updatequnatity456">Update quantity</div>
-        <select value={totalItem} onChange={(e) => handleChange(e)}>
+        <select
+          className="updateselectele564"
+          value={totalItem}
+          onChange={(e) => handleChange(e)}
+        >
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -58,15 +62,17 @@ export default function EditOrderCart({
           <option value="9">9</option>
           <option value="10">10</option>
         </select>
-        <button
-          className="submitFinalUpdate789"
-          onClick={(e) => handleEditToCart(e)}
-        >
-          Update
-        </button>
-        <button className="submitFinalUpdate789" onClick={() => closeModal()}>
-          Cancel
-        </button>
+        <div className="updateEditCartselect5897">
+          <button
+            className="submitFinalUpdate789"
+            onClick={(e) => handleEditToCart(e)}
+          >
+            Update
+          </button>
+          <button className="submitFinalUpdate789" onClick={() => closeModal()}>
+            Cancel
+          </button>
+        </div>
       </div>
     </>
   );
