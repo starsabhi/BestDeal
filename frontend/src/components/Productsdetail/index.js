@@ -1,5 +1,5 @@
 // Productsdetail
-import { useParams } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getOneProduct } from '../../store/product';
 import { useDispatch, useSelector } from 'react-redux';

@@ -5,6 +5,7 @@
 
 .homepageDiv {
   /* background-image: url(../../images/background/back1.jpg); */
+  background-color: rgba(247, 247, 248, 1);
 }
 
 .productListClass {
@@ -21,6 +22,7 @@
   border-radius: 1px solid black;
 }
 .productClassArr {
+  background-color: rgba(250, 250, 250, 1);
   /* display: flex; */
   /* border-radius: 1px solid black; */
 }
@@ -50,9 +52,13 @@
   margin: 5px;
 }
 
+.mainPriceDiv {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
 .productNameh2 {
   display: block;
-  font-size: 1.4em;
+  /* font-size: 1.4em; */
   font-weight: 300;
   margin-block-start: 0.9em;
   margin-block-end: 0.9em;

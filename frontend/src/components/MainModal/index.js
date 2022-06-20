@@ -32,7 +32,7 @@ const MainModal = ({ showModal, closeModal, children }) => {
     };
 
     //add event listener to entire document
-    document.addEventListener('click', eventListener);
+    // document.addEventListener('click', eventListener);
 
     //cleanup function - remove listener on dock
     return () => document.removeEventListener('click', eventListener);

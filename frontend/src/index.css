@@ -30,6 +30,7 @@ body,
   /* min-height: 100vh; */
   /* used to only apply to splash, double check in  */
   overflow: auto;
+  background-color: rgba(247, 247, 248, 1);
   position: relative;
 }
 

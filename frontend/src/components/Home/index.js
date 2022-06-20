@@ -44,7 +44,7 @@ function Home() {
                         <div className="productNameh2">{name}</div>
                       </div>
                       <div className="priceMainDiv">
-                        <div>${price}</div>
+                        <div className="mainPriceDiv">${price}</div>
                       </div>
                     </NavLink>
                     {/* <p className="descriptionptag">{description}</p> */}
