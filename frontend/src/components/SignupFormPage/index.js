@@ -1,7 +1,7 @@
 // frontend/src/components/SignupFormPage/index.js
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
 import navLogo from '../../images/Navbar/bestDeal.png';
 
@@ -35,11 +35,10 @@ function SignupFormPage() {
   return (
     <>
       <div className="loginformMainDiv">
-        <div className="loginFormimageforForm">
-          <img className="loginFormimageforFormIMG" src={navLogo}></img>
-        </div>
+        <div className="loginFormimageforForm"></div>
         <div className="loginformMainDivInner">
           <form className="formLoginformElement" onSubmit={handleSubmit}>
+            <img className="loginFormimageforFormIMG" src={navLogo}></img>
             Sign-up
             <ul className="errorsSingup">
               {errors.map((error, idx) => (
@@ -48,45 +47,60 @@ function SignupFormPage() {
                 </li>
               ))}
             </ul>
-            <label className="formLabelDivinnerforLogin">
-              *Email
-              <input
-                type="text"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </label>
-            <label className="formLabelDivinnerforLogin">
-              *Username
-              <input
-                type="text"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                required
-              />
-            </label>
-            <label className="formLabelDivinnerforLogin">
-              *Password
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </label>
-            <label className="formLabelDivinnerforLogin">
-              *Confirm Password
-              <input
-                type="password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                required
-              />
-            </label>
+            <div className="gapDivConetnet456789">
+              <label className="formLabelDivinnerforLogin">
+                *Email
+                <input
+                  className="inputFormLogSignUp"
+                  type="text"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </label>
+            </div>
+            <div className="gapDivConetnet456789">
+              <label className="formLabelDivinnerforLogin">
+                *Username
+                <input
+                  className="inputFormLogSignUp"
+                  type="text"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  required
+                />
+              </label>
+            </div>
+            <div className="gapDivConetnet456789">
+              <label className="formLabelDivinnerforLogin">
+                *Password
+                <input
+                  className="inputFormLogSignUp"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </label>
+            </div>
+            <div className="gapDivConetnet456789">
+              <label className="formLabelDivinnerforLogin">
+                *Confirm Password
+                <input
+                  className="inputFormLogSignUp"
+                  type="password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  required
+                />
+              </label>
+            </div>
             <button className="logInFormButtonforsubmit" type="submit">
               Sign Up
             </button>
+            <NavLink className={'LinkChangesForSingLog'} to={'/login'}>
+              Already have account then Log-in
+            </NavLink>
           </form>
         </div>
       </div>

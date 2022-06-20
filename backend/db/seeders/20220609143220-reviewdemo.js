@@ -22,20 +22,38 @@ module.exports = {
           userId: '2',
           productId: '2',
           rating: '4',
-          content:
-            "I don't like this shirt. I can use this one any time very nice!!!",
+          content: "I don't like this shirt.",
         },
         {
           userId: '2',
-          productId: '2',
+          productId: '3',
           rating: '4',
           content: 'I can use this for various parties!!!',
         },
         {
           userId: '3',
-          productId: '2',
+          productId: '3',
           rating: '4',
-          content: 'It is not bad shirt for this price!!!',
+          content: 'One of the best shoes in BESTDEAL!!! THANK YOU BEST DEAL',
+        },
+        {
+          userId: '3',
+          productId: '3',
+          rating: '4',
+          content: 'I really like this shoes!',
+        },
+        {
+          userId: '3',
+          productId: '4',
+          rating: '4',
+          content:
+            'It is not bad shirt for this price and I love bestDEAL and thier offers!!!',
+        },
+        {
+          userId: '3',
+          productId: '5',
+          rating: '4',
+          content: 'It is one of the best Shoes Sneakers !!!',
         },
       ],
       {}

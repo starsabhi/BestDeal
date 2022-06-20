@@ -67,7 +67,7 @@ function Productsdetail() {
                         <div className="productNameh2">{Product?.name}</div>
                         <p className="pricepTageCss">Price :${Product.price}</p>
                         <p className="descriptionptag">
-                          {Product?.description}
+                          Description: {Product?.description}
                         </p>
                       </div>
                     </div>
