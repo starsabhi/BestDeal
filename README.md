@@ -41,9 +41,14 @@ Live link : [BESTDEAL](https://bestdeal-zone.herokuapp.com/)
 
 ## Feature List
 1. (CRUD) Log-in user can create, update, delete thier own reviews. All users can read reviews on prduct detail page.
-![REVIEWS](https://user-images.githubusercontent.com/95883222/174621065-23bb69bd-2e15-4ca7-8309-626ef90f7f6d.gif)
+![image](https://user-images.githubusercontent.com/95883222/174622326-74e8556c-e348-4685-a640-df4f63a295d1.png)
+
 2. (CRUD) Log-in user can create, update(quantity) , delete shopping carts products. They can view their cart on shoppiing detail page. 
+ ![image](https://user-images.githubusercontent.com/95883222/174622201-9315df88-7df6-4010-b41d-2c19a88cfd9b.png)
+
 3. (CRUD) Log-in user can create ,view, update order (if its same day as order day), delete thier order on order detail page.
+ ![image](https://user-images.githubusercontent.com/95883222/174622455-05d9a707-9834-4a8d-9523-84cf91ae96f2.png)
+
 
 
 ## Future Feature List
