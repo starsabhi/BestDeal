@@ -10,12 +10,19 @@ const validateReview = [
   check('content')
     .exists({ checkFalsy: true })
     .withMessage('Review cannot be empty')
-    .isLength({ min: 5 })
-    .withMessage('Review should have at least 5 characters')
+    // .isLength({ min: 5 })
+    // .withMessage('Review should have at least 5 characters')
     .isLength({ max: 200 })
     .withMessage('Review should have max 200 characters')
     .matches(/.*\S.*/)
-    .withMessage('Review must not be only spaces'),
+    .withMessage('Review must not be only white spaces')
+    .custom((value) => {
+      const newStr = value.replace(/\s+/g, '');
+      return newStr.length >= 5;
+    })
+    .withMessage(
+      'Review should have at least 5 characters (excluding white spaces)'
+    ),
   // .matches(/.*\s{1,4}*/)
   // .withMessage('Please remove extra spaces'),
   handleValidationErrors,

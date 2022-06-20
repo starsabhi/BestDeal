@@ -19,6 +19,7 @@
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   border-radius: 5px;
+  padding: 12px;
 }
 
 .REviewCardDivH1Tag {
@@ -28,28 +29,38 @@
 }
 
 .AddReviewbtninsideDiv {
-  border: 1px solid lightgrey;
-  border-radius: 3px;
+  margin-bottom: 15px;
+  /* border-radius: 3px;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
     rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
   transition-duration: 0.4s;
+  cursor: pointer; */
+  background-color: rgba(0, 0, 0, 0.71);
+  color: rgba(255, 255, 255, 0.723);
   cursor: pointer;
-  margin-bottom: 15px;
+  border: 2px solid grey;
+  border-radius: 5px;
+  transition-duration: 0.4s;
 }
 
 .AddReviewbtninsideDiv:hover {
   transform: scale(1.2);
+  background-color: rgba(134, 118, 118, 0.66);
+  box-shadow: 0 12px 16px 0 rgba(239, 235, 235, 0.24),
+    0 17px 50px 0 rgba(247, 247, 247, 0.19);
+  color: black;
 }
 
 .reviewContentDivwrap {
   display: flex;
   flex-direction: column;
-  word-break: break-all;
   overflow-wrap: break-word;
+  word-break: break-all;
   margin: 10px;
-  border: 0.5px solid rgba(184, 187, 198, 1);
+  border: 0.5px solid rgb(218, 213, 213);
   border-radius: 5px;
   padding: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .mainDivforTwoBtneditRdR {
@@ -58,28 +69,43 @@
 }
 
 .reviewEditButton {
-  margin: 5px;
-  border: 1px solid lightgrey;
-  border-radius: 3px;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
-    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
-  transition-duration: 0.4s;
+  margin-right: 10px;
+  background-color: rgba(14, 14, 14, 0.648);
+  color: rgba(255, 255, 255, 0.723);
   cursor: pointer;
+  border: 2px solid grey;
+  border-radius: 5px;
+  transition-duration: 0.4s;
 }
 .reviewEditButton:hover {
-  transform: scale(1.1);
+  margin-left: 10px;
+  background-color: rgba(134, 118, 118, 0.66);
+  box-shadow: 0 12px 16px 0 rgba(239, 235, 235, 0.24),
+    0 17px 50px 0 rgba(247, 247, 247, 0.19);
+  color: black;
+  transform: scale(1.2);
 }
 
 .reviewDeleteButton {
-  margin: 5px;
-  border-radius: 3px;
-  border: 1px solid lightgrey;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
-    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
-  transition-duration: 0.4s;
+  background-color: rgba(14, 14, 14, 0.648);
+  color: rgba(255, 255, 255, 0.723);
   cursor: pointer;
+  border: 2px solid grey;
+  border-radius: 5px;
+  transition-duration: 0.4s;
 }
 
 .reviewDeleteButton:hover {
-  transform: scale(1.1);
+  background-color: rgba(134, 118, 118, 0.66);
+  box-shadow: 0 12px 16px 0 rgba(239, 235, 235, 0.24),
+    0 17px 50px 0 rgba(247, 247, 247, 0.19);
+  color: black;
+  transform: scale(1.2);
+}
+
+.reviewCardHeadaer {
+  font-weight: bolder;
+  font-size: 23px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }

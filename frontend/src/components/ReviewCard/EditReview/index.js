@@ -18,13 +18,16 @@ export default function EditReview({
 
   const handleEditReview = async (e) => {
     e.preventDefault();
-    const newContent = editformcontent.trim();
-    const newStr = editformcontent.trim();
+    // const newContent = editformcontent.trim();
+    // const newStr = editformcontent.trim();
+    // const str2 = editformcontent.replace(/\s+/g, '');
+    // console.log(str2);
+    // console.log(`88${newStr}88`, `${newStr.length}`);
     const newReview = {
       userId: sessionuid,
       productId: prodcutid,
       rating: 4,
-      content: newStr,
+      content: editformcontent,
     };
 
     const review = await dispatch(updateReview(newReview, reviewId)).catch(
@@ -41,8 +44,8 @@ export default function EditReview({
 
   return (
     <div className="resource-edit-form-container">
-      <div className="edit-song-card">
-        <h2 className="edit-song-header">Edit Review</h2>
+      <div className="edit-review-card">
+        <h2 className="edit-review-header">Edit Review</h2>
         <form
           className={'resource-edit-form'}
           autoComplete="off"
@@ -55,15 +58,15 @@ export default function EditReview({
               </li>
             ))}
           </ul>
-          <div className="edit-song-form-group">
-            <label className="edit-song-label" htmlFor="songTitle">
+          <div className="edit-review-form-group">
+            <label className="edit-review-label" htmlFor="reviewContent">
               <div>*Review</div>
             </label>
-            <input
-              id="songTitle"
-              className="edit-song-input"
+            <textarea
+              id="reviewContent"
+              className="edit-review-input"
               type="text"
-              name="songTitle"
+              name="content"
               value={editformcontent}
               onChange={(e) => setEditformcontent(e.target.value)}
               required

@@ -2,12 +2,15 @@
   /* display: flex; */
   align-items: center;
   height: 100%;
+  width: 100%;
+  overflow: hidden;
   justify-content: center;
   background-image: url(../../images/splashPageimg/main.png);
   background-size: 100% 100%;
+  background-position: center;
   background-repeat: no-repeat;
   object-fit: cover;
-  animation: change linear 12s infinite;
+  animation: change linear 18s infinite;
   background-color: white;
 }
 
@@ -17,60 +20,18 @@
     animation-timing-function: ease-in;
     background-image: url(../../images/splashPageimg/main.png);
   }
+  25% {
+    background-image: url(../../images/splashPageimg/main.png);
+  }
   50% {
     opacity: 0.7;
-    animation-timing-function: ease-out;
+    animation-timing-function: ease-in;
+    background-image: url(../../images/splashPageimg/main2.png);
+  }
+  75% {
     background-image: url(../../images/splashPageimg/main2.png);
   }
 }
-
-.infoforsplashPage {
-  margin-top: -90px;
-  color: black;
-  font-size: 35px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  z-index: 10;
-  animation: change2 linear 15s infinite;
-}
-
-@keyframes change2 {
-  0% {
-    color: black;
-    font-weight: 600;
-  }
-  50% {
-    color: black;
-    font-weight: 600;
-  }
-}
-
-.divbutttonforladningPage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-/*
-.ProductBtnonSplashPage {
-  height: 50px;
-  width: 170px;
-  background-color: black;
-  color: white;
-  cursor: pointer;
-  border: 2px solid grey;
-  border-radius: 5px;
-  transition-duration: 0.4s;
-  animation: change3 linear 5s infinite;
-}
-
-@keyframes change3 {
-  0% {
-    transform: scale(1.1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-} */
 
 .productMainbtn {
   margin-left: 40px;
@@ -95,21 +56,25 @@
 .splashPAGEdiv {
   z-index: 50;
   /* width: 80%; */
-  background-color: rgba(226, 227, 228, 1);
-  margin: 5px;
+  /* background-color: rgb(248, 248, 249); */
+  margin: 3px;
   padding: 5px;
   display: flex;
   justify-content: center;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  font-family: 'Lato';
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 72px;
+
+  text-align: center;
+  text-transform: uppercase;
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
   align-items: center;
   border-radius: 5px;
   font-weight: bolder;
 }
 
-.mainDiv {
-  height: 100%;
-}
 .mainDivimage {
-  height: 50px;
-  width: 100px;
+  height: 70px;
+  width: 130px;
 }

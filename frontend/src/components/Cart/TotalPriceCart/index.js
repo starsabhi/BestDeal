@@ -27,9 +27,7 @@ export default function TotalPriceCart() {
   // console.log('How many time value changes', theSum);
   return (
     <>
-      <div>
-        <div className="totalPriceNumber">TOTAL PRICE ${totalPrice}</div>
-      </div>
+      <div className="totalPriceNumber">TOTAL PRICE ${totalPrice}</div>
     </>
   );
 }

@@ -9,9 +9,11 @@
 .CartDeatailPageMainDiv {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  /* width: 50%; */
   float: left;
   margin: 10px 10px 10px 10px;
+  width: 500px;
+  padding: 10px;
 }
 
 .CartDeatailPageInnerDiv {
@@ -22,6 +24,8 @@
   margin: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  padding: 10px;
+
   /* width: 50%; */
 }
 
@@ -58,8 +62,10 @@
 }
 
 .TotalPriceDiv {
+  padding: 5px;
+  display: flex;
   float: right;
-  margin-right: 10%;
+  /* margin-right: 10%; */
   margin-top: 10%;
   border: 2px solid rgba(225, 227, 234, 1);
   height: 20%;
@@ -76,15 +82,17 @@
 }
 
 .MainDivForCartDetailPAge {
-  /* display: flex; */
+  display: flex;
   height: 100%;
 }
 
-.MAAINYOURCARTEHEADER {
+.MAAINYOURCARTEHEADERDiv {
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bolder;
+  margin-top: 10px;
+  padding: 5px;
 }
 
 .nameDivCartdpage {
@@ -114,4 +122,10 @@
     0 17px 50px 0 rgba(247, 247, 247, 0.19);
   color: black;
   transform: scale(1.1);
+}
+
+.innerDivTotalPrice {
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
 }

@@ -144,90 +144,121 @@ function OrderDetail() {
   return (
     <>
       <div className="orderDeatailPageMainDiv">
+        {/* {cart.length ? (
+          <></>
+        ) : (
+          <>
+            <div className="MAAINYOURCARTEHEADER">YOUR ORDER IS EMPTY</div>
+            <NavLink to={'/products'}>
+              <div>Please go to product list page to shop</div>
+            </NavLink>
+          </>
+        )} */}
         {loading ? (
           <div className="loadingScreenDemo">
             <ClipLoader color={'#344441'} loading={loading} size={150} />
           </div>
         ) : (
-          <div>
-            <MainModal
-              showModal={editCartModal}
-              closeModal={closeEditCartModal}
-            >
-              <EditCart
-                cartEditId={cartEditId}
-                productId={editCartProductId}
-                name={editCartName}
-                price={editCartPrice}
-                imageUrl={editCartimageUrl}
-                quantity={editCartQuantity}
-              />
-            </MainModal>
+          <>
+            {cart.length ? (
+              <>
+                <MainModal
+                  showModal={editCartModal}
+                  closeModal={closeEditCartModal}
+                >
+                  <EditCart
+                    cartEditId={cartEditId}
+                    productId={editCartProductId}
+                    name={editCartName}
+                    price={editCartPrice}
+                    imageUrl={editCartimageUrl}
+                    quantity={editCartQuantity}
+                  />
+                </MainModal>
 
-            <MainModal
-              showModal={orderModal}
-              closeModal={closeAddOrderCartModal}
-            >
-              <OrderConfirm totalPrice={totalPrice} />
-            </MainModal>
+                <MainModal
+                  showModal={orderModal}
+                  closeModal={closeAddOrderCartModal}
+                >
+                  <OrderConfirm totalPrice={totalPrice} />
+                </MainModal>
 
-            <div className="CartDeatailPageMainDiv">
-              {cart?.map(
-                ({ id, name, productId, imageUrl, price, quantity }) => (
-                  <div className="CartDeatailPageInnerDiv" key={id}>
-                    <div className="nameDivCartdpage">{name}</div>
-                    <img
-                      className="imageforCartdetailPage"
-                      src={imageUrl}
-                      alt={imageUrl}
-                    ></img>
+                <div className="CartDeatailPageMainDiv">
+                  <span className="MAAINYOURCARTEHEADERDiv">
+                    YOUR ORDER REVIEW
+                  </span>
+                  {cart?.map(
+                    ({ id, name, productId, imageUrl, price, quantity }) => (
+                      <div className="CartDeatailPageInnerDiv" key={id}>
+                        <div className="nameDivCartdpage">{name}</div>
+                        <img
+                          className="imageforCartdetailPage"
+                          src={imageUrl}
+                          alt={imageUrl}
+                        ></img>
 
-                    <div className="simpleDivDiv">${price}</div>
-                    <div className="simpleDivDiv">Quantity:{quantity}</div>
-                    <div className="bothBtnforCartpage">
+                        <div className="simpleDivDiv">${price}</div>
+                        <div className="simpleDivDiv">Quantity:{quantity}</div>
+                        <div className="bothBtnforCartpage">
+                          <button
+                            className="updateAnddeleteBtn"
+                            onClick={() =>
+                              helperFunctionEdit(
+                                id,
+                                productId,
+                                name,
+                                price,
+                                quantity,
+                                imageUrl
+                              )
+                            }
+                          >
+                            Update Quantity
+                          </button>
+                          <button
+                            className="updateAnddeleteBtn"
+                            onClick={() => handleCartDelete(id)}
+                          >
+                            Delete This Item
+                          </button>
+                        </div>
+                      </div>
+                    )
+                  )}
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="MAAINYOURCARTEHEADER">YOUR ORDER IS EMPTY</div>
+                <NavLink to={'/products'}>
+                  <div>Please go to product list page to shop</div>
+                </NavLink>
+              </>
+            )}
+
+            <>
+              {cart.length ? (
+                <div className="TotalPriceDiv">
+                  <div className="innerDivTotalPrice">
+                    {/* <div className="totalPriceNumber"> */}
+                    TOTAL PRICE ${totalPrice}
+                    {/* </div> */}
+                    <div className="OrderDetailPageBtnDiv">
                       <button
-                        className="updateAnddeleteBtn"
-                        onClick={() =>
-                          helperFunctionEdit(
-                            id,
-                            productId,
-                            name,
-                            price,
-                            quantity,
-                            imageUrl
-                          )
-                        }
+                        className="CartCompleteBtn"
+                        onClick={() => handleFinalAddOrder()}
                       >
-                        Update Quantity
-                      </button>
-                      <button
-                        className="updateAnddeleteBtn"
-                        onClick={() => handleCartDelete(id)}
-                      >
-                        Delete
+                        Confirm Order
                       </button>
                     </div>
                   </div>
-                )
+                </div>
+              ) : (
+                <></>
               )}
-            </div>
-          </div>
+            </>
+          </>
         )}
-        <div className="TotalPriceDiv">
-          <div>
-            <div className="totalPriceNumber">TOTAL PRICE ${totalPrice}</div>
-          </div>
-          <div>
-            <div className="OrderDetailPageBtnDiv">
-              <button
-                className="CartCompleteBtn"
-                onClick={() => handleFinalAddOrder()}
-              >
-                Confirm Order
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </>
   );

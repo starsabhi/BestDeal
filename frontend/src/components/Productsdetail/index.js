@@ -64,8 +64,8 @@ function Productsdetail() {
                     </div>
                     <div className="grid-child-element classTwoinfo">
                       <div className="innerDivForsecondGrid">
-                        <h2 className="productNameh2">{Product?.name}</h2>
-                        <p>${Product.price}</p>
+                        <div className="productNameh2">{Product?.name}</div>
+                        <p className="pricepTageCss">Price :${Product.price}</p>
                         <p className="descriptionptag">
                           {Product?.description}
                         </p>

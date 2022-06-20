@@ -81,85 +81,109 @@ function CartDetailPage() {
   return (
     <>
       <div className="MainDivForCartDetailPAge">
-        {cart.length ? (
-          <div className="MAAINYOURCARTEHEADER">YOUR CART</div>
+        {/* {cart.length ? (
+          <></>
         ) : (
-          <div className="MAAINYOURCARTEHEADER">YOUR CART IS EMPTY</div>
-        )}
+          <>
+            <div className="MAAINYOURCARTEHEADER">YOUR CART IS EMPTY</div>
+            <NavLink to={'/products'}>
+              <div>Please go to product list page to shop</div>
+            </NavLink>
+          </>
+        )} */}
         {loading ? (
           <div className="loadingScreenDemo">
             <ClipLoader color={'#344441'} loading={loading} size={150} />
           </div>
         ) : (
-          <div>
-            <MainModal
-              showModal={editCartModal}
-              closeModal={closeEditCartModal}
-            >
-              <EditCart
-                cartEditId={cartEditId}
-                productId={editCartProductId}
-                name={editCartName}
-                price={editCartPrice}
-                imageUrl={editCartimageUrl}
-                quantity={editCartQuantity}
-              />
-            </MainModal>
+          <>
+            {cart.length ? (
+              <>
+                <MainModal
+                  showModal={editCartModal}
+                  closeModal={closeEditCartModal}
+                >
+                  <EditCart
+                    cartEditId={cartEditId}
+                    productId={editCartProductId}
+                    name={editCartName}
+                    price={editCartPrice}
+                    imageUrl={editCartimageUrl}
+                    quantity={editCartQuantity}
+                  />
+                </MainModal>
 
-            <div className="CartDeatailPageMainDiv">
-              {cart?.map(
-                ({ id, name, productId, imageUrl, price, quantity }) => (
-                  <div className="CartDeatailPageInnerDiv" key={id}>
-                    <div className="nameDivCartdpage">{name}</div>
-                    <img
-                      className="imageforCartdetailPage"
-                      src={imageUrl}
-                      alt={imageUrl}
-                    ></img>
+                <div className="CartDeatailPageMainDiv">
+                  <span className="MAAINYOURCARTEHEADERDiv">YOUR CART</span>
+                  {cart?.map(
+                    ({ id, name, productId, imageUrl, price, quantity }) => (
+                      <div className="CartDeatailPageInnerDiv" key={id}>
+                        <div className="nameDivCartdpage">{name}</div>
+                        <img
+                          className="imageforCartdetailPage"
+                          src={imageUrl}
+                          alt={imageUrl}
+                        ></img>
 
-                    <div className="simpleDivDiv">${price}</div>
-                    <div className="simpleDivDiv">Quantity:{quantity}</div>
-                    <div className="bothBtnforCartpage">
-                      <button
-                        className="updateAnddeleteBtn"
-                        onClick={() =>
-                          helperFunctionEdit(
-                            id,
-                            productId,
-                            name,
-                            price,
-                            quantity,
-                            imageUrl
-                          )
-                        }
-                      >
-                        Update Quantity
-                      </button>
-                      <button
-                        className="updateAnddeleteBtn"
-                        onClick={() => handleCartDelete(id)}
-                      >
-                        Delete
-                      </button>
+                        <div className="simpleDivDiv">${price}</div>
+                        <div className="simpleDivDiv">Quantity:{quantity}</div>
+                        <div className="bothBtnforCartpage">
+                          <button
+                            className="updateAnddeleteBtn"
+                            onClick={() =>
+                              helperFunctionEdit(
+                                id,
+                                productId,
+                                name,
+                                price,
+                                quantity,
+                                imageUrl
+                              )
+                            }
+                          >
+                            Update Quantity
+                          </button>
+                          <button
+                            className="updateAnddeleteBtn"
+                            onClick={() => handleCartDelete(id)}
+                          >
+                            Delete This Item
+                          </button>
+                        </div>
+                      </div>
+                    )
+                  )}
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="MAAINYOURCARTEHEADER">
+                  YOUR CART IS EMPTY&nbsp;{' '}
+                </div>
+                <NavLink to={'/products'}>
+                  <div> Please go to product list page to shop</div>
+                </NavLink>
+              </>
+            )}
+            <>
+              {cart.length ? (
+                <div className="TotalPriceDiv">
+                  <div className="innerDivTotalPrice">
+                    <TotalPriceCart />
+                    <div className="OrderDetailPageBtnDiv">
+                      <NavLink to="/orderdetail">
+                        <button className="CartCompleteBtn">
+                          Place Your Order
+                        </button>
+                      </NavLink>
                     </div>
                   </div>
-                )
+                </div>
+              ) : (
+                <></>
               )}
-            </div>
-          </div>
-        )}
-
-        {cart.length ? (
-          <div className="TotalPriceDiv">
-            <TotalPriceCart />
-            <div className="OrderDetailPageBtnDiv">
-              <NavLink to="/orderdetail">
-                <button className="CartCompleteBtn">Place Your Order</button>
-              </NavLink>
-            </div>
-          </div>
-        ) : (
-          <></>
+            </>
+          </>
         )}
       </div>
     </>

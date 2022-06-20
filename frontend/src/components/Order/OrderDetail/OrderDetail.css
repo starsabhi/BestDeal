@@ -8,9 +8,10 @@
 .CartDeatailPageMainDiv {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  /* width: 50%; */
   float: left;
-  /* border: 1px solid black; */
+  width: 500px;
+  padding: 10px;
   margin: 10px 10px 10px 10px;
 }
 
@@ -38,6 +39,7 @@
   margin: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  padding: 10px;
 }
 
 .imageforCartdetailPage {
@@ -45,15 +47,24 @@
   width: 100px;
 }
 
-.TotalPriceDiv {
+/* .TotalPriceDiv {
+  padding: 5px;
+  display: flex;
   float: right;
   margin-right: 10%;
   margin-top: 10%;
-  /* border: 1px solid black; */
+  border: 1px solid black;
   height: 20%;
   width: 20%;
-}
+} */
 
 .orderDeatailPageMainDiv {
+  display: flex;
   height: 100%;
+}
+
+.innerDivTotalPrice {
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
 }
