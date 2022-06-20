@@ -13,7 +13,7 @@ function SplashPage() {
           price
           <NavLink exact to={'/products'}>
             <button className="productMainbtn">
-              Click here to View products >>>
+              {`>> Click here to View products <<`}
             </button>
           </NavLink>
         </div>

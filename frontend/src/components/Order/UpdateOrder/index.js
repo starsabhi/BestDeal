@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
+import { NavLink, useHistory, useParams } from 'react-router-dom';
 import { updateOrder } from '../../../store/order';
 import { deleteCartOrder, loadToOrderCart } from '../../../store/ordercart';
 import MainModal from '../../MainModal';
@@ -95,6 +95,10 @@ export default function UpdateOrder() {
     openEditOrderCartModal(true);
   };
 
+  const cancelEvent = (e) => {
+    e.preventDefault();
+    history.push('/listorder');
+  };
   ////UPDATE TOTAL PRICE FOR ORDER---------
   const handleTotalpriceUpdate = (e) => {
     e.preventDefault();
@@ -130,7 +134,8 @@ export default function UpdateOrder() {
             />
           </MainModal>
           <div className="bodyofCartOrderList">
-            <div className="innnerDivmainUpdateOrderDiv">
+            <div className="innnerDivmainUpdateOrderDivDiv">
+              UPDATE YOUR ORDER
               {newArr.map(
                 ({
                   id,
@@ -143,7 +148,7 @@ export default function UpdateOrder() {
                   quantity,
                 }) => (
                   <>
-                    <div className="innerOrderUpdateOrderCartListDivand">
+                    <div className="innerOrderUpdateOrderCartListDivandDIVDIV">
                       <img
                         className="bodyCartorderimage"
                         src={imageUrl}
@@ -185,6 +190,12 @@ export default function UpdateOrder() {
               onClick={(e) => handleTotalpriceUpdate(e)}
             >
               Submit Changes
+            </button>
+            <button
+              onClick={(e) => cancelEvent(e)}
+              className="submitFinalUpdate789"
+            >
+              Cancel
             </button>
           </div>
         </div>

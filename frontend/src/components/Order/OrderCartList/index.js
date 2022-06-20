@@ -105,7 +105,7 @@ export default function OrderCartList({ orderId, showBtn }) {
               imageUrl,
               quantity,
             }) => (
-              <>
+              <div className="innerClassList456789">
                 <img
                   className="bodyCartorderimage"
                   src={imageUrl}
@@ -136,7 +136,7 @@ export default function OrderCartList({ orderId, showBtn }) {
                     Delete
                   </button>
                 </> */}
-              </>
+              </div>
             )
           )}
         </div>

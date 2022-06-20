@@ -1,7 +1,13 @@
 /* .mainDivforOrderList {
 } */
 
+.mainDivForOrderDetailPAAGEE {
+  width: 100%;
+  background-color: rgba(247, 247, 248, 1);
+}
+
 .MainDivforOrdersListPAGE {
+  margin-top: 10px;
   height: 100%;
 }
 
@@ -19,20 +25,26 @@
   /* display: flex; */
 }
 .InnerDivOrderList {
-  border: 1px solid rgb(122, 117, 117);
+  /* border: 1px solid rgb(122, 117, 117); */
 }
 
 .doubleInnerDivOrderList {
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(97, 99, 107, 1);
+  /* border: 1px solid rgba(213, 215, 222, 0.945); */
   margin: 50px;
 }
 
 .OneOrderListDiv {
-  border: 1px solid rgba(97, 99, 107, 1);
-
-  margin: 20px 20px;
+  /* border: 1px solid rgba(189, 192, 203, 1); */
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; */
+  /* border-radius: 5px; */
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  /* width: 60%; */
+  /* margin: 20px 20px; */
 }
 
 .UpdateOrderBtnforsecondPG {
@@ -85,4 +97,71 @@
     0 17px 50px 0 rgba(247, 247, 247, 0.19);
   color: black;
   transform: scale(1.05);
+}
+
+.tableable {
+  border: 1px solid black;
+}
+
+.header456123789 {
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.logoCompleted {
+  height: 30px;
+  width: 30px;
+}
+
+.insideDivCompleted {
+  display: flex;
+  align-items: center;
+  color: green;
+}
+
+.ficelDivinnergamesshow {
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+}
+
+.spanStatusOrderin {
+  color: rgb(0, 123, 255);
+}
+
+.MainDHeaderforDeatipop {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.bodymaindivorderDetailpage456 {
+  /* background-color: grey; */
+  background-color: white;
+  border: 1px solid rgba(215, 217, 224, 1);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  margin: 15px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.header456123789 {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.header43warnning {
+  display: flex;
+  justify-content: center;
+  /* font-weight: bold; */
+  padding: 5px;
+  color: red;
+}
+
+.NavLinkOrderList {
+  color: grey;
 }

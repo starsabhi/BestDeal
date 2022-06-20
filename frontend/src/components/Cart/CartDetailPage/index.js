@@ -156,14 +156,12 @@ function CartDetailPage() {
                 </div>
               </>
             ) : (
-              <>
-                <div className="MAAINYOURCARTEHEADER">
-                  YOUR CART IS EMPTY&nbsp;{' '}
-                </div>
-                <NavLink to={'/products'}>
-                  <div> Please go to product list page to shop</div>
+              <div className="noItemInCART4578">
+                <div className="MAAINYOURCARTEHEADER">YOUR CART IS EMPTY</div>
+                <NavLink className={'prdocutNavlink'} to={'/products'}>
+                  Products Page
                 </NavLink>
-              </>
+              </div>
             )}
             <>
               {cart.length ? (

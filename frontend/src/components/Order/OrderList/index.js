@@ -7,6 +7,7 @@ import OrderCartList from '../OrderCartList';
 import UpdateOrder from '../UpdateOrder';
 import { NavLink, useHistory } from 'react-router-dom';
 import DateObject from 'react-date-object';
+import complete from '../../../images/completed.svg';
 
 export default function OrderList() {
   const [loading, setLoading] = useState(false);
@@ -58,51 +59,83 @@ export default function OrderList() {
   const todayDate1 = date.format();
   const todayDate2 = todayDate1.replace('/', '-');
   const todayDate3 = todayDate2.replace('/', '-');
-  console.log(todayDate3);
+  // console.log(todayDate3);
 
   ////-------------------------------------------------------------
 
   //-------------------------------------
   return (
     <>
-      <div className="MainDivforOrdersListPAGE">
-        {loading ? (
-          <div className="loadingScreenDemo">
-            <ClipLoader color={'#344441'} loading={loading} size={150} />
-          </div>
-        ) : orderListForuser?.length ? (
-          <div className="InnerDivOrderList">
-            {orderListForuser.reverse()?.map((order) => (
+      <div className="mainDivForOrderDetailPAAGEE">
+        <div className="OneOrderListDiv">
+          <div className="MainDivforOrdersListPAGE">
+            {loading ? (
+              <div className="loadingScreenDemo">
+                <ClipLoader color={'#344441'} loading={loading} size={150} />
+              </div>
+            ) : orderListForuser?.length ? (
               <>
-                <div className="OneOrderListDiv">
-                  <div>Ordered On:{order.createdAt.slice(0, 10)}</div>
-                  {order.createdAt.slice(0, 10) == todayDate3 ? (
-                    <div>
-                      <NavLink to={`/updateorder/${order.id}`}>
-                        <button className="UpdateOrderBtnforsecondPG">
-                          Update Order
-                        </button>
-                      </NavLink>
-                      <button
-                        className="UpdateOrderBtnforsecondPG1"
-                        onClick={() => handleDelete(order.id)}
-                      >
-                        Delete Order
-                      </button>
+                <div className="header456123789">Your Orders</div>
+                <div className="header43warnning">
+                  * You can update and delete order only if it is not complete
+                  [Order need at least 24 hours to complete]
+                </div>
+                <div className="InnerDivOrderList">
+                  {orderListForuser.reverse()?.map((order) => (
+                    <div className="bodymaindivorderDetailpage456">
+                      <>
+                        <div className="MainDHeaderforDeatipop">
+                          Order Details
+                        </div>
+                        <div className="ficelDivinnergamesshow">
+                          <div>ID: XSNASNKDN{order.id}</div>
+                          <div>DATE:{order.createdAt.slice(0, 10)}</div>
+                          {order.createdAt.slice(0, 10) == todayDate3 ? (
+                            <div>
+                              <span className="spanStatusOrderin">
+                                STATUS: Not completed
+                              </span>
+                              <NavLink to={`/updateorder/${order.id}`}>
+                                <button className="UpdateOrderBtnforsecondPG">
+                                  Update Order
+                                </button>
+                              </NavLink>
+                              <button
+                                className="UpdateOrderBtnforsecondPG1"
+                                onClick={() => handleDelete(order.id)}
+                              >
+                                Delete Order
+                              </button>
+                            </div>
+                          ) : (
+                            <div className="insideDivCompleted">
+                              STATUS: COMPLETED
+                              <img
+                                className="logoCompleted"
+                                src={complete}
+                                alt={complete}
+                              ></img>
+                            </div>
+                          )}
+                          <div>TOTAL:{order.totalPrice}</div>
+                        </div>
+                        <OrderCartList orderId={order?.id} key={order?.id} />
+                        {/* <button>delete</button> */}
+                      </>
                     </div>
-                  ) : (
-                    <> ***YOUR ORDER HAS BEEN COMPLETED****</>
-                  )}
-                  <div>ORDER TOTAL:{order.totalPrice}</div>
-                  <OrderCartList orderId={order?.id} key={order?.id} />
-                  {/* <button>delete</button> */}
+                  ))}
                 </div>
               </>
-            ))}
+            ) : (
+              <>
+                <div>You Have No Orders</div>
+                <NavLink className={'NavLinkOrderList'} to={'/products'}>
+                  Products Page
+                </NavLink>
+              </>
+            )}
           </div>
-        ) : (
-          <>You Have 0 ORDERS</>
-        )}
+        </div>
       </div>
     </>
   );
