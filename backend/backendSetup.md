@@ -42,13 +42,6 @@ npx dotenv sequelize db:seed:undo:all
 5 -npx sequelize model:generate --name OrderCart --attributes orderId:integer,userId:integer,productId:integer,quantity:integer,imageUrl:text,price:decimal
 npx dotenv sequelize db:migrate
 npx dotenv sequelize db:migrate:undo:all
-npx sequelize seed:generate --name OrderCartdemo
-npx dotenv sequelize db:seed:all
-npx dotenv sequelize db:seed:undo:all
-
-5 -npx sequelize model:generate --name OrderCart --attributes orderId:integer,userId:integer,productId:integer,quantity:integer,imageUrl:text,price:decimal
-npx dotenv sequelize db:migrate
-npx dotenv sequelize db:migrate:undo:all
 npx sequelize seed:generate --name Orderdemo
 npx dotenv sequelize db:seed:all
 npx dotenv sequelize db:seed Order
