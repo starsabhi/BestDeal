@@ -132,3 +132,7 @@
   list-style-type: none;
   color: red;
 }
+
+input[type='radio'] {
+  display: none;
+}

@@ -4,11 +4,13 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Redirect, useHistory } from 'react-router-dom';
+import StarRating from '../Rating/StarRating';
 
 export default function AddReview({ sessionuid, prodcutid, closeModal }) {
   const dispatch = useDispatch();
   const [content, setContent] = useState('');
   const [errors, setErrors] = useState([]);
+  const [rating, setRating] = useState(0);
 
   const handleSubmitReview = async (e) => {
     e.preventDefault();
@@ -17,7 +19,7 @@ export default function AddReview({ sessionuid, prodcutid, closeModal }) {
     const newReview = {
       userId: sessionuid,
       productId: prodcutid,
-      rating: 4,
+      rating: rating,
       content: content,
     };
 
@@ -52,6 +54,7 @@ export default function AddReview({ sessionuid, prodcutid, closeModal }) {
               </li>
             ))}
           </ul>
+          <StarRating rating={rating} setRating={setRating} />
           <div className="add-review-form-group">
             <label className="add-review-label" htmlFor="reviewContent">
               <div>*Review</div>
