@@ -7,6 +7,7 @@ import EditReview from './EditReview/index';
 import DeleteReview from './DeleteReview';
 import AddReview from './AddReview';
 import './ReviewCard.css';
+import ReadStarRating from './Rating/ReadStarRating';
 
 function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
   const dispatch = useDispatch();
@@ -153,6 +154,9 @@ function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
           )}
           {newArr?.map((review) => (
             <div className="reviewContentDivwrap" key={review?.id}>
+              <div className="rating">
+                <ReadStarRating rating={review?.rating} />
+              </div>
               {review?.content}
               {sessionUser && sessionUser?.id === review.userId ? (
                 <>
