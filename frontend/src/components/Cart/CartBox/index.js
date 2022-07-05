@@ -4,14 +4,17 @@ import { getCarts, addItemToCart, editCart } from '../../../store/cart';
 import addCartLogo from '../../../images/Navbar/addCart.svg';
 import './CartBox.css';
 import logoApp from '../../../images/Navbar/logo.svg';
+import { useHistory } from 'react-router-dom';
 
 export default function CartBox({ Product, productId }) {
   const sessionUser = useSelector((state) => state.session.user);
   const cartPrevious = useSelector((state) => Object.values(state.cart));
   const dispatch = useDispatch();
   const [totalItem, setTotalItem] = useState(1);
+  const [errors, setErrors] = useState([]);
   // console.log('********', Product, cartPrevious);
   // console.log('****', totalItem);
+  const history = useHistory();
 
   const handleChange = (e) => {
     setTotalItem(e.target.value);
@@ -42,8 +45,14 @@ export default function CartBox({ Product, productId }) {
         imageUrl: Product.imageUrl,
         quantity: previousQuantity + parseInt(totalItem),
       };
-      const cartEdit = await dispatch(editCart(newItem, cartId));
+      const cartEdit = await dispatch(editCart(newItem, cartId)).catch(
+        async (res) => {
+          const data = await res.json();
+          if (data && data.errors) setErrors(data.errors);
+        }
+      );
       if (cartEdit) {
+        history.push('/cartpage');
         // console.log('Completededitcart');
       }
     } else {
@@ -56,8 +65,12 @@ export default function CartBox({ Product, productId }) {
         quantity: parseInt(totalItem),
       };
 
-      const cartAdd = dispatch(addItemToCart(newItem));
+      const cartAdd = dispatch(addItemToCart(newItem)).catch(async (res) => {
+        const data = await res.json();
+        if (data && data.errors) setErrors(data.errors);
+      });
       if (cartAdd) {
+        history.push('/cartpage');
         // console.log('Completed');
       }
     }
@@ -70,6 +83,13 @@ export default function CartBox({ Product, productId }) {
           <div className="imagelogoCartdiv">
             <img className="imagelogoCartBox" src={logoApp}></img>
           </div>
+          <ul className="errorsLi">
+            {errors.map((error, idx) => (
+              <li className="errorsLi leftMax" key={idx}>
+                * {error}
+              </li>
+            ))}
+          </ul>
           <div className="quantityDivforcartbox">
             Quantity
             <select value={totalItem} onChange={(e) => handleChange(e)}>
