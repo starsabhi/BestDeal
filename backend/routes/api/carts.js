@@ -3,6 +3,15 @@ const { asyncHandler, csrfProtection } = require('../utils');
 const { requireAuth } = require('../../utils/auth');
 const router = express.Router();
 const db = require('../../db/models');
+const { check } = require('express-validator');
+const { handleValidationErrors } = require('../../utils/validation');
+
+const validateCart = [
+  check('quantity')
+    .isInt({ max: 10 })
+    .withMessage('Maximum 10 same items per Cart'),
+  handleValidationErrors,
+];
 
 router.get(
   '/:userId',
@@ -20,6 +29,7 @@ router.get(
 
 router.post(
   '/',
+  validateCart,
   requireAuth,
   asyncHandler(async (req, res) => {
     // console.log("ROUTER COMPLETED OR NOT   *********************")
@@ -40,6 +50,7 @@ router.post(
 
 router.patch(
   '/:cartId',
+  validateCart,
   requireAuth,
   asyncHandler(async (req, res) => {
     const { userId, productId, name, price, imageUrl, quantity } = req.body;
