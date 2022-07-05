@@ -4,29 +4,28 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Redirect, useHistory } from 'react-router-dom';
+import StarRating from '../Rating/StarRating';
 
 export default function EditReview({
   reviewId,
   sessionuid,
   prodcutid,
   editcontent,
+  oldrating,
   closeModal,
 }) {
   const dispatch = useDispatch();
   const [errors, setErrors] = useState([]);
   const [editformcontent, setEditformcontent] = useState(editcontent);
+  const [rating, setRating] = useState(oldrating);
+  console.log(oldrating);
 
   const handleEditReview = async (e) => {
     e.preventDefault();
-    // const newContent = editformcontent.trim();
-    // const newStr = editformcontent.trim();
-    // const str2 = editformcontent.replace(/\s+/g, '');
-    // console.log(str2);
-    // console.log(`88${newStr}88`, `${newStr.length}`);
     const newReview = {
       userId: sessionuid,
       productId: prodcutid,
-      rating: 4,
+      rating: rating,
       content: editformcontent,
     };
 
@@ -58,6 +57,7 @@ export default function EditReview({
               </li>
             ))}
           </ul>
+          <StarRating rating={rating} setRating={setRating} />
           <div className="edit-review-form-group">
             <label className="edit-review-label" htmlFor="reviewContent">
               <div>*Review</div>

@@ -13,12 +13,10 @@ function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const CheckingWhat = useSelector((state) => state);
-  // console.log('CheckingWhatREVIEWCARD', Reviews);
-  // const [content, setContent] = useState('');
-  // const [form, setForm] = useState(false);
 
   const [selectedReviewId, setSelectedReviewId] = useState(null);
   const [editcontent, setEditContent] = useState('');
+  const [oldrating, setRating] = useState(0);
 
   const prodcutid = Id.productId;
   const newArr = Reviews.filter((review) => review.productId == prodcutid);
@@ -27,28 +25,6 @@ function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
   useEffect(() => {
     dispatch(getReviews(prodcutid));
   }, [dispatch]);
-
-  // const handleSubmitReview = async (e) => {
-  //   e.preventDefault();
-
-  //   const newReview = {
-  //     userId: sessionUser.id,
-  //     productId: prodcutid,
-  //     rating: 4,
-  //     content,
-  //   };
-
-  //   const review = await dispatch(writeReview(newReview));
-  //   if (review) {
-  //     setForm(false);
-  //     dispatch(getReviews(prodcutid));
-  //     resetAdd();
-  //   }
-  // };
-
-  // const resetAdd = () => {
-  //   setContent('');
-  // };
 
   //EDIT REVIEW MODAL
   const [editReviewModal, seteditReviewModal] = useState(false);
@@ -116,6 +92,7 @@ function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
           prodcutid={prodcutid}
           sessionuid={sessionUser?.id}
           editcontent={editcontent}
+          oldrating={oldrating}
         />
       </MainModal>
 
@@ -166,6 +143,7 @@ function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
                       onClick={() => {
                         passingFun(review?.id);
                         setEditContent(review?.content);
+                        setRating(review?.rating);
                       }}
                     >
                       Edit
