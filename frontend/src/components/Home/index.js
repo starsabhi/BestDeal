@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllProduct } from '../../store/product';
 import Productsdetail from '../Productsdetail';
 import './Home.css';
+import Cash from '../../images/cash.svg';
 
 function Home() {
   const dispatch = useDispatch();
@@ -44,7 +45,12 @@ function Home() {
                         <div className="productNameh2">{name}</div>
                       </div>
                       <div className="priceMainDiv">
-                        <div className="mainPriceDiv">${price}</div>
+                        <div className="mainPriceDiv">
+                          <span class="material-symbols-outlined">
+                            attach_money
+                          </span>
+                          {price}
+                        </div>
                       </div>
                     </NavLink>
                     {/* <p className="descriptionptag">{description}</p> */}
