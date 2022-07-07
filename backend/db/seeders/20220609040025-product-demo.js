@@ -142,6 +142,61 @@ module.exports = {
             'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
           category: 'Sports',
         },
+        {
+          name: 'Best Choice Products Kids 12V Ride On Truck',
+          price: '299.99',
+          imageUrl:
+            'https://m.media-amazon.com/images/I/71ZQ5cxaFuS._AC_SX522_.jpg',
+          description:
+            'Battery Powered Toy Car w/ Spring Suspension, Remote Control, 3 Speeds, LED Lights, Bluetooth - Pink',
+          productInfo:
+            'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
+          category: 'Kids',
+        },
+        {
+          name: 'Best Choice Products Kids 12V Ride On Truck',
+          price: '299.99',
+          imageUrl:
+            'https://m.media-amazon.com/images/I/71ZQ5cxaFuS._AC_SX522_.jpg',
+          description:
+            'Battery Powered Toy Car w/ Spring Suspension, Remote Control, 3 Speeds, LED Lights, Bluetooth - Pink',
+          productInfo:
+            'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
+          category: 'Kids',
+        },
+        {
+          name: 'Best Choice Products Kids 12V Ride On Truck',
+          price: '299.99',
+          imageUrl:
+            'https://m.media-amazon.com/images/I/71ZQ5cxaFuS._AC_SX522_.jpg',
+          description:
+            'Battery Powered Toy Car w/ Spring Suspension, Remote Control, 3 Speeds, LED Lights, Bluetooth - Pink',
+          productInfo:
+            'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
+          category: 'Kids',
+        },
+        {
+          name: 'Best Choice Products Kids 12V Ride On Truck',
+          price: '299.99',
+          imageUrl:
+            'https://m.media-amazon.com/images/I/71ZQ5cxaFuS._AC_SX522_.jpg',
+          description:
+            'Battery Powered Toy Car w/ Spring Suspension, Remote Control, 3 Speeds, LED Lights, Bluetooth - Pink',
+          productInfo:
+            'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
+          category: 'Kids',
+        },
+        {
+          name: 'Best Choice Products Kids 12V Ride On Truck',
+          price: '299.99',
+          imageUrl:
+            'https://m.media-amazon.com/images/I/71ZQ5cxaFuS._AC_SX522_.jpg',
+          description:
+            'Battery Powered Toy Car w/ Spring Suspension, Remote Control, 3 Speeds, LED Lights, Bluetooth - Pink',
+          productInfo:
+            'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
+          category: 'Kids',
+        },
       ],
       {}
     );
