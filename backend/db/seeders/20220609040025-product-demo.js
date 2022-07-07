@@ -19,7 +19,7 @@ module.exports = {
             'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
           productInfo:
             'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
-          category: 'cloths',
+          category: 'Men',
         },
         {
           name: "Flannel Shirt for Men Long Sleeve Men's Casual Button-Down Shirt 100%",
@@ -30,7 +30,7 @@ module.exports = {
             'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
           productInfo:
             'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
-          category: 'cloths',
+          category: 'Men',
         },
         {
           name: 'COKAFIL Mens Running Shoes Athletic Walking Blade Tennis Shoes Fashion Sneakers',
@@ -41,7 +41,7 @@ module.exports = {
             'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
           productInfo:
             'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
-          category: 'cloths',
+          category: 'Men',
         },
         {
           name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
@@ -52,7 +52,7 @@ module.exports = {
             'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
           productInfo:
             'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
-          category: 'cloths',
+          category: 'Men',
         },
         {
           name: "Men's Walking Shoes Sneakers Breathable Mesh Upper Casual",
@@ -63,7 +63,7 @@ module.exports = {
             'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
           productInfo:
             'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
-          category: 'cloths',
+          category: 'Shoes',
         },
         {
           name: 'Kids Watch,Boys Watch for 3-15 Year Old Boys',
@@ -74,7 +74,7 @@ module.exports = {
             'Everyday made better: we listen to customer feedback and fine-tune every detail to ensure quality, fit, and comfort',
           productInfo:
             'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
-          category: 'cloths',
+          category: 'Kids',
         },
         {
           name: "Essentials Men's Regular-fit Long-Sleeve Flannel Shirt",
@@ -118,7 +118,7 @@ module.exports = {
             'Grip All Season - The silicone palm of the G1 football glove is infused with our NXT-Grip formula offering consistent stickiness throughout the entire season.',
           productInfo:
             'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
-          category: 'cloths',
+          category: 'Sports',
         },
         {
           name: "Hanes mens Hanes Men's Max Cushion Low Cut 6-pair Pack",
@@ -129,7 +129,7 @@ module.exports = {
             'Max cushioning of the foot make these cushioned socks for men a sure bet for everyday wear, from work, play, gym, sports, and beyond.',
           productInfo:
             'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
-          category: 'cloths',
+          category: 'Men',
         },
         {
           name: 'Franklin Sports Junior Football - Grip-Rite 100',
@@ -140,7 +140,7 @@ module.exports = {
             'These junior footballs are constructed from a durable, high-grip, deep-pebbled rubber that stands up to wear and tear on grass, concrete, or any other surface',
           productInfo:
             'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
-          category: 'cloths',
+          category: 'Sports',
         },
       ],
       {}
