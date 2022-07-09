@@ -30,6 +30,9 @@ function Productsdetail() {
   //   Object.values(Reviews)
   // );
   const CurrrentState = useSelector((state) => state);
+  // const rating = useSelector((state) => state.review.rating);
+  // let ratingArr = Object.values(rating);
+  // console.log(Reviews);
 
   useEffect(() => {
     dispatch(getOneProduct(Id.productId));
@@ -39,6 +42,14 @@ function Productsdetail() {
   useEffect(() => {
     dispatch(getReviews(Id.productId));
   }, [dispatch]);
+
+  let totalRating = null;
+  Reviews.forEach((review) => {
+    totalRating += review.rating;
+  });
+  // console.log(ratingArr, '******************************');
+  console.log(Reviews.length);
+  console.log(totalRating / Reviews.length, '---------------------');
 
   // console.log(Reviews?.reviews[0].content, '********REVIEWS*********');
   return (
