@@ -6,6 +6,7 @@ import ProfileButton from './ProfileButton';
 import * as sessionActions from '../../store/session';
 import navLogo from '../../images/Navbar/bestDeal.png';
 import './Navigation.css';
+import Home from '../Home';
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -22,6 +23,8 @@ function Navigation({ isLoaded }) {
   //     // history.push('/products');
   //   });
   // };
+  //---------------SEARCHBAR----------------
+  //-----------------------------------------------------
 
   const demoLogin = (e) => {
     e.preventDefault();

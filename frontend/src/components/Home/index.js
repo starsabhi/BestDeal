@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllProduct } from '../../store/product';
 import ClipLoader from 'react-spinners/ClipLoader';
@@ -32,6 +32,27 @@ function Home() {
     // console.log(newArr);
   };
 
+  //-----------------SEARCH BAR ----------------------------------------
+  const [search, setSearch] = useState('');
+  const reset = () => {
+    setSearch('');
+  };
+  // const searchSubmit = () => {
+  //   setAllProducts(false);
+  //   console.log(search);
+  //   setNewArr(
+  //     newArr.filter((val) => {
+  //       if (search == '') {
+  //         return val;
+  //       } else if (val.name.toLowerCase().includes(search.toLowerCase())) {
+  //         console.log(val.name.toLowerCase());
+  //         return val;
+  //       }
+  //     })
+  //   );
+  //   console.log(newArr);
+  // };
+
   return (
     <>
       {/* <div className="ParentHomePageDiv"> */}
@@ -45,95 +66,143 @@ function Home() {
             <span>Our Product List</span>
           </h2>
           <div className="sideBarDiv">
-            <div className="InnerDivBtnSelect">
-              <div>
-                <button onClick={() => setAllProducts(true)}>All</button>
-              </div>
-              <div>
-                <button onClick={() => newFunction('Men')}>Men</button>
-              </div>
-              <div>
-                <button onClick={() => newFunction('Kids')}>kids</button>
-              </div>
+            {/* <div className="InnerDivBtnSelect"> */}
+            {/*  <div>
+                 <input
+                  type="text"
+                  placeholder="search"
+                  value={search}
+                  onChange={(e) => {
+                    setAllProducts(true);
+                    setSearch(e.target.value);
+                  }}
+                ></input>
+                <button onClick={() => reset()}>Reset</button>
+              </div> */}
+            <div className="buttonDivCatogory">
+              <span className="catogoryClass">Category</span>
+              <button
+                className="catogoryBtn logOutBtneleHome"
+                onClick={() => setAllProducts(true)}
+              >
+                All
+              </button>
             </div>
+            <div className="buttonDivCatogory">
+              <button
+                className="catogoryBtn logOutBtneleHome"
+                onClick={() => newFunction('Men')}
+              >
+                Men
+              </button>
+            </div>
+            <div className="buttonDivCatogory">
+              <button
+                className="catogoryBtn logOutBtneleHome"
+                onClick={() => newFunction('Kids')}
+              >
+                kids
+              </button>
+            </div>
+            {/* </div> */}
           </div>
           <div className="HomepageMainDiv">
             <div className="productListClass">
               {allProducts
-                ? productList?.map(
-                    ({
-                      id,
-                      name,
-                      price,
-                      imageUrl,
-                      description,
-                      productInfo,
-                      category,
-                    }) => (
-                      <div key={id} className="productClassArr">
-                        <div className="contentdivforHome">
-                          <NavLink
-                            style={{
-                              color: 'inherit',
-                              textDecoration: 'inherit',
-                            }}
-                            to={`products/${id}`}
-                          >
-                            <div className="imageListDivevery">
-                              <img
-                                className="productListimage"
-                                src={imageUrl}
-                                alt={imageUrl}
-                              />
+                ? productList
+                    ?.filter((val) => {
+                      if (search === '') {
+                        return val;
+                      } else if (
+                        val.name.toLowerCase().includes(search.toLowerCase())
+                      )
+                        return val;
+                    })
+                    .map(
+                      ({
+                        id,
+                        name,
+                        price,
+                        imageUrl,
+                        description,
+                        productInfo,
+                        category,
+                      }) => (
+                        <>
+                          <div key={id} className="productClassArr">
+                            <div className="contentdivforHome">
+                              <NavLink
+                                style={{
+                                  color: 'inherit',
+                                  textDecoration: 'inherit',
+                                }}
+                                to={`products/${id}`}
+                              >
+                                <div className="imageListDivevery">
+                                  <img
+                                    className="productListimage"
+                                    src={imageUrl}
+                                    alt={imageUrl}
+                                  />
+                                </div>
+                                <div className="productnameDivforMain">
+                                  <div className="productNameh2">{name}</div>
+                                </div>
+                                <div className="priceMainDiv">
+                                  <div className="mainPriceDiv">${price}</div>
+                                </div>
+                              </NavLink>
                             </div>
-                            <div className="productnameDivforMain">
-                              <div className="productNameh2">{name}</div>
-                            </div>
-                            <div className="priceMainDiv">
-                              <div className="mainPriceDiv">${price}</div>
-                            </div>
-                          </NavLink>
-                        </div>
-                      </div>
+                          </div>
+                        </>
+                      )
                     )
-                  )
-                : newArr?.map(
-                    ({
-                      id,
-                      name,
-                      price,
-                      imageUrl,
-                      description,
-                      productInfo,
-                      category,
-                    }) => (
-                      <div key={id} className="productClassArr">
-                        <div className="contentdivforHome">
-                          <NavLink
-                            style={{
-                              color: 'inherit',
-                              textDecoration: 'inherit',
-                            }}
-                            to={`products/${id}`}
-                          >
-                            <div className="imageListDivevery">
-                              <img
-                                className="productListimage"
-                                src={imageUrl}
-                                alt={imageUrl}
-                              />
-                            </div>
-                            <div className="productnameDivforMain">
-                              <div className="productNameh2">{name}</div>
-                            </div>
-                            <div className="priceMainDiv">
-                              <div className="mainPriceDiv">${price}</div>
-                            </div>
-                          </NavLink>
+                : newArr
+                    ?.filter((val) => {
+                      if (search === '') {
+                        return val;
+                      } else if (
+                        val.name.toLowerCase().includes(search.toLowerCase())
+                      )
+                        return val;
+                    })
+                    .map(
+                      ({
+                        id,
+                        name,
+                        price,
+                        imageUrl,
+                        description,
+                        productInfo,
+                        category,
+                      }) => (
+                        <div key={id} className="productClassArr">
+                          <div className="contentdivforHome">
+                            <NavLink
+                              style={{
+                                color: 'inherit',
+                                textDecoration: 'inherit',
+                              }}
+                              to={`products/${id}`}
+                            >
+                              <div className="imageListDivevery">
+                                <img
+                                  className="productListimage"
+                                  src={imageUrl}
+                                  alt={imageUrl}
+                                />
+                              </div>
+                              <div className="productnameDivforMain">
+                                <div className="productNameh2">{name}</div>
+                              </div>
+                              <div className="priceMainDiv">
+                                <div className="mainPriceDiv">${price}</div>
+                              </div>
+                            </NavLink>
+                          </div>
                         </div>
-                      </div>
-                    )
-                  )}
+                      )
+                    )}
             </div>
           </div>
         </div>

@@ -22,6 +22,19 @@ body,
   margin: 0px;
 }
 
+#root::-webkit-scrollbar {
+  width: 1em;
+}
+
+#root::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+#root::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
 #root {
   display: flex;
   flex-direction: column;
@@ -85,4 +98,8 @@ textarea {
   --delete1: rgb(176, 42, 42);
 
   --bar: #ffca12;
+}
+
+div {
+  display: block;
 }
