@@ -8,6 +8,7 @@ import { getReviews } from '../../store/review';
 import ReviewCard from '../ReviewCard';
 import CartBox from '../Cart/CartBox';
 import ClipLoader from 'react-spinners/ClipLoader';
+import ReadStarRating from '../ReviewCard/Rating/ReadStarRating';
 
 function Productsdetail() {
   const dispatch = useDispatch();
@@ -80,6 +81,10 @@ function Productsdetail() {
                         <p className="descriptionptag">
                           Description: {Product?.description}
                         </p>
+                        <ReadStarRating
+                          rating={totalRating / Reviews?.length}
+                        />
+                        {`(${Reviews?.length})`}
                       </div>
                     </div>
                   </div>

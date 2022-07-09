@@ -19,7 +19,7 @@
   grid-template-columns: repeat(4, 1fr);
   border: 1px;
   gap: 15px;
-  border-radius: 1px solid black;
+  /* border-radius: 1px solid black; */
 }
 .productClassArr {
   /* background-color: rgba(250, 250, 250, 1); */
@@ -167,12 +167,12 @@
   /* display: flex; */
   float: left;
   /* background-color: #0f1111d5; */
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 20%;
   height: 500px;
   position: sticky;
   top: 20px;
-  border: 1px solid rgba(196, 199, 212, 1);
+  /* border: 1px solid rgba(196, 199, 212, 1); */
 }
 
 /* .ParentHomePageDiv {
