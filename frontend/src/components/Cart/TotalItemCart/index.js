@@ -25,10 +25,12 @@ export default function TotalItemCart() {
   // console.log('How many time value changes', theSum);
   return (
     <>
-      <div className="carDivonNav">
+      <div className="carDivonNav logOutBtnele">
         <NavLink to="/cartpage">
           <div className="shoppindCartTotalNumberOfItems">
-            <img className="imageCartTotalSumCount" src={addToCart}></img>
+            <div>
+              <img className="imageCartTotalSumCount" src={addToCart}></img>
+            </div>
             <div className="totalSumNumber">{theSum}</div>
           </div>
         </NavLink>
