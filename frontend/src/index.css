@@ -42,7 +42,8 @@ body,
   align-items: center;
   /* min-height: 100vh; */
   /* used to only apply to splash, double check in  */
-  overflow: auto;
+  overflow-x: hidden;
+  /* overflow: auto; */
   position: relative;
 }
 
