@@ -3,7 +3,8 @@ import { Link, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllProduct } from '../../store/product';
 import ClipLoader from 'react-spinners/ClipLoader';
-
+import { getAllReviews } from '../../store/review';
+import ReadStarRating from '../ReviewCard/Rating/ReadStarRating';
 import './Home.css';
 import Footer from '../Footer';
 
@@ -33,11 +34,49 @@ function Home() {
     // console.log(newArr);
   };
 
+  //--------------TOTAL REVIEWS------------
+  useEffect(() => {
+    dispatch(getAllReviews());
+  }, [dispatch]);
+  const Review = useSelector((state) => state.review);
+  const Reviews = Object.values(Review);
+  let RatingArr = [];
+  if (setAllProducts) {
+    for (let i = 1; i <= productList.length; i++) {
+      let eachArr = Reviews.filter((ele) => ele.productId == i);
+      let totalRating = 0;
+      eachArr.forEach((reviewIn) => {
+        totalRating += reviewIn.rating;
+      });
+      if (eachArr.length) {
+        RatingArr.push([totalRating / eachArr.length, eachArr.length]);
+      } else {
+        RatingArr.push([0, 0]);
+      }
+    }
+  } else {
+    for (let i = 1; i <= newArr.length; i++) {
+      let eachArr = Reviews.filter((ele) => ele.productId == i);
+      let totalRating = 0;
+      eachArr.forEach((reviewIn) => {
+        totalRating += reviewIn.rating;
+      });
+      if (eachArr.length) {
+        RatingArr.push([totalRating / eachArr.length, eachArr.length]);
+      } else {
+        RatingArr.push([0, 0]);
+      }
+    }
+  }
+  // console.log(RatingArr);
+
+  //-----------------------------------------
+
   //-----------------SEARCH BAR ----------------------------------------
   const [search, setSearch] = useState('');
-  const reset = () => {
-    setSearch('');
-  };
+  // const reset = () => {
+  //   setSearch('');
+  // };
   // const searchSubmit = () => {
   //   setAllProducts(false);
   //   console.log(search);
@@ -149,6 +188,17 @@ function Home() {
                                 <div className="productnameDivforMain">
                                   <div className="productNameh2">{name}</div>
                                 </div>
+                                <div className="RatingDivUpdate">
+                                  <ReadStarRating
+                                    rating={RatingArr[id - 1][0]}
+                                  />
+                                  {` `}
+                                  <div className="ratingNumbersDiv">
+                                    {RatingArr[id - 1][1]}
+                                    {` `}
+                                    Reviews
+                                  </div>
+                                </div>
                                 <div className="priceMainDiv">
                                   <div className="mainPriceDiv">${price}</div>
                                 </div>
@@ -195,6 +245,15 @@ function Home() {
                               </div>
                               <div className="productnameDivforMain">
                                 <div className="productNameh2">{name}</div>
+                              </div>
+                              <div className="RatingDivUpdate">
+                                <ReadStarRating rating={RatingArr[id - 1][0]} />
+                                {` `}
+                                <div className="ratingNumbersDiv">
+                                  {RatingArr[id - 1][1]}
+                                  {` `}
+                                  Reviews
+                                </div>
                               </div>
                               <div className="priceMainDiv">
                                 <div className="mainPriceDiv">${price}</div>
