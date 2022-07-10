@@ -33,8 +33,12 @@ function LoginFormPage() {
         <div className="loginFormimageforForm"></div>
         <div className="loginformMainDivInner">
           <form className="formLoginformElement" onSubmit={handleSubmit}>
-            <img className="loginFormimageforFormIMG" src={navLogo}></img>
-            Log in
+            <img
+              className="loginFormimageforFormIMG"
+              src={navLogo}
+              alt={navLogo}
+            ></img>
+            <div className="LoginHeaderorSignIn">Log in</div>
             <ul className="errorsSingup">
               {errors.map((error, idx) => (
                 <li className="errorsSingup" key={idx}>
@@ -43,28 +47,24 @@ function LoginFormPage() {
               ))}
             </ul>
             <div className="gapDivConetnet456789">
-              <label className="formLabelDivinnerforLogin">
-                *Username or Email
-                <input
-                  className="inputFormLogSignUp"
-                  type="text"
-                  value={credential}
-                  onChange={(e) => setCredential(e.target.value)}
-                  required
-                />
-              </label>
+              <div className="insideDivwithname">*Username or Email</div>
+              <input
+                className="inputFormLogSignUp"
+                type="text"
+                value={credential}
+                onChange={(e) => setCredential(e.target.value)}
+                required
+              />
             </div>
             <div className="gapDivConetnet456789">
-              <label className="formLabelDivinnerforLogin">
-                *Password
-                <input
-                  className="inputFormLogSignUp"
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
-              </label>
+              <div className="insideDivwithname">*Password</div>
+              <input
+                className="inputFormLogSignUp"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
             </div>
             <button className="logInFormButtonforsubmit" type="submit">
               Log In

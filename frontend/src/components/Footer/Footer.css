@@ -11,7 +11,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  /* width: 7.6%; */
+  /* margin-left: 5%; */
   /* margin: 0px 0px 0px 20px; */
+}
+
+.listOfFooterImages {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer-developed-by {
@@ -46,7 +55,8 @@
   justify-content: center;
   align-items: center;
   margin: 5px;
-  width: 100px;
+  /* width: 7.6%; */
+  /* width: 100px; */
 }
 
 .technologiesDivImg {
@@ -56,4 +66,18 @@
 .nameDivfortech {
   padding: 10px;
   text-align: center;
+}
+
+.copyrightLogo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.technologiesDivImgForGit {
+  padding: 0px;
 }

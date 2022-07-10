@@ -25,6 +25,7 @@ function Productsdetail() {
   const Product = useSelector((state) => state.product);
   const Review = useSelector((state) => state.review);
   const Reviews = Object.values(Review);
+  const productReviews = Reviews.filter((ele) => ele.productId == Id.productId);
   const CurrrentState = useSelector((state) => state);
 
   useEffect(() => {
@@ -37,12 +38,13 @@ function Productsdetail() {
   }, [dispatch]);
 
   let totalRating = null;
-  Reviews.forEach((review) => {
+  productReviews.forEach((review) => {
     totalRating += review.rating;
   });
   // console.log(ratingArr, '******************************');
-  console.log(Reviews.length);
-  console.log(totalRating / Reviews.length, '---------------------');
+  // console.log(productReviews);
+  // console.log(productReviews.length);
+  // console.log(totalRating / Reviews.length, '---------------------');
 
   // console.log(Reviews?.reviews[0].content, '********REVIEWS*********');
   return (
@@ -74,9 +76,9 @@ function Productsdetail() {
                           Description: {Product?.description}
                         </p>
                         <ReadStarRating
-                          rating={totalRating / Reviews?.length}
+                          rating={totalRating / productReviews?.length}
                         />
-                        {`(${Reviews?.length})`}
+                        {`(${productReviews?.length})`}
                       </div>
                     </div>
                   </div>
