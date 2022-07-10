@@ -5,6 +5,7 @@ import { getAllProduct } from '../../store/product';
 import ClipLoader from 'react-spinners/ClipLoader';
 
 import './Home.css';
+import Footer from '../Footer';
 
 function Home() {
   const dispatch = useDispatch();
@@ -207,6 +208,7 @@ function Home() {
           </div>
         </div>
       )}
+      <Footer />
     </>
   );
 }

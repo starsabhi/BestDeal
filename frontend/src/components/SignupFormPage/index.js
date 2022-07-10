@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Redirect } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
-import navLogo from '../../images/Navbar/bestDeal.png';
+import navLogo from '../../images/Navbar/logo.svg';
+import Footer from '../Footer';
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -104,6 +105,7 @@ function SignupFormPage() {
           </form>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

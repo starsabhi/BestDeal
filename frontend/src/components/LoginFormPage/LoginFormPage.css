@@ -5,22 +5,26 @@
   align-items: center;
   justify-content: center; */
   border: 1px solid black;
-  background-image: url(../../images/sign-up/first.png);
+  background-color: #9e8fb2;
+  background-image: url('../../images/shoppingBoy3.svg');
   /* background-repeat: no-repeat; */
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 
 .loginformMainDivInner {
+  font-size: 20px;
+  font-weight: bolder;
   display: flex;
   flex-direction: column;
-  width: 35%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 25%;
+  margin-left: 55%;
+  /* margin-left: auto;
+  margin-right: auto; */
   border-radius: 4px;
   border: 1px #ddd solid;
-  background-color: rgb(37, 33, 43);
-  color: rgb(122, 120, 120);
+  background-color: #a88dcca6;
+  color: rgb(18, 18, 18);
 }
 
 .loginFormimageforForm {
@@ -30,8 +34,8 @@
 }
 
 .loginFormimageforFormIMG {
-  height: 50px;
-  width: 80px;
+  height: 80px;
+  width: 120px;
 }
 
 .formLoginformElement {
@@ -68,9 +72,12 @@
 .LinkChangesForSingLog {
   margin: 4px;
   padding: 3px;
-  color: grey;
+  color: black;
 }
 
+.LinkChangesForSingLog:hover {
+  color: #154bca;
+}
 .gapDivConetnet456789 {
   margin: 5px;
   padding: 4px;

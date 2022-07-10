@@ -1,20 +1,23 @@
 .splashPageMainDiv {
   /* display: flex; */
+  /* margin-top: 10px; */
+  font-family: 'Poppins', sans-serif;
   align-items: center;
   height: 100%;
   width: 100%;
   overflow: hidden;
   justify-content: center;
-  background-image: url(../../images/splashPageimg/main.png);
+  /* background-image: url(../../images/splashPageimg/main.png); */
+  background: linear-gradient(-90deg, #fce7e9 20%, #fce7e9 100%);
   background-size: 100% 100%;
-  background-position: center;
+  /* background-position: center;
   background-repeat: no-repeat;
-  object-fit: cover;
-  animation: change linear 18s infinite;
+  object-fit: cover; */
+  /* animation: change linear 18s infinite; */
   background-color: white;
 }
 
-@keyframes change {
+/* @keyframes change {
   0% {
     opacity: 0.8;
     animation-timing-function: ease-in;
@@ -31,29 +34,37 @@
   75% {
     background-image: url(../../images/splashPageimg/main2.png);
   }
-}
+} */
 
 .productMainbtn {
-  margin-left: 40px;
-  font-family: Arial, Helvetica, sans-serif;
+  height: 50px;
+  font-size: 18px;
+  /* margin-left: 40px; */
+  font-family: 'Poppins', sans-serif;
+  font-weight: bolder;
   background-color: black;
   border: 1px solid grey;
+  border-radius: 25px;
   color: white;
   cursor: pointer;
-  border-radius: 5px;
   transition-duration: 0.4s;
-  animation: change3 linear 5s infinite;
+  padding: 10px;
+  /* animation: change3 linear 5s infinite; */
+}
+.productMainbtn:hover {
+  transform: scale(1.1);
 }
 
-@keyframes change3 {
+/* @keyframes change3 {
   0% {
     transform: scale(1.1);
   }
   50% {
     transform: scale(1.2);
   }
-}
+} */
 .splashPAGEdiv {
+  font-family: 'Poppins', sans-serif;
   z-index: 50;
   /* width: 80%; */
   /* background-color: rgb(248, 248, 249); */
@@ -61,20 +72,98 @@
   padding: 5px;
   display: flex;
   justify-content: center;
-  font-family: 'Lato';
-  font-size: 22px;
-  font-weight: 800;
+  font-size: 24px;
+  font-weight: bolder;
   line-height: 72px;
-
   text-align: center;
   text-transform: uppercase;
-  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
   align-items: center;
   border-radius: 5px;
-  font-weight: bolder;
 }
 
-.mainDivimage {
-  height: 70px;
+/* .mainDivimage {
+  height: 120px;
   width: 130px;
+} */
+
+/* #tabFirst {
+  animation: wheel 8s infinite;
+  background-color: black;
+  fill: #0000;
+}
+
+@keyframes wheel {
+  from {
+    background-color: black;
+
+    transform: rotateZ(0deg);
+  }
+  to {
+    background-color: black;
+
+    transform: rotateZ(360deg);
+  }
+} */
+
+#FirstSlide {
+  animation: firstSlideanimi 8s infinite;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  /* animation-direction: alternate-reverse; */
+}
+
+@keyframes firstSlideanimi {
+  from {
+    transform: translateX(0px);
+  }
+  20% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(300px);
+    border: none;
+  }
+  to {
+    transform: translateX(300px);
+    border: none;
+  }
+}
+
+#secondSlide {
+  animation: secondSlideanimi 8s infinite;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  /* animation-direction: alternate-reverse; */
+}
+
+@keyframes secondSlideanimi {
+  from {
+    transform: translateX(0px);
+  }
+  20% {
+    transform: translateX(0px);
+  }
+  50% {
+    border: 10px solid blue;
+    transform: translateX(-300px);
+  }
+  to {
+    border: 10px solid blue;
+    transform: translateX(-300px);
+  }
+}
+
+.animationSVGClass {
+  margin: 0px 0px 0px 40px;
+}
+
+#Vector_26 {
+  border: 10px solid blue;
+}
+
+.ContainDivdeatils {
+  display: flex;
+  flex-direction: column;
 }
