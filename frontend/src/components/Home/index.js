@@ -40,36 +40,33 @@ function Home() {
   }, [dispatch]);
   const Review = useSelector((state) => state.review);
   const Reviews = Object.values(Review);
-  let RatingArr = [];
-  if (setAllProducts) {
-    for (let i = 1; i <= productList.length; i++) {
-      let eachArr = Reviews.filter((ele) => ele.productId == i);
-      let totalRating = 0;
-      eachArr.forEach((reviewIn) => {
-        totalRating += reviewIn.rating;
-      });
-      if (eachArr.length) {
-        RatingArr.push([totalRating / eachArr.length, eachArr.length]);
-      } else {
-        RatingArr.push([0, 0]);
-      }
-    }
-  } else {
-    for (let i = 1; i <= newArr.length; i++) {
-      let eachArr = Reviews.filter((ele) => ele.productId == i);
-      let totalRating = 0;
-      eachArr.forEach((reviewIn) => {
-        totalRating += reviewIn.rating;
-      });
-      if (eachArr.length) {
-        RatingArr.push([totalRating / eachArr.length, eachArr.length]);
-      } else {
-        RatingArr.push([0, 0]);
-      }
-    }
-  }
-  // console.log(RatingArr);
 
+  //TRY2-----------------------------------------
+  const countRating = (id) => {
+    let eachArr = Reviews.filter((ele) => ele.productId == id);
+    let totalRating = 0;
+    eachArr.forEach((reviewIn) => {
+      totalRating += reviewIn.rating;
+    });
+    if (eachArr.length) {
+      return Math.round(totalRating / eachArr.length);
+    } else {
+      return 0;
+    }
+  };
+  const countRating2 = (id) => {
+    let eachArr = Reviews.filter((ele) => ele.productId == id);
+    let totalRating = 0;
+    eachArr.forEach((reviewIn) => {
+      totalRating += reviewIn.rating;
+    });
+    if (eachArr.length) {
+      return Math.round(eachArr.length);
+    } else {
+      return 0;
+    }
+  };
+  //------------------------------------------------
   //-----------------------------------------
 
   //-----------------SEARCH BAR ----------------------------------------
@@ -189,12 +186,10 @@ function Home() {
                                   <div className="productNameh2">{name}</div>
                                 </div>
                                 <div className="RatingDivUpdate">
-                                  <ReadStarRating
-                                    rating={RatingArr[id - 1][0]}
-                                  />
+                                  <ReadStarRating rating={countRating(id)} />
                                   {` `}
                                   <div className="ratingNumbersDiv">
-                                    {RatingArr[id - 1][1]}
+                                    {countRating2(id)}
                                     {` `}
                                     Reviews
                                   </div>
@@ -247,10 +242,10 @@ function Home() {
                                 <div className="productNameh2">{name}</div>
                               </div>
                               <div className="RatingDivUpdate">
-                                <ReadStarRating rating={RatingArr[id - 1][0]} />
+                                <ReadStarRating rating={countRating(id)} />
                                 {` `}
                                 <div className="ratingNumbersDiv">
-                                  {RatingArr[id - 1][1]}
+                                  {countRating2(id)}
                                   {` `}
                                   Reviews
                                 </div>
