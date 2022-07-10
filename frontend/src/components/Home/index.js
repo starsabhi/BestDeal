@@ -3,7 +3,8 @@ import { Link, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllProduct } from '../../store/product';
 import ClipLoader from 'react-spinners/ClipLoader';
-
+import { getAllReviews } from '../../store/review';
+import ReadStarRating from '../ReviewCard/Rating/ReadStarRating';
 import './Home.css';
 import Footer from '../Footer';
 
@@ -33,11 +34,46 @@ function Home() {
     // console.log(newArr);
   };
 
+  //--------------TOTAL REVIEWS------------
+  useEffect(() => {
+    dispatch(getAllReviews());
+  }, [dispatch]);
+  const Review = useSelector((state) => state.review);
+  const Reviews = Object.values(Review);
+
+  //TRY2-----------------------------------------
+  const countRating = (id) => {
+    let eachArr = Reviews.filter((ele) => ele.productId == id);
+    let totalRating = 0;
+    eachArr.forEach((reviewIn) => {
+      totalRating += reviewIn.rating;
+    });
+    if (eachArr.length) {
+      return Math.round(totalRating / eachArr.length);
+    } else {
+      return 0;
+    }
+  };
+  const countRating2 = (id) => {
+    let eachArr = Reviews.filter((ele) => ele.productId == id);
+    let totalRating = 0;
+    eachArr.forEach((reviewIn) => {
+      totalRating += reviewIn.rating;
+    });
+    if (eachArr.length) {
+      return Math.round(eachArr.length);
+    } else {
+      return 0;
+    }
+  };
+  //------------------------------------------------
+  //-----------------------------------------
+
   //-----------------SEARCH BAR ----------------------------------------
   const [search, setSearch] = useState('');
-  const reset = () => {
-    setSearch('');
-  };
+  // const reset = () => {
+  //   setSearch('');
+  // };
   // const searchSubmit = () => {
   //   setAllProducts(false);
   //   console.log(search);
@@ -149,6 +185,15 @@ function Home() {
                                 <div className="productnameDivforMain">
                                   <div className="productNameh2">{name}</div>
                                 </div>
+                                <div className="RatingDivUpdate">
+                                  <ReadStarRating rating={countRating(id)} />
+                                  {` `}
+                                  <div className="ratingNumbersDiv">
+                                    {countRating2(id)}
+                                    {` `}
+                                    Reviews
+                                  </div>
+                                </div>
                                 <div className="priceMainDiv">
                                   <div className="mainPriceDiv">${price}</div>
                                 </div>
@@ -195,6 +240,15 @@ function Home() {
                               </div>
                               <div className="productnameDivforMain">
                                 <div className="productNameh2">{name}</div>
+                              </div>
+                              <div className="RatingDivUpdate">
+                                <ReadStarRating rating={countRating(id)} />
+                                {` `}
+                                <div className="ratingNumbersDiv">
+                                  {countRating2(id)}
+                                  {` `}
+                                  Reviews
+                                </div>
                               </div>
                               <div className="priceMainDiv">
                                 <div className="mainPriceDiv">${price}</div>

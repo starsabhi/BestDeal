@@ -64,6 +64,8 @@
 }
 
 .nameDivfortech {
+  font-weight: bold;
+  letter-spacing: 0.1em;
   padding: 10px;
   text-align: center;
 }

@@ -29,6 +29,14 @@ const validateReview = [
 ];
 
 router.get(
+  '/',
+  asyncHandler(async (req, res) => {
+    const reviews = await db.Review.findAll();
+    return res.json(reviews);
+  })
+);
+
+router.get(
   '/:productId',
   asyncHandler(async (req, res) => {
     const { productId } = req.params;

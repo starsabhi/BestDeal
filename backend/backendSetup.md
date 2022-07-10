@@ -75,3 +75,36 @@ heroku run npm run sequelize db:migrate
 heroku run npm run sequelize db:migrate:undo:all
 heroku run npm run sequelize db:seed:all
 heroku run npm run sequelize db:seed:undo:all
+
+////////////////EXTRA CODE ////////////////
+// let RatingArr = [];
+// let RatingArr2 = [];
+
+// if (setAllProducts) {
+// for (let i = 1; i <= productList.length; i++) {
+// let eachArr = Reviews.filter((ele) => ele.productId == i);
+// let totalRating = 0;
+// eachArr.forEach((reviewIn) => {
+// totalRating += reviewIn.rating;
+// });
+// if (eachArr.length) {
+// RatingArr.push([totalRating / eachArr.length, eachArr.length]);
+// } else {
+// RatingArr.push([0, 0]);
+// }
+// }
+// } else {
+// for (let i = 1; i <= newArr.length; i++) {
+// let eachArr = Reviews.filter((ele) => ele.productId == i);
+// let totalRating = 0;
+// eachArr.forEach((reviewIn) => {
+// totalRating += reviewIn.rating;
+// });
+// if (eachArr.length) {
+// RatingArr2.push([totalRating / eachArr.length, eachArr.length]);
+// } else {
+// RatingArr2.push([0, 0]);
+// }
+// }
+// }
+// console.log(RatingArr);

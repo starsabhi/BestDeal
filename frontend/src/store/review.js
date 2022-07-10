@@ -1,6 +1,7 @@
 import { csrfFetch } from './csrf';
 
 const LOAD_REVIEWS = 'review/LOAD_REVIEWS';
+const LOAD_ALLREVIEWS = 'review/LOAD_ALLREVIEWS';
 const ADD_REVIEWS = 'review/ADD_REVIEWS';
 const EDIT_REVIEW = 'review/EDIT_REVIEWS';
 const DELETE_REVIEW = 'review/DELETE_REVIEWS';
@@ -21,6 +22,11 @@ const loadReviews = (reviews) => ({
   reviews,
 });
 
+const loadAllReviews = (reviews) => ({
+  type: LOAD_ALLREVIEWS,
+  reviews,
+});
+
 const addReview = (review) => ({
   type: ADD_REVIEWS,
   review,
@@ -30,6 +36,17 @@ const editReview = (review) => ({
   type: EDIT_REVIEW,
   review,
 });
+
+export const getAllReviews = () => async (dispatch) => {
+  const res = await csrfFetch(`/api/review/`);
+  // console.log('********************8', res);
+  if (res.ok) {
+    const reviews = await res.json();
+    // console.log('***************', reviews);
+    dispatch(loadAllReviews(reviews));
+    return reviews;
+  }
+};
 
 export const getReviews = (productId) => async (dispatch) => {
   const res = await csrfFetch(`/api/review/${productId}`);
@@ -43,7 +60,7 @@ export const getReviews = (productId) => async (dispatch) => {
 };
 
 export const getOneReview = (reviewId, productId) => async (dispatch) => {
-  console.log(reviewId, '***********************');
+  // console.log(reviewId, '***********************');
   const res = await csrfFetch(`/api/review/${productId}/${reviewId}`, {
     method: 'GET',
   });
@@ -113,6 +130,14 @@ const reviewReducer = (state = initialState, action) => {
       });
       return newState;
     }
+
+    case LOAD_ALLREVIEWS: {
+      action.reviews.forEach((review) => {
+        newState[review.id] = review;
+      });
+      return newState;
+    }
+
     case ADD_REVIEWS: {
       newState[action.review.id] = action.review;
       return newState;
