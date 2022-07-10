@@ -1,3 +1,7 @@
+.mainDivProDP {
+  height: 100%;
+}
+
 .ProductsdetailDiv {
   margin-top: 25px;
   margin-left: 45px;
@@ -91,4 +95,11 @@
   margin-block-end: 1.1em;
   margin-inline-start: 0.1px;
   margin-inline-end: 0.1px;
+}
+
+.loadingScreenDemo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }

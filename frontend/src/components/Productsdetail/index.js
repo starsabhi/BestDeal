@@ -25,15 +25,7 @@ function Productsdetail() {
   const Product = useSelector((state) => state.product);
   const Review = useSelector((state) => state.review);
   const Reviews = Object.values(Review);
-  // console.log(
-  //   Reviews,
-  //   '********CurrrentStatePRODUCTDETAIL*********',
-  //   Object.values(Reviews)
-  // );
   const CurrrentState = useSelector((state) => state);
-  // const rating = useSelector((state) => state.review.rating);
-  // let ratingArr = Object.values(rating);
-  // console.log(Reviews);
 
   useEffect(() => {
     dispatch(getOneProduct(Id.productId));
@@ -54,7 +46,7 @@ function Productsdetail() {
 
   // console.log(Reviews?.reviews[0].content, '********REVIEWS*********');
   return (
-    <div>
+    <div className="mainDivProDP">
       {loading ? (
         <div className="loadingScreenDemo">
           <ClipLoader color={'#344441'} loading={loading} size={150} />
@@ -94,7 +86,6 @@ function Productsdetail() {
             <div className="priceCartorderBoxDiv">
               <CartBox Product={Product} productId={Id.productId} />
               <div />
-              {/* <p>{Reviews?.reviews[0].content}</p> */}
             </div>
           </div>
 
