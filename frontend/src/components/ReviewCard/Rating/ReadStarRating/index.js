@@ -10,7 +10,7 @@ function ReadStarRating({ rating }) {
           <FaStar
             size={20}
             className="readStars"
-            color={value <= rating ? '#EF0107' : '#e4e5e9'}
+            color={value <= rating ? '#EF0107' : '#8c91ab'}
             key={idx}
           />
         );

@@ -98,16 +98,17 @@ function Home() {
           <ClipLoader color={'#344441'} loading={loading} size={150} />
         </div>
       ) : (
-        <div className="homepageDiv">
-          <h2 className="productlistnameclass">
-            <span>Our Product List</span>
-          </h2>
-          <div className="sideBarDiv">
-            {/* <div className="InnerDivBtnSelect"> */}
-            {/*  <div>
+        <>
+          <div className="homepageDiv">
+            <h2 className="productlistnameclass">
+              <span>Our Product List</span>
+            </h2>
+            <div className="sideBarDiv">
+              {/* <div className="InnerDivBtnSelect"> */}
+              {/*  <div>
                  <input
-                  type="text"
-                  placeholder="search"
+                 type="text"
+                 placeholder="search"
                   value={search}
                   onChange={(e) => {
                     setAllProducts(true);
@@ -116,56 +117,112 @@ function Home() {
                 ></input>
                 <button onClick={() => reset()}>Reset</button>
               </div> */}
-            <div className="buttonDivCatogory">
-              <span className="catogoryClass">Category</span>
-              <button
-                className="catogoryBtn logOutBtneleHome"
-                onClick={() => setAllProducts(true)}
-              >
-                All
-              </button>
+              <div className="buttonDivCatogory">
+                <span className="catogoryClass">Category</span>
+                <button
+                  className="catogoryBtn logOutBtneleHome"
+                  onClick={() => setAllProducts(true)}
+                >
+                  All
+                </button>
+              </div>
+              <div className="buttonDivCatogory">
+                <button
+                  className="catogoryBtn logOutBtneleHome"
+                  onClick={() => newFunction('Men')}
+                >
+                  Men
+                </button>
+              </div>
+              <div className="buttonDivCatogory">
+                <button
+                  className="catogoryBtn logOutBtneleHome"
+                  onClick={() => newFunction('Kids')}
+                >
+                  kids
+                </button>
+              </div>
+              {/* </div> */}
             </div>
-            <div className="buttonDivCatogory">
-              <button
-                className="catogoryBtn logOutBtneleHome"
-                onClick={() => newFunction('Men')}
-              >
-                Men
-              </button>
-            </div>
-            <div className="buttonDivCatogory">
-              <button
-                className="catogoryBtn logOutBtneleHome"
-                onClick={() => newFunction('Kids')}
-              >
-                kids
-              </button>
-            </div>
-            {/* </div> */}
-          </div>
-          <div className="HomepageMainDiv">
-            <div className="productListClass">
-              {allProducts
-                ? productList
-                    ?.filter((val) => {
-                      if (search === '') {
-                        return val;
-                      } else if (
-                        val.name.toLowerCase().includes(search.toLowerCase())
+            <div className="HomepageMainDiv">
+              <div className="productListClass">
+                {allProducts
+                  ? productList
+                      ?.filter((val) => {
+                        if (search === '') {
+                          return val;
+                        } else if (
+                          val.name.toLowerCase().includes(search.toLowerCase())
+                        )
+                          return val;
+                      })
+                      .map(
+                        ({
+                          id,
+                          name,
+                          price,
+                          imageUrl,
+                          description,
+                          productInfo,
+                          category,
+                        }) => (
+                          <>
+                            <div key={id} className="productClassArr">
+                              <div className="contentdivforHome">
+                                <NavLink
+                                  style={{
+                                    color: 'inherit',
+                                    textDecoration: 'inherit',
+                                  }}
+                                  to={`products/${id}`}
+                                >
+                                  <div className="imageListDivevery">
+                                    <img
+                                      className="productListimage"
+                                      src={imageUrl}
+                                      alt={imageUrl}
+                                    />
+                                  </div>
+                                  <div className="productnameDivforMain">
+                                    <div className="productNameh2">{name}</div>
+                                  </div>
+                                  <div className="RatingDivUpdate">
+                                    <ReadStarRating rating={countRating(id)} />
+                                    {` `}
+                                    <div className="ratingNumbersDiv">
+                                      {countRating2(id)}
+                                      {` `}
+                                      Reviews
+                                    </div>
+                                  </div>
+                                  <div className="priceMainDiv">
+                                    <div className="mainPriceDiv">${price}</div>
+                                  </div>
+                                </NavLink>
+                              </div>
+                            </div>
+                          </>
+                        )
                       )
-                        return val;
-                    })
-                    .map(
-                      ({
-                        id,
-                        name,
-                        price,
-                        imageUrl,
-                        description,
-                        productInfo,
-                        category,
-                      }) => (
-                        <>
+                  : newArr
+                      ?.filter((val) => {
+                        if (search === '') {
+                          return val;
+                        } else if (
+                          val.name.toLowerCase().includes(search.toLowerCase())
+                        )
+                          return val;
+                      })
+                      .map(
+                        ({
+                          id,
+                          name,
+                          price,
+                          imageUrl,
+                          description,
+                          productInfo,
+                          category,
+                        }) => (
                           <div key={id} className="productClassArr">
                             <div className="contentdivforHome">
                               <NavLink
@@ -200,69 +257,14 @@ function Home() {
                               </NavLink>
                             </div>
                           </div>
-                        </>
-                      )
-                    )
-                : newArr
-                    ?.filter((val) => {
-                      if (search === '') {
-                        return val;
-                      } else if (
-                        val.name.toLowerCase().includes(search.toLowerCase())
-                      )
-                        return val;
-                    })
-                    .map(
-                      ({
-                        id,
-                        name,
-                        price,
-                        imageUrl,
-                        description,
-                        productInfo,
-                        category,
-                      }) => (
-                        <div key={id} className="productClassArr">
-                          <div className="contentdivforHome">
-                            <NavLink
-                              style={{
-                                color: 'inherit',
-                                textDecoration: 'inherit',
-                              }}
-                              to={`products/${id}`}
-                            >
-                              <div className="imageListDivevery">
-                                <img
-                                  className="productListimage"
-                                  src={imageUrl}
-                                  alt={imageUrl}
-                                />
-                              </div>
-                              <div className="productnameDivforMain">
-                                <div className="productNameh2">{name}</div>
-                              </div>
-                              <div className="RatingDivUpdate">
-                                <ReadStarRating rating={countRating(id)} />
-                                {` `}
-                                <div className="ratingNumbersDiv">
-                                  {countRating2(id)}
-                                  {` `}
-                                  Reviews
-                                </div>
-                              </div>
-                              <div className="priceMainDiv">
-                                <div className="mainPriceDiv">${price}</div>
-                              </div>
-                            </NavLink>
-                          </div>
-                        </div>
-                      )
-                    )}
+                        )
+                      )}
+              </div>
             </div>
           </div>
-        </div>
+          <Footer />
+        </>
       )}
-      <Footer />
     </>
   );
 }
