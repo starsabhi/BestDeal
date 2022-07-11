@@ -82,7 +82,8 @@ export default function OrderConfirm({ totalPrice, closeModal }) {
       <div className="orderFinalModalMainDiv">
         <div className="OrderConfirmMainDiv">
           <div className="warningDivOrderConfirm">
-            YOUR ORDER WILL BE ADDED IN ORDER LIST AND CART WILL BE EMPTY
+            YOUR ORDER WILL BE ADDED IN ORDER LIST THANK YOU FOR SHOPPING WITH
+            US.
           </div>
           <div className="divFinalConfirmOrder">
             <button
