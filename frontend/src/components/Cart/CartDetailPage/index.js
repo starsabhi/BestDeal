@@ -8,6 +8,7 @@ import TotalPriceCart from '../TotalPriceCart';
 import EditCart from '../EditCart';
 import MainModal from '../../MainModal';
 import { NavLink } from 'react-router-dom';
+import cashSVG from '../../../images/cash2.svg';
 
 function CartDetailPage() {
   const sessionUser = useSelector((state) => state.session.user);
@@ -119,14 +120,28 @@ function CartDetailPage() {
                     ({ id, name, productId, imageUrl, price, quantity }) => (
                       <div className="CartDeatailPageInnerDiv" key={id}>
                         <div className="nameDivCartdpage">{name}</div>
-                        <img
-                          className="imageforCartdetailPage"
-                          src={imageUrl}
-                          alt={imageUrl}
-                        ></img>
-
-                        <div className="simpleDivDiv">${price}</div>
-                        <div className="simpleDivDiv">Quantity:{quantity}</div>
+                        <div className="newimageforCartdetailPage">
+                          <img
+                            className="imageforCartdetailPage"
+                            src={imageUrl}
+                            alt={imageUrl}
+                          ></img>
+                        </div>
+                        {/* <div className="twoInfopriceandQ"> */}
+                        <div className="simpleDivDiv">
+                          <div className="logoCashClass">
+                            <img src={cashSVG}></img>
+                          </div>
+                          <p className="pricepTageCss">
+                            Price :{' '}
+                            <span className="priceSpancolor">${price}</span>
+                          </p>
+                        </div>
+                        <div className="simpleDivDiv forQuantity">
+                          Quantity:{` `}
+                          {quantity}
+                        </div>
+                        {/* </div> */}
                         <div className="bothBtnforCartpage">
                           <button
                             className="updateAnddeleteBtn"

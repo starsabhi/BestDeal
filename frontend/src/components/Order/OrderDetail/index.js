@@ -10,6 +10,8 @@ import MainModal from '../../MainModal';
 import { NavLink } from 'react-router-dom';
 import { addToOneOrder, getOrders } from '../../../store/order';
 import OrderConfirm from '../OrderConfirm';
+import cashSVG from '../../../images/cash2.svg';
+
 // import { v4 as uuid } from 'uuid';
 
 function OrderDetail() {
@@ -191,14 +193,28 @@ function OrderDetail() {
                     ({ id, name, productId, imageUrl, price, quantity }) => (
                       <div className="CartDeatailPageInnerDiv" key={id}>
                         <div className="nameDivCartdpage">{name}</div>
-                        <img
-                          className="imageforCartdetailPage"
-                          src={imageUrl}
-                          alt={imageUrl}
-                        ></img>
-
-                        <div className="simpleDivDiv">${price}</div>
-                        <div className="simpleDivDiv">Quantity:{quantity}</div>
+                        <div className="newimageforCartdetailPage">
+                          <img
+                            className="imageforCartdetailPage"
+                            src={imageUrl}
+                            alt={imageUrl}
+                          ></img>
+                        </div>
+                        {/* <div className="twoInfopriceandQ"> */}
+                        <div className="simpleDivDiv">
+                          <div className="logoCashClass">
+                            <img src={cashSVG}></img>
+                          </div>
+                          <p className="pricepTageCss">
+                            Price :{' '}
+                            <span className="priceSpancolor">${price}</span>
+                          </p>
+                        </div>
+                        <div className="simpleDivDiv">
+                          Quantity:{` `}
+                          {quantity}
+                        </div>
+                        {/* </div> */}
                         <div className="bothBtnforCartpage">
                           <button
                             className="updateAnddeleteBtn"
@@ -243,7 +259,15 @@ function OrderDetail() {
                 <div className="TotalPriceDiv">
                   <div className="innerDivTotalPrice">
                     {/* <div className="totalPriceNumber"> */}
-                    TOTAL PRICE ${totalPrice}
+                    <div className="finalOrderDTdiv">
+                      <div className="logoCashClass">
+                        <img src={cashSVG} alt={cashSVG}></img>
+                      </div>
+                      <p className="pricepTageCss">
+                        Total :{' '}
+                        <span className="priceSpancolor">${totalPrice}</span>
+                      </p>
+                    </div>
                     {/* </div> */}
                     <div className="OrderDetailPageBtnDiv">
                       <button
