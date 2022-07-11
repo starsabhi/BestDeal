@@ -47,6 +47,8 @@ npx dotenv sequelize db:seed:all
 npx dotenv sequelize db:seed Order
 npx dotenv sequelize db:seed:undo:all
 
+//HEroku commands
+heroku login
 git push heroku main
 
         {

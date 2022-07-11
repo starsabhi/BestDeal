@@ -78,44 +78,71 @@ export default function OrderCartList({ orderId, showBtn }) {
   // console.log('isCHANEGAD', orderCartList);
   return (
     <>
-      <div className="OrderCartListmainDiv">
-        <MainModal
-          showModal={editOrderCartModal}
-          closeModal={closeEditOrderCartModal}
-        >
-          <EditOrderCart
-            Id={cartEditId}
-            OrderId={cartEditOrderId}
-            productId={editCartProductId}
-            name={editCartName}
-            price={editCartPrice}
-            imageUrl={editCartimageUrl}
-            quantity={editCartQuantity}
-          />
-        </MainModal>
-        <div className="bodyofCartOrderList">
-          {newArr.map(
-            ({
-              id,
-              orderId,
-              userId,
-              productId,
-              name,
-              price,
-              imageUrl,
-              quantity,
-            }) => (
-              <div className="innerClassList456789">
-                <img
+      {/* <div className="OrderCartListmainDiv"> */}
+      <MainModal
+        showModal={editOrderCartModal}
+        closeModal={closeEditOrderCartModal}
+      >
+        <EditOrderCart
+          Id={cartEditId}
+          OrderId={cartEditOrderId}
+          productId={editCartProductId}
+          name={editCartName}
+          price={editCartPrice}
+          imageUrl={editCartimageUrl}
+          quantity={editCartQuantity}
+        />
+      </MainModal>
+      {/* <div className="bodyofCartOrderList"> */}
+      {newArr.map(
+        ({
+          id,
+          orderId,
+          userId,
+          productId,
+          name,
+          price,
+          imageUrl,
+          quantity,
+        }) => (
+          // <div className="innerClassList456789">
+          // <table className="insideTable">
+          <tr className="TRinsideItemsSpace">
+            <td>
+              <img
+                className="bodyCartorderimage"
+                src={imageUrl}
+                alt={imageUrl}
+              ></img>
+            </td>
+            <td>
+              <div className="MakeTableItemCenter">{name}</div>
+            </td>
+            <td>
+              <div className="MakeTableItemCenter">${price}</div>
+            </td>
+            <td>
+              <div className="MakeTableItemCenter">{quantity}</div>
+            </td>
+            {/* </table> */}
+            {/* <img
                   className="bodyCartorderimage"
                   src={imageUrl}
                   alt={imageUrl}
                 ></img>
-                <div>Name:{name}</div>
-                <div>Price:${price}</div>
-                <div>Quantity:{quantity}</div>
+                <div>
+                  Name :{` `}
+                  {name}
+                </div>
+                <div>
+                  Price :{` `}${price}
+                </div>
+                <div>
+                  Quantity :{` `}
+                  {quantity}
+                </div> */}
 
-                {/* <>
+            {/* <>
                   <button
                     onClick={() =>
                       helperFunctionEdit(
@@ -127,20 +154,21 @@ export default function OrderCartList({ orderId, showBtn }) {
                         price,
                         imageUrl,
                         quantity
-                      )
-                    }
-                  >
-                    Update
-                  </button>
-                  <button onClick={() => handleOrderCartDelete(id)}>
-                    Delete
-                  </button>
-                </> */}
-              </div>
-            )
-          )}
-        </div>
-      </div>
+                        )
+                      }
+                      >
+                      Update
+                      </button>
+                      <button onClick={() => handleOrderCartDelete(id)}>
+                      Delete
+                      </button>
+                    </> */}
+          </tr>
+          // </div>
+        )
+      )}
+      {/* </div> */}
+      {/* </div> */}
     </>
   );
 }

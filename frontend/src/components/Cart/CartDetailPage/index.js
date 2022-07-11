@@ -173,9 +173,11 @@ function CartDetailPage() {
             ) : (
               <div className="noItemInCART4578">
                 <div className="MAAINYOURCARTEHEADER">YOUR CART IS EMPTY</div>
-                <NavLink className={'prdocutNavlink'} to={'/products'}>
-                  Products Page
-                </NavLink>
+                <div className="linkDivNavLinkforHP">
+                  <NavLink className={'prdocutNavlink'} to={'/products'}>
+                    Products Page
+                  </NavLink>
+                </div>
               </div>
             )}
             <>
