@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCarts } from '../../../store/cart';
+import cashSVG from '../../../images/cash2.svg';
+import './TotalPriceCart.css';
 
 export default function TotalPriceCart() {
   const sessionUser = useSelector((state) => state.session.user);
@@ -27,7 +29,16 @@ export default function TotalPriceCart() {
   // console.log('How many time value changes', theSum);
   return (
     <>
-      <div className="totalPriceNumber">TOTAL PRICE ${totalPrice}</div>
+      <div className="totalPriceNumber">
+        <div>
+          <div className="logoCashClass">
+            <img src={cashSVG}></img>
+          </div>
+          <p className="pricepTageCss">
+            Total : <span className="priceSpancolor">${totalPrice}</span>
+          </p>
+        </div>
+      </div>
     </>
   );
 }
