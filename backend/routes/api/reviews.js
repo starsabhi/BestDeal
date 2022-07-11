@@ -55,11 +55,11 @@ router.get(
   '/:productId/:reviewId',
   asyncHandler(async (req, res) => {
     const { reviewId } = req.params;
-    console.log(reviewId, '*********************');
+    // console.log(reviewId, '*********************');
     // console.log(reviewId,"GETTING ANYTHING FOR SPECIAL DETAIL PAGE$")
     // console.log(reviewId,"GETTING ANYTHING FOR SPECIAL DETAIL PAGE$")
     const review = await db.Review.findByPk(reviewId);
-    console.log(review, '*********************');
+    // console.log(review, '*********************');
     // console.log(review)
     return res.json(review);
   })
@@ -71,7 +71,7 @@ router.post(
   validateReview,
   asyncHandler(async (req, res) => {
     // console.log("ROUTER COMPLETED OR NOT   *********************")
-    const { userId, productId, rating, content } = req.body;
+    const { userId, productId, rating, content, username } = req.body;
     // console.log("ROUTER COMPLETED OR NOT   *********************")
 
     const newReview = await db.Review.create({
@@ -79,6 +79,7 @@ router.post(
       productId,
       rating,
       content,
+      username,
     });
     res.json(newReview);
   })
@@ -91,7 +92,7 @@ router.patch(
   asyncHandler(async (req, res) => {
     // console.log(req.body);
 
-    const { userId, productId, rating, content } = req.body;
+    const { userId, productId, rating, content, username } = req.body;
 
     const { reviewId } = req.params;
     // console.log('THIS IS ID', { reviewId });
@@ -104,6 +105,7 @@ router.patch(
       productId,
       rating,
       content,
+      username,
     });
     res.json(review);
   })

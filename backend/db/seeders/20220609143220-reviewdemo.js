@@ -17,30 +17,35 @@ module.exports = {
           rating: '4',
           content:
             'I like this shirt. I can use this one any time very nice!!!',
+          username: 'FakeUser1',
         },
         {
           userId: '2',
           productId: '2',
           rating: '4',
           content: "I don't like this shirt.",
+          username: 'FakeUser1',
         },
         {
           userId: '2',
           productId: '3',
           rating: '4',
           content: 'I can use this for various parties!!!',
+          username: 'FakeUser1',
         },
         {
           userId: '3',
           productId: '3',
           rating: '4',
           content: 'One of the best shoes in BESTDEAL!!! THANK YOU BEST DEAL',
+          username: 'FakeUser2',
         },
         {
           userId: '3',
           productId: '3',
           rating: '4',
           content: 'I really like this shoes!',
+          username: 'FakeUser2',
         },
         {
           userId: '3',
@@ -48,12 +53,14 @@ module.exports = {
           rating: '4',
           content:
             'It is not bad shirt for this price and I love bestDEAL and thier offers!!!',
+          username: 'FakeUser2',
         },
         {
           userId: '3',
           productId: '5',
           rating: '4',
           content: 'It is one of the best Shoes Sneakers !!!',
+          username: 'FakeUser2',
         },
       ],
       {}

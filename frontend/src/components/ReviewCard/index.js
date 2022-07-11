@@ -8,6 +8,7 @@ import DeleteReview from './DeleteReview';
 import AddReview from './AddReview';
 import './ReviewCard.css';
 import ReadStarRating from './Rating/ReadStarRating';
+import profilePic from '../../images/reviewCard/profilePic.svg';
 
 function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
   const dispatch = useDispatch();
@@ -93,6 +94,7 @@ function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
           sessionuid={sessionUser?.id}
           editcontent={editcontent}
           oldrating={oldrating}
+          // sessionUser={sessionUser}
         />
       </MainModal>
 
@@ -132,9 +134,32 @@ function ReviewCard({ Id, Reviews, CurrrentState, Product }) {
           {newArr?.map((review) => (
             <div className="reviewContentDivwrap" key={review?.id}>
               <div className="rating">
-                <ReadStarRating rating={review?.rating} />
+                <div className="infoProfile">
+                  <div className="leftSideinfowithProImg">
+                    <img
+                      className="profilePicImg"
+                      src={profilePic}
+                      alt={profilePic}
+                    ></img>
+                  </div>
+                  <div className="userNameDivwithPro">
+                    <span>{review.username}</span>
+                  </div>
+                  <div className="rightSideinfoReviewCard">
+                    Created At:{` `}
+                    <span>
+                      {/* {review.createdAt.slice(0, 10)} */}
+                      {review.createdAt.slice(5, 7)}-
+                      {review.createdAt.slice(8, 10)}-
+                      {review.createdAt.slice(0, 4)}
+                    </span>
+                  </div>
+                </div>
+                <div className="RatingDiv4556891">
+                  <ReadStarRating rating={review?.rating} />
+                </div>
               </div>
-              {review?.content}
+              <div className="reviewContentDivmain">{review?.content}</div>
               {sessionUser && sessionUser?.id === review.userId ? (
                 <>
                   <div className="mainDivforTwoBtneditRdR">

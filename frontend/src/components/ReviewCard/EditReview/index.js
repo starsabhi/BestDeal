@@ -18,7 +18,8 @@ export default function EditReview({
   const [errors, setErrors] = useState([]);
   const [editformcontent, setEditformcontent] = useState(editcontent);
   const [rating, setRating] = useState(oldrating);
-  console.log(oldrating);
+  // console.log(oldrating);
+  const sessionUser = useSelector((state) => state.session.user);
 
   const handleEditReview = async (e) => {
     e.preventDefault();
@@ -27,6 +28,7 @@ export default function EditReview({
       productId: prodcutid,
       rating: rating,
       content: editformcontent,
+      username: sessionUser.username,
     };
 
     const review = await dispatch(updateReview(newReview, reviewId)).catch(

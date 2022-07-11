@@ -22,6 +22,7 @@
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
   border-radius: 5px;
   padding: 12px;
+  margin-bottom: 50px;
 }
 
 .REviewCardDivH1Tag {
@@ -31,6 +32,10 @@
 }
 
 .AddReviewbtninsideDiv {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  height: 50px;
+  width: 120px;
   margin-bottom: 15px;
   /* border-radius: 3px;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
@@ -61,8 +66,8 @@
   margin: 10px;
   border: 0.5px solid rgb(218, 213, 213);
   border-radius: 5px;
-  padding: 5px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 10px;
+  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
 }
 
 .mainDivforTwoBtneditRdR {
@@ -71,8 +76,13 @@
 }
 
 .reviewEditButton {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  height: 30px;
+  width: 60px;
+
   margin-right: 10px;
-  background-color: rgba(14, 14, 14, 0.648);
+  background-color: rgba(14, 14, 14, 0.822);
   color: rgba(255, 255, 255, 0.723);
   cursor: pointer;
   border: 2px solid grey;
@@ -89,7 +99,14 @@
 }
 
 .reviewDeleteButton {
-  background-color: rgba(14, 14, 14, 0.648);
+  height: 30px;
+  width: 60px;
+  margin-left: 10px;
+
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+
+  background-color: rgba(14, 14, 14, 0.822);
   color: rgba(255, 255, 255, 0.723);
   cursor: pointer;
   border: 2px solid grey;
@@ -110,4 +127,52 @@
   font-size: 23px;
   margin-bottom: 10px;
   margin-top: 10px;
+}
+
+.profilePicImg {
+  width: 20x;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 25px;
+}
+
+.infoProfile {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  box-shadow: rgb(233, 229, 229) 0px 10px 10px -10px;
+  /* border-bottom: 1px solid rgb(233, 229, 229); */
+}
+
+.leftSideinfowithProImg {
+  /* height: 20px; */
+  /* float: left; */
+}
+
+.rightSideinfoReviewCard {
+  /* display: flex;
+  float: right; */
+  margin-left: auto;
+  padding: 2px;
+}
+
+.RatingDiv4556891 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 5px 5px 5px;
+}
+
+.reviewContentDivmain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  padding: 5px;
+}
+
+.userNameDivwithPro {
+  padding: 2px;
+  margin-left: 5px;
 }

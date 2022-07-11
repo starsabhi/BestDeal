@@ -11,6 +11,7 @@ export default function AddReview({ sessionuid, prodcutid, closeModal }) {
   const [content, setContent] = useState('');
   const [errors, setErrors] = useState([]);
   const [rating, setRating] = useState(0);
+  const sessionUser = useSelector((state) => state.session.user);
 
   const handleSubmitReview = async (e) => {
     e.preventDefault();
@@ -21,6 +22,7 @@ export default function AddReview({ sessionuid, prodcutid, closeModal }) {
       productId: prodcutid,
       rating: rating,
       content: content,
+      username: sessionUser.username,
     };
 
     const review = await dispatch(writeReview(newReview)).catch(async (res) => {
