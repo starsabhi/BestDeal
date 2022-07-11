@@ -16,16 +16,18 @@
   overflow: hidden;
   /* display: flex; */
   /* flex-direction: column; */
-  border: 1px solid rgba(166, 166, 166, 1);
+  /* border: 1px solid rgba(166, 166, 166, 1); */
   width: 20%;
   margin-left: 5%;
   margin-right: 3%;
   /* width: 100%; */
-  background-color: rgba(224, 224, 224, 1);
+  /* background-color: rgba(224, 224, 224, 1); */
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   /* box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
     rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
     rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px; */
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 
 .productListClassforProductdetailPage {
@@ -41,7 +43,7 @@
     rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px; */
   border-radius: 10px;
   /* background-color: rgba(224, 224, 224, 1); */
-  border: 1px solid rgba(242, 242, 242, 1);
+  /* border: 1px solid rgba(242, 242, 242, 1); */
 }
 
 .grid-container-element {
@@ -52,8 +54,8 @@
   width: 100%;
   /* max-height: 390px; */
   padding: 10px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; */
 }
 .grid-child-element {
   margin: 10px;
@@ -67,18 +69,20 @@
 }
 
 .classOneImage {
-  border: 1px solid rgba(227, 227, 227, 1);
+  /* border: 1px solid rgba(227, 227, 227, 1); */
   border-radius: 5px;
   max-height: 370px;
+
   /* box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px; */
 }
 
 .classTwoinfo {
-  border: 1px solid rgba(220, 219, 219, 1);
+  /* border: 1px solid rgba(220, 219, 219, 1); */
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   max-height: 370px;
   border-radius: 5px;
+  overflow: hidden;
 }
 
 .innerDivForsecondGrid {

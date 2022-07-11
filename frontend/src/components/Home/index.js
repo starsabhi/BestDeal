@@ -7,6 +7,7 @@ import { getAllReviews } from '../../store/review';
 import ReadStarRating from '../ReviewCard/Rating/ReadStarRating';
 import './Home.css';
 import Footer from '../Footer';
+import cashSVG from '../../images/cash2.svg';
 
 function Home() {
   const dispatch = useDispatch();
@@ -196,7 +197,18 @@ function Home() {
                                     </div>
                                   </div>
                                   <div className="priceMainDiv">
-                                    <div className="mainPriceDiv">${price}</div>
+                                    <div className="priceDivPDpage">
+                                      <div className="logoCashClass">
+                                        <img src={cashSVG}></img>
+                                      </div>
+                                      <p className="pricepTageCss">
+                                        Price :{' '}
+                                        <span className="priceSpancolor">
+                                          ${price}
+                                        </span>
+                                      </p>
+                                    </div>
+                                    {/* <div className="mainPriceDiv">${price}</div> */}
                                   </div>
                                 </NavLink>
                               </div>
@@ -252,7 +264,20 @@ function Home() {
                                   </div>
                                 </div>
                                 <div className="priceMainDiv">
-                                  <div className="mainPriceDiv">${price}</div>
+                                  <div className="priceMainDiv">
+                                    <div className="priceDivPDpage">
+                                      <div className="logoCashClass">
+                                        <img src={cashSVG}></img>
+                                      </div>
+                                      <p className="pricepTageCss">
+                                        Price :{' '}
+                                        <span className="priceSpancolor">
+                                          ${price}
+                                        </span>
+                                      </p>
+                                    </div>
+                                    {/* <div className="mainPriceDiv">${price}</div> */}
+                                  </div>
                                 </div>
                               </NavLink>
                             </div>
