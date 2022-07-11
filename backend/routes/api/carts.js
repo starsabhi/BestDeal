@@ -9,7 +9,7 @@ const { handleValidationErrors } = require('../../utils/validation');
 const validateCart = [
   check('quantity')
     .isInt({ max: 10 })
-    .withMessage('Maximum 10 same items per Cart'),
+    .withMessage('Maximum 10 same items per Cart. Please check your Cart.'),
   handleValidationErrors,
 ];
 

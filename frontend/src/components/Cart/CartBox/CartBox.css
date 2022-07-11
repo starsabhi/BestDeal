@@ -1,16 +1,18 @@
 .addCartButtonforbox {
   /* margin-left: 30px; */
+
+  padding: 10px;
   background-color: #0f1111d5;
   color: white;
   cursor: pointer;
   transition-duration: 0.4s;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 15px;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 }
 
 .addCartButtonforbox:hover {
   transform: scale(1.1);
-  color: rgba(242, 242, 242, 1);
+  color: rgba(12, 250, 12, 0.592);
 }
 
 .addCartButtonforboxDivmainDiv {
@@ -62,10 +64,65 @@
   display: flex;
   justify-content: center;
   margin: 10px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .leftMax {
-  margin-left: -25px;
-  font-size: 14px;
+  /* margin: 5px 5px 5px 10px; */
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 5px;
+  padding-inline-start: 5px;
+  text-align: center;
+  list-style-type: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.LogInButtnInsideCartBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logInBtnCartBOX {
+  border-radius: 10px;
+}
+
+.quantityClass {
+  font-size: 22px;
+  font-weight: bolder;
+  margin-right: 10px;
+}
+
+.addToCartBTN {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  padding: 10px;
+  font-weight: bolder;
+}
+
+.selectClassforCARTB {
+  /* -webkit-appearance: none; */
+  padding: 7px 10px 7px 12px;
+  /* width: 50%; */
+  border: 1px solid #e8eaed;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 1px 3px -2px #9098a9;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+.h3FreeDelivery {
+  /* font-size: 1.17em; */
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  margin-top: -5px;
 }

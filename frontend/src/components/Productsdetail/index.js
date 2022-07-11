@@ -9,6 +9,7 @@ import ReviewCard from '../ReviewCard';
 import CartBox from '../Cart/CartBox';
 import ClipLoader from 'react-spinners/ClipLoader';
 import ReadStarRating from '../ReviewCard/Rating/ReadStarRating';
+import cashSVG from '../../images/cash2.svg';
 
 function Productsdetail() {
   const dispatch = useDispatch();
@@ -54,50 +55,67 @@ function Productsdetail() {
           <ClipLoader color={'#344441'} loading={loading} size={150} />
         </div>
       ) : (
-        <div className="ProductMainDiv">
-          <div className="ProductsdetailDiv">
-            {/* <h1>Productsdetail</h1> */}
-            <div className="productListClassforProductdetailPage">
-              <div key={Product?.id} className="productClassArr">
-                <div className="contentdivForproductdetailpage">
-                  <div className="grid-container-element">
-                    <div className="grid-child-element classOneImage">
-                      <img
-                        className="productListimageonProductdetailpage"
-                        src={Product?.imageUrl}
-                        alt={Product?.imageUrl}
-                      />
-                    </div>
-                    <div className="grid-child-element classTwoinfo">
-                      <div className="innerDivForsecondGrid">
-                        <div className="productNameh2">{Product?.name}</div>
-                        <p className="pricepTageCss">Price :${Product.price}</p>
-                        <p className="descriptionptag">
-                          Description: {Product?.description}
-                        </p>
-                        <ReadStarRating
-                          rating={totalRating / productReviews?.length}
+        <>
+          <div className="ProductMainDiv">
+            <div className="ProductsdetailDiv">
+              {/* <h1>Productsdetail</h1> */}
+              <div className="productListClassforProductdetailPage">
+                <div key={Product?.id} className="productClassArr">
+                  <div className="contentdivForproductdetailpage">
+                    <div className="grid-container-element">
+                      <div className="grid-child-element classOneImage">
+                        <img
+                          className="productListimageonProductdetailpage"
+                          src={Product?.imageUrl}
+                          alt={Product?.imageUrl}
                         />
-                        {`(${productReviews?.length})`}
+                      </div>
+                      <div className="grid-child-element classTwoinfo">
+                        <div className="innerDivForsecondGrid">
+                          <div id="productNameH2DP">{Product?.name}</div>
+                          <div className="RatingDivInsideDP">
+                            <ReadStarRating
+                              rating={totalRating / productReviews?.length}
+                            />
+                            {`(${productReviews?.length})`} Reviews
+                          </div>
+                          <div className="priceDivPDpage">
+                            <div className="logoCashClass">
+                              <img src={cashSVG}></img>
+                            </div>
+                            <p className="pricepTageCss">
+                              Price :{' '}
+                              <span className="priceSpancolor">
+                                ${Product.price}
+                              </span>
+                            </p>
+                          </div>
+                          <div className="DescriptionTAGPDP">Description:</div>
+                          <p className="descriptionptag">
+                            <div className="DescriptionDIVTAGPDP">
+                              {Product?.description}
+                            </div>
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <div className="priceCartorderBoxDiv">
+                <CartBox Product={Product} productId={Id.productId} />
+                <div />
+              </div>
             </div>
-            <div className="priceCartorderBoxDiv">
-              <CartBox Product={Product} productId={Id.productId} />
-              <div />
-            </div>
-          </div>
 
-          <ReviewCard
-            Id={Id}
-            Reviews={Reviews}
-            CurrrentState={CurrrentState}
-            Product={Product}
-          />
-        </div>
+            <ReviewCard
+              Id={Id}
+              Reviews={Reviews}
+              CurrrentState={CurrrentState}
+              Product={Product}
+            />
+          </div>
+        </>
       )}
     </div>
   );

@@ -4,7 +4,7 @@ import { getCarts, addItemToCart, editCart } from '../../../store/cart';
 import addCartLogo from '../../../images/Navbar/addCart.svg';
 import './CartBox.css';
 import logoApp from '../../../images/Navbar/logo.svg';
-import { useHistory } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 
 export default function CartBox({ Product, productId }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -83,7 +83,7 @@ export default function CartBox({ Product, productId }) {
           <div className="imagelogoCartdiv">
             <img className="imagelogoCartBox" src={logoApp}></img>
           </div>
-          <ul className="errorsLi">
+          <ul className="errorsLi leftMax">
             {errors.map((error, idx) => (
               <li className="errorsLi leftMax" key={idx}>
                 * {error}
@@ -91,8 +91,12 @@ export default function CartBox({ Product, productId }) {
             ))}
           </ul>
           <div className="quantityDivforcartbox">
-            Quantity
-            <select value={totalItem} onChange={(e) => handleChange(e)}>
+            <div className="quantityClass">Quantity</div>
+            <select
+              className="selectClassforCARTB"
+              value={totalItem}
+              onChange={(e) => handleChange(e)}
+            >
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -110,9 +114,16 @@ export default function CartBox({ Product, productId }) {
               className="addCartButtonforbox"
               onClick={(e) => handleAddToCart(e)}
             >
-              <div>ADD TO CART</div>
+              <div className="addToCartBTN">ADD TO CART</div>
               <img src={addCartLogo}></img>
             </button>
+          </div>
+          <div>
+            <div className="h3FreeDelivery">
+              <h3 className="h3forwithoutlogin">
+                <div> With Free Delivery </div>
+              </h3>
+            </div>
           </div>
         </div>
       ) : (
@@ -120,8 +131,23 @@ export default function CartBox({ Product, productId }) {
           <div className="imagelogoCartdivwithourlogin">
             <img className="imagelogoCartBoxwithoutlog" src={logoApp}></img>
             <h3 className="h3forwithoutlogin">
-              Please Log-in to use all site features
+              <div>Please Log-in to use all site features</div>
             </h3>
+            <div className="LogInButtnInsideCartBox">
+              <NavLink className="navLogin buttonfornavforSpace" to="/login">
+                <button className="log-InNAv logInBtnCartBOX">Log In</button>
+              </NavLink>
+            </div>
+            <div>
+              <h3 className="h3forwithoutlogin">
+                <div>Don't have account with BestDeal</div>
+              </h3>
+            </div>
+            <div className="LogInButtnInsideCartBox">
+              <NavLink className="navSignUp buttonfornavforSpace" to="/signup">
+                <button className="sing-upNAv logInBtnCartBOX">Sign up</button>
+              </NavLink>
+            </div>
           </div>
         </>
       )}

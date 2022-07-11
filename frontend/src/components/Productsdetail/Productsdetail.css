@@ -1,5 +1,6 @@
 .mainDivProDP {
   height: 100%;
+  /* background-image: linear-gradient(to right, #f2a4ad89, #d3ebf7b5); */
 }
 
 .ProductsdetailDiv {
@@ -11,31 +12,33 @@
 }
 
 .priceCartorderBoxDiv {
+  max-height: 410px;
+  overflow: hidden;
   /* display: flex; */
   /* flex-direction: column; */
   border: 1px solid rgba(166, 166, 166, 1);
-  width: 250px;
+  width: 20%;
   margin-left: 5%;
-  margin-right: 10px;
+  margin-right: 3%;
   /* width: 100%; */
   background-color: rgba(224, 224, 224, 1);
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+  /* box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
     rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
-    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px; */
   border-radius: 10px;
 }
 
 .productListClassforProductdetailPage {
   width: 70%;
-  max-height: 390px;
+  /* max-height: 390px; */
 
   /* border: 1px solid black; */
 }
 
 .contentdivForproductdetailpage {
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+  /* box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
     rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
-    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px; */
   border-radius: 10px;
   /* background-color: rgba(224, 224, 224, 1); */
   border: 1px solid rgba(242, 242, 242, 1);
@@ -43,11 +46,14 @@
 
 .grid-container-element {
   display: grid;
-  grid-template-columns: 1fr 0.6fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
   /* border: 1px solid black; */
   width: 100%;
-  max-height: 390px;
+  /* max-height: 390px; */
+  padding: 10px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 .grid-child-element {
   margin: 10px;
@@ -64,7 +70,7 @@
   border: 1px solid rgba(227, 227, 227, 1);
   border-radius: 5px;
   max-height: 370px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+  /* box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px; */
 }
 
 .classTwoinfo {
@@ -81,9 +87,11 @@
 }
 
 .pricepTageCss {
-  font-weight: 200;
+  margin-top: 0px;
+  font-weight: bolder;
   display: block;
-  margin-block-start: 1.1em;
+  font-size: 20px;
+  /* margin-block-start: 1.1em; */
   margin-block-end: 1.1em;
   margin-inline-start: 0.1px;
   margin-inline-end: 0.1px;
@@ -91,7 +99,7 @@
 
 .descriptionptag {
   display: flex;
-  margin-block-start: 1.1em;
+  margin-block-start: 0em;
   margin-block-end: 1.1em;
   margin-inline-start: 0.1px;
   margin-inline-end: 0.1px;
@@ -102,4 +110,61 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+}
+
+#productNameH2DP {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 900;
+  padding: 5px 5px 0px 5px;
+  /* margin-bottom: 15px; */
+  margin-block-end: 0.5em;
+  overflow: visible;
+}
+
+.priceDivPDpage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7px;
+  margin-bottom: -2px;
+}
+
+.logoCashClass {
+  margin-top: 0px;
+
+  /* margin-block-start: 1.1em; */
+  margin-block-end: 1.1em;
+  margin-inline-start: 0.1px;
+  margin-inline-end: 0.1px;
+  padding: 2px;
+  margin-right: 5px;
+  /* margin-left: 10px; */
+}
+
+.priceSpancolor {
+  color: green;
+}
+
+.RatingDivInsideDP {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  margin: 2px;
+}
+
+.DescriptionTAGPDP {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.DescriptionDIVTAGPDP {
+  padding: 5px;
+  font-size: 18px;
+  font-weight: 550;
+  text-align: center;
 }
