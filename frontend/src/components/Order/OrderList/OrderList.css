@@ -48,8 +48,10 @@
 }
 
 .UpdateOrderBtnforsecondPG {
+  font-family: 'Poppins', sans-serif;
   margin-left: 10px;
-  background-color: rgba(172, 172, 175, 1);
+  color: rgba(255, 255, 255, 0.734);
+  background-color: rgb(74, 74, 75);
   /* color: white; */
   cursor: pointer;
   border: 2px solid grey;
@@ -58,13 +60,20 @@
 }
 
 .UpdateOrderBtnforsecondPG1 {
+  font-family: 'Poppins', sans-serif;
   margin-left: 10px;
-  background-color: rgba(172, 172, 175, 1);
+  color: rgba(255, 255, 255, 0.734);
+  background-color: rgb(74, 74, 75);
   /* color: white; */
   cursor: pointer;
   border: 2px solid grey;
   border-radius: 5px;
   transition-duration: 0.4s;
+}
+.UpdateOrderBtnforsecondPG:hover,
+.UpdateOrderBtnforsecondPG1:hover {
+  color: white;
+  transform: scale(1.1);
 }
 
 .innnerDivmainUpdateOrderDiv {
@@ -133,6 +142,8 @@
   margin-top: 5px;
   display: flex;
   justify-content: center;
+  font-weight: 900;
+  font-size: 20px;
 }
 
 .bodymaindivorderDetailpage456 {
@@ -145,12 +156,14 @@
   margin-bottom: 20px;
   padding: 10px;
   border-radius: 5px;
+  font-weight: 900;
 }
 
 .header456123789 {
   display: flex;
   justify-content: center;
-  font-weight: bold;
+  font-size: 22px;
+  font-weight: 900;
   padding: 10px;
 }
 
@@ -159,9 +172,16 @@
   justify-content: center;
   /* font-weight: bold; */
   padding: 5px;
+  font-size: 20px;
+  font-weight: 900;
   color: red;
+  text-align: center;
 }
 
 .NavLinkOrderList {
   color: grey;
+}
+
+.borderBottomTR {
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 }

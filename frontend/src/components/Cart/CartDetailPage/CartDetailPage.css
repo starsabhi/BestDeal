@@ -115,6 +115,13 @@
   padding: 5px;
 }
 
+.MAAINYOURCARTEHEADER {
+  font-size: 26px;
+  margin-top: 20px;
+  letter-spacing: 1px;
+  font-weight: 900;
+}
+
 .nameDivCartdpage {
   margin: 5px;
   font-weight: 900;
@@ -165,8 +172,18 @@
 }
 
 .prdocutNavlink {
-  margin-left: 25px;
-  margin-top: 5px;
+  /* margin-left: 20px; */
+  /* margin-top: 5px; */
+  font-size: 22px;
+  font-weight: 900;
   padding: 5px;
   color: grey;
+  font-weight: 900;
+}
+
+.linkDivNavLinkforHP {
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

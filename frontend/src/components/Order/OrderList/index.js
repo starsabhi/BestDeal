@@ -78,7 +78,7 @@ export default function OrderList() {
                 <div className="header456123789">Your Orders</div>
                 <div className="header43warnning">
                   * You can update and delete order only if it is not complete
-                  [Order need at least 24 hours to complete]
+                  [Only same day Orders]
                 </div>
                 <div className="InnerDivOrderList">
                   {orderListForuser.reverse()?.map((order) => (
@@ -88,12 +88,15 @@ export default function OrderList() {
                           Order Details
                         </div>
                         <div className="ficelDivinnergamesshow">
-                          <div>ID: XSNASNKDN{order.id}</div>
-                          <div>DATE:{order.createdAt.slice(0, 10)}</div>
+                          <div>ID : XSNASNKDN{order.id}</div>
+                          <div>
+                            DATE :{` `}
+                            {order.createdAt.slice(0, 10)}
+                          </div>
                           {order.createdAt.slice(0, 10) == todayDate3 ? (
                             <div>
                               <span className="spanStatusOrderin">
-                                STATUS: Not completed
+                                STATUS : Not completed
                               </span>
                               <NavLink to={`/updateorder/${order.id}`}>
                                 <button className="UpdateOrderBtnforsecondPG">
@@ -117,10 +120,20 @@ export default function OrderList() {
                               ></img>
                             </div>
                           )}
-                          <div>TOTAL:{order.totalPrice}</div>
+                          <div>
+                            TOTAL :{` `}
+                            {order.totalPrice}
+                          </div>
                         </div>
-                        <OrderCartList orderId={order?.id} key={order?.id} />
-                        {/* <button>delete</button> */}
+                        <table className="insideTable">
+                          <tr className="borderBottomTR">
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                          </tr>
+                          <OrderCartList orderId={order?.id} key={order?.id} />
+                        </table>
                       </>
                     </div>
                   ))}
