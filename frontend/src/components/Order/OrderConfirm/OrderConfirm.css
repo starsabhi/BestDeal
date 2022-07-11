@@ -4,6 +4,8 @@
   height: 200px;
   width: 300px;
   border-radius: 5px;
+  font-weight: 900;
+  text-align: center;
 }
 
 .orderFinalModalMainDiv {
@@ -27,7 +29,11 @@
 }
 
 .modalBtnConfirmmodal {
-  background-color: rgba(172, 172, 175, 1);
+  font-family: 'Poppins', sans-serif;
+  width: 100px;
+  height: 40px;
+  background-color: rgb(57, 57, 57);
+  color: rgba(255, 255, 255, 0.564);
   /* color: white; */
   cursor: pointer;
   border: 2px solid grey;
