@@ -64,12 +64,15 @@ export default function EditOrderCart({
         </select>
         <div className="updateEditCartselect5897">
           <button
-            className="submitFinalUpdate789"
+            className="submitFinalUpdate7891"
             onClick={(e) => handleEditToCart(e)}
           >
             Update
           </button>
-          <button className="submitFinalUpdate789" onClick={() => closeModal()}>
+          <button
+            className="submitFinalUpdate7891"
+            onClick={() => closeModal()}
+          >
             Cancel
           </button>
         </div>
