@@ -143,12 +143,11 @@ module.exports = {
           category: 'Sports',
         },
         {
-          name: 'Best Choice Products Kids 12V Ride On Truck',
-          price: '299.99',
+          name: 'Osmo - Monster - Ages 5-10 - Bring Real-life Drawings ',
+          price: '34.99',
           imageUrl:
-            'https://m.media-amazon.com/images/I/71ZQ5cxaFuS._AC_SX522_.jpg',
-          description:
-            'Battery Powered Toy Car w/ Spring Suspension, Remote Control, 3 Speeds, LED Lights, Bluetooth - Pink',
+            'https://m.media-amazon.com/images/I/81dMdPhpKzL._AC_SX522_.jpg',
+          description: `Fun-filled & award winning learning games. Children interact with actual hand held pieces & an iPad or Fire Tablet, bringing a child's game pieces & actions to life`,
           productInfo:
             'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
           category: 'Kids',
@@ -165,10 +164,10 @@ module.exports = {
           category: 'Kids',
         },
         {
-          name: 'Best Choice Products Kids 12V Ride On Truck',
+          name: 'Kidzone 12V Battery Powered Licensed Chevrolet',
           price: '299.99',
           imageUrl:
-            'https://m.media-amazon.com/images/I/71ZQ5cxaFuS._AC_SX522_.jpg',
+            'https://m.media-amazon.com/images/I/71hd3lyG5cS._AC_SX522_.jpg',
           description:
             'Battery Powered Toy Car w/ Spring Suspension, Remote Control, 3 Speeds, LED Lights, Bluetooth - Pink',
           productInfo:
@@ -176,23 +175,23 @@ module.exports = {
           category: 'Kids',
         },
         {
-          name: 'Best Choice Products Kids 12V Ride On Truck',
-          price: '299.99',
+          name: 'PlayShifu STEM Toys for Kids - Tacto Coding',
+          price: '39.99',
           imageUrl:
-            'https://m.media-amazon.com/images/I/71ZQ5cxaFuS._AC_SX522_.jpg',
+            'https://m.media-amazon.com/images/I/71cfDa-RhrL._AC_SX522_.jpg',
           description:
-            'Battery Powered Toy Car w/ Spring Suspension, Remote Control, 3 Speeds, LED Lights, Bluetooth - Pink',
+            'layShifu helps early learners THINK code with exciting gameplay and bite-sized sequences. Did you know, it has been designed and created by coder parents?! Tacto makes coding fun and easy through interactions with VISUAL elements, NOT blocks of code!',
           productInfo:
             'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
           category: 'Kids',
         },
         {
-          name: 'Best Choice Products Kids 12V Ride On Truck',
-          price: '299.99',
+          name: 'Pixicade Plus: Transform Creative Drawings to Animated',
+          price: '27.99',
           imageUrl:
-            'https://m.media-amazon.com/images/I/71ZQ5cxaFuS._AC_SX522_.jpg',
+            'https://m.media-amazon.com/images/I/91cqy7zldrL._AC_SX522_.jpg',
           description:
-            'Battery Powered Toy Car w/ Spring Suspension, Remote Control, 3 Speeds, LED Lights, Bluetooth - Pink',
+            'Kids and teens use colored markers and paper to turn hand drawings into instantly playable video games! ',
           productInfo:
             'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
           category: 'Kids',
