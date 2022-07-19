@@ -2,7 +2,7 @@
 
 BestDeal is eCommerce app where you can buy products. User can leave reviews on products. They can shop with shopping cart and submit thier order.
 Live link : [BESTDEAL](https://bestdeal-zone.herokuapp.com/)
-(![CapstoneProject](https://user-images.githubusercontent.com/95883222/179445330-62946e4d-e6f4-49af-990e-eb0bc575684a.gif)
+![CapstoneProject](https://user-images.githubusercontent.com/95883222/179445330-62946e4d-e6f4-49af-990e-eb0bc575684a.gif)
 
 
 
@@ -42,10 +42,12 @@ Live link : [BESTDEAL](https://bestdeal-zone.herokuapp.com/)
 
 ## Feature List
 1. (CRUD) Log-in user can create, update, delete thier own reviews. All users can read reviews on prduct detail page.
-![image](https://user-images.githubusercontent.com/95883222/174622326-74e8556c-e348-4685-a640-df4f63a295d1.png)
+![Capstone](https://user-images.githubusercontent.com/95883222/179638935-21b3cc5c-01cf-4b44-897a-b9b53a302b18.gif)
+
 
 2. (CRUD) Log-in user can create, update(quantity) , delete shopping carts products. They can view their cart on shoppiing detail page. 
- ![image](https://user-images.githubusercontent.com/95883222/174622201-9315df88-7df6-4010-b41d-2c19a88cfd9b.png)
+![Capstone2](https://user-images.githubusercontent.com/95883222/179639050-f1f3336b-1e9e-4bea-9b9f-5ac5226f8de9.gif)
+
 
 3. (CRUD) Log-in user can create ,view, update order (if its same day as order day), delete thier order on order detail page.
  ![image](https://user-images.githubusercontent.com/95883222/174622455-05d9a707-9834-4a8d-9523-84cf91ae96f2.png)
