@@ -50,7 +50,8 @@ Live link : [BESTDEAL](https://bestdeal-zone.herokuapp.com/)
 
 
 3. (CRUD) Log-in user can create ,view, update order (if its same day as order day), delete thier order on order detail page.
- ![image](https://user-images.githubusercontent.com/95883222/174622455-05d9a707-9834-4a8d-9523-84cf91ae96f2.png)
+ ![Capstone3](https://user-images.githubusercontent.com/95883222/182003919-114eae6b-cc8b-41fa-befd-730ff7dec70e.gif)
+
 
 
 
