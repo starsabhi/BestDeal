@@ -91,11 +91,11 @@ function Productsdetail() {
                             </p>
                           </div>
                           <div className="DescriptionTAGPDP">Description:</div>
-                          <p className="descriptionptag">
+                          <span className="descriptionptag">
                             <div className="DescriptionDIVTAGPDP">
                               {Product?.description}
                             </div>
-                          </p>
+                          </span>
                         </div>
                       </div>
                     </div>

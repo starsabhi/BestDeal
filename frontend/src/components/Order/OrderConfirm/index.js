@@ -36,14 +36,14 @@ export default function OrderConfirm({ totalPrice, closeModal }) {
           quantity: quantity,
         };
 
-        console.log('******');
+        // console.log('******');
         const cartOrderAdd = await dispatch(addOrderCart(newItem));
         if (cartOrderAdd) {
           // console.log('Completed');
         }
       }
     );
-    console.log(cartListIdForDelete, '*****');
+    // console.log(cartListIdForDelete, '*****');
 
     const deleteWhole = await cartListIdForDelete.forEach((ele) => {
       dispatch(deleteCart(ele));

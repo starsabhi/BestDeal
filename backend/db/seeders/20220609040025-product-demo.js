@@ -196,6 +196,94 @@ module.exports = {
             'This weekend-perfect casual button-front shirt in a midweight flannel is a go-to pick when the temperature drops',
           category: 'Kids',
         },
+        {
+          name: '14K White Gold 4.5 Carat LAB GROWN IGI CERTIFIED DIAMOND',
+          price: '7110.00',
+          imageUrl:
+            'https://m.media-amazon.com/images/I/61Ji1YZuwtL._AC_UY625_.jpg',
+          description:
+            'Side Stone Diamonds are G-H Color SI1-SI2 Clarity. However the Center Stone is a MAN MADE LAB GROWN IGI CERTIFIED DIAMOND',
+          productInfo:
+            'Side Stone Diamonds are G-H Color SI1-SI2 Clarity. However the Center Stone is a MAN MADE LAB GROWN IGI CERTIFIED DIAMOND',
+          category: 'Women',
+        },
+        {
+          name: "Obey Women's Bond DTREET Romper",
+          price: '54.29',
+          imageUrl:
+            'https://m.media-amazon.com/images/I/81pXEspZC3L._AC_UY550_.jpg',
+          description:
+            'Relaxed fit drapery romper with button-front placket and belt detail. Features a cropped wide leg.',
+          productInfo:
+            'Relaxed fit drapery romper with button-front placket and belt detail. Features a cropped wide leg.',
+          category: 'Women',
+        },
+        {
+          name: "SweatyRocks Women's Sexy 2 Piece Outfits Striped ",
+          price: '28.99',
+          imageUrl:
+            'https://m.media-amazon.com/images/I/71P3leAUhLL._AC_UY550_.jpg',
+          description:
+            'Crop top and shorts set are easy to dress. Suitable for vacation, beach, shopping, club, or casual wear.',
+          productInfo:
+            'Crop top and shorts set are easy to dress. Suitable for vacation, beach, shopping, club, or casual wear.',
+          category: 'Women',
+        },
+        {
+          name: "SweatyRocks Women's 2 Piece Boho Butterfly",
+          price: '28.99',
+          imageUrl:
+            'https://m.media-amazon.com/images/I/71XTyxlY9wL._AC_UY679_.jpg',
+          description:
+            'Cap sleeve crop top, with dalmatian print, knot front, v neck design, make you charming',
+          productInfo:
+            'Cap sleeve crop top, with dalmatian print, knot front, v neck design, make you charming',
+          category: 'Women',
+        },
+        {
+          name: "Women's Lace Short Sleeved Jumpsuit",
+          price: '7.99',
+          imageUrl:
+            'https://m.media-amazon.com/images/I/41RCVaqNKfL._AC_SX679_.jpg',
+          description:
+            'one piece jumpsuits for women catsuit leopard print jumpsuit catsuit for women leopard romper leopard romper for women womens catsuit',
+          productInfo:
+            'one piece jumpsuits for women catsuit leopard print jumpsuit catsuit for women leopard romper leopard romper for women womens catsuit',
+          category: 'Women',
+        },
+        {
+          name: "Emporio Armani Women's Stainless Steel",
+          price: '173.29',
+          imageUrl:
+            'https://m.media-amazon.com/images/I/715mSgcYhSL._AC_UX679_.jpg',
+          description:
+            'Emporio Armani’s pro-planet practices embrace ways of sourcing and developing materials that have less impact on the environment',
+          productInfo:
+            'Emporio Armani’s pro-planet practices embrace ways of sourcing and developing materials that have less impact on the environment',
+          category: 'Women',
+        },
+        {
+          name: "ASICS Women's Gel-Excite 7 Running Shoe",
+          price: '44.99',
+          imageUrl:
+            'https://m.media-amazon.com/images/I/61cUozlKi8L._AC_UX575_.jpg',
+          description:
+            'AmpliFoam Midsole - Engineered to maintain durability at softer densities, and platform adaptability ideal for natural running.',
+          productInfo:
+            'AmpliFoam Midsole - Engineered to maintain durability at softer densities, and platform adaptability ideal for natural running.',
+          category: 'Women',
+        },
+        {
+          name: "ASICS Women's GT-1000 10 Running Shoes",
+          price: '89.99',
+          imageUrl:
+            'https://m.media-amazon.com/images/I/61L6ku6Z9bL._AC_UX575_.jpg',
+          description:
+            'Strategically positioned in critical areas of the outsole, this exceptionally durable compound is 50% more durable than standard ASICS High Abrasion Rubber.',
+          productInfo:
+            'Strategically positioned in critical areas of the outsole, this exceptionally durable compound is 50% more durable than standard ASICS High Abrasion Rubber.',
+          category: 'Women',
+        },
       ],
       {}
     );

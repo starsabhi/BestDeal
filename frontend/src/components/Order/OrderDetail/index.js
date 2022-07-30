@@ -63,7 +63,7 @@ function OrderDetail() {
     );
   }, initialValue);
   let totalPrice = theSum.toFixed(2);
-  console.log(totalPrice);
+  // console.log(totalPrice);
   //-------------------------------------------------------------
 
   //EDIT REVIEW MODAL
@@ -117,7 +117,7 @@ function OrderDetail() {
 
     const orderAdd = await dispatch(addToOneOrder(newOrder));
     if (orderAdd) {
-      console.log('Complete Order');
+      // console.log('Complete Order');
     }
   };
 
