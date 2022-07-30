@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteCart, getCarts } from '../../../store/cart';
-import { getAllProduct } from '../../../store/product';
 import './CartDetailPage.css';
 import ClipLoader from 'react-spinners/ClipLoader';
 import TotalPriceCart from '../TotalPriceCart';

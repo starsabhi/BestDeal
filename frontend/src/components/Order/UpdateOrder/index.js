@@ -22,7 +22,7 @@ export default function UpdateOrder() {
   }, [dispatch]);
 
   //TRY filter
-  console.log(Orderid);
+  // console.log(Orderid);
   const newArr = orderCartList.filter((order) => order.orderId == Orderid);
   // console.log(newArr);
 
@@ -36,7 +36,7 @@ export default function UpdateOrder() {
     );
   }, initialValue);
   let totalPriceOrder = theSum.toFixed(2);
-  console.log(totalPriceOrder);
+  // console.log(totalPriceOrder);
 
   //--------------------------------------------------------
 

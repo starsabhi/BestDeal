@@ -21,7 +21,7 @@ export default function EditOrderCart({
     setTotalItem(e.target.value);
   };
 
-  console.log(name);
+  // console.log(name);
 
   const handleEditToCart = async (e) => {
     const newItem = {

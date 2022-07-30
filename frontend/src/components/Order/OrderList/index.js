@@ -20,7 +20,7 @@ export default function OrderList() {
     dispatch(getOrders(sessionUser.id));
   }, [dispatch, sessionUser.id]);
   const orderListForuser = useSelector((state) => Object.values(state.order));
-  console.log(orderListForuser);
+  // console.log(orderListForuser);
   // console.log(orderListForuser);
 
   useEffect(() => {

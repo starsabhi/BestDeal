@@ -130,6 +130,14 @@ function Home() {
               <div className="buttonDivCatogory">
                 <button
                   className="catogoryBtn logOutBtneleHome"
+                  onClick={() => newFunction('Women')}
+                >
+                  Women
+                </button>
+              </div>
+              <div className="buttonDivCatogory">
+                <button
+                  className="catogoryBtn logOutBtneleHome"
                   onClick={() => newFunction('Men')}
                 >
                   Men

@@ -24,7 +24,7 @@ export default function TotalPriceCart() {
     );
   }, initialValue);
   let totalPrice = theSum.toFixed(2);
-  console.log(totalPrice);
+  // console.log(totalPrice);
 
   // console.log('How many time value changes', theSum);
   return (
