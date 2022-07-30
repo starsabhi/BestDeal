@@ -34,11 +34,11 @@ export default function EditOrderCart({
       quantity: totalItem,
     };
 
-    console.log(newItem);
+    // console.log(newItem);
     const cartOrderEdit = await dispatch(editOrderCart(newItem, Id));
     if (cartOrderEdit) {
       closeModal();
-      console.log('Completededitcart');
+      // console.log('Completededitcart');
     }
   };
 

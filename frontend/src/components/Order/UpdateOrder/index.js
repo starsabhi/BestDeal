@@ -14,7 +14,7 @@ export default function UpdateOrder() {
   const history = useHistory();
   const Orderid = objectId.orderId;
   const orderCartList = useSelector((state) => Object.values(state.orderCart));
-  console.log(orderCartList);
+  // console.log(orderCartList);
 
   //LOADING ORDER CART
   useEffect(() => {
@@ -84,7 +84,7 @@ export default function UpdateOrder() {
     imageUrl,
     quantity
   ) => {
-    console.log(name);
+    // console.log(name);
     setCartEditId(id);
     setCartEditOrderId(orderId);
     setEditCartProductId(productId);
