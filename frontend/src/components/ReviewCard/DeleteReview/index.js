@@ -24,7 +24,9 @@ export default function DeleteReview({
       <div className="delete-review-card">
         <h2 className="delete-review-header">Delete Review</h2>
         <form className={'resource-edit-form'} autoComplete="off">
-          This will permanently delete your review
+          <div className="deletewarningD">
+            This will permanently delete your review
+          </div>
           <div className="delete-song-form-group"></div>
           <div className="resource-edit-form-btn-div">
             <div className="resource-btn-container">

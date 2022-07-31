@@ -59,10 +59,12 @@ export default function EditReview({
               </li>
             ))}
           </ul>
-          <StarRating rating={rating} setRating={setRating} />
+          <div className="starRatingDivedit">
+            <StarRating rating={rating} setRating={setRating} />
+          </div>
           <div className="edit-review-form-group">
             <label className="edit-review-label" htmlFor="reviewContent">
-              <div>*Review</div>
+              <div className="innterLabelreviw">*Review</div>
             </label>
             <textarea
               id="reviewContent"
