@@ -30,7 +30,8 @@
   color: rgb(33, 33, 36);
   text-size-adjust: 100%;
   padding-bottom: 16px;
-  border-bottom: 2px dotted rgba(0, 0, 0, 0.482);
+  border-bottom: 1px solid #8c91ab;
+  font-weight: 900;
 }
 
 .resource-error-container {
@@ -136,4 +137,10 @@
 .errorsLi {
   list-style-type: none;
   color: red;
+}
+
+.deletewarningD {
+  color: red;
+
+  font-weight: 900;
 }

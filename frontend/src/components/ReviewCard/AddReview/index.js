@@ -56,10 +56,12 @@ export default function AddReview({ sessionuid, prodcutid, closeModal }) {
               </li>
             ))}
           </ul>
-          <StarRating rating={rating} setRating={setRating} />
+          <div className="ratingDivOuter">
+            <StarRating rating={rating} setRating={setRating} />
+          </div>
           <div className="add-review-form-group">
             <label className="add-review-label" htmlFor="reviewContent">
-              <div>*Review</div>
+              <div className="reviewContentlabel">*Review</div>
             </label>
             <textarea
               id="reviewContent"
