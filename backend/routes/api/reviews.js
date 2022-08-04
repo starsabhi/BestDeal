@@ -55,9 +55,6 @@ router.get(
   '/:productId/:reviewId',
   asyncHandler(async (req, res) => {
     const { reviewId } = req.params;
-    // console.log(reviewId, '*********************');
-    // console.log(reviewId,"GETTING ANYTHING FOR SPECIAL DETAIL PAGE$")
-    // console.log(reviewId,"GETTING ANYTHING FOR SPECIAL DETAIL PAGE$")
     const review = await db.Review.findByPk(reviewId);
     // console.log(review, '*********************');
     // console.log(review)
