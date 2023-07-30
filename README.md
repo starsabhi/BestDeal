@@ -1,7 +1,6 @@
 # BestDeal
 
 BestDeal is eCommerce app where you can buy products. User can leave reviews on products. They can shop with shopping cart and submit thier order.
-Live link : [BESTDEAL](https://bestdeal-zone.herokuapp.com/)
 ![CapstoneProject](https://user-images.githubusercontent.com/95883222/179445330-62946e4d-e6f4-49af-990e-eb0bc575684a.gif)
 
 
